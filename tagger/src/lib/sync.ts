@@ -74,6 +74,7 @@ export async function pushProject(project: GcipProject): Promise<SyncResult> {
         team_code: e.teamCode || null,
         player: e.player || null,
         body_part: e.bodyPart || null,
+        direction: e.direction || "ltr",
         notes: e.notes || null,
       }));
     if (rows.length) {

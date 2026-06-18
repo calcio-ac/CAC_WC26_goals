@@ -308,6 +308,25 @@ a.brand:hover img.cac {
 .minute-row .muted {
   font-size: 11px;
 }
+.dir-toggle {
+  display: inline-flex;
+  border: 1px solid var(--line);
+  border-radius: 7px;
+  overflow: hidden;
+}
+.dir-toggle button {
+  background: #0e120b;
+  color: var(--muted);
+  border: none;
+  padding: 7px 11px;
+  font-family: var(--body-font);
+  font-size: 13px;
+}
+.dir-toggle button.on {
+  background: var(--cac-green);
+  color: #08230a;
+  font-weight: 600;
+}
 
 /* ── action rows (arm + country + player) ── */
 .actions {

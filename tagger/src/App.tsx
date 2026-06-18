@@ -4,7 +4,7 @@ import { SequenceList } from "./components/SequenceList";
 import { useProject } from "./lib/store";
 import { useSquads } from "./lib/useSquads";
 import { useYouTube } from "./lib/useYouTube";
-import { BODY_PARTS, BodyPart, EVENT_META, EVENT_ORDER, EventType } from "./lib/types";
+import { AttackDirection, BODY_PARTS, BodyPart, DIRECTIONS, EVENT_META, EVENT_ORDER, EventType } from "./lib/types";
 import { fmtClock, parseYouTubeId } from "./lib/util";
 import { supabaseConfigured } from "./lib/supabase";
 import { pushProject } from "./lib/sync";
@@ -37,6 +37,8 @@ export function App({ auth }: { auth: Auth | null }) {
   const [syncing, setSyncing] = useState(false);
   // Actual match minute (manual) — highlight videos don't carry the real clock.
   const [matchMinute, setMatchMinute] = useState<string>("");
+  // Attack direction this half (teams switch ends) — used to normalize coords.
+  const [direction, setDirection] = useState<AttackDirection>("ltr");
   // When set, the next pitch click records the shot END location for this event.
   const [awaitingEndFor, setAwaitingEndFor] = useState<string | null>(null);
 
@@ -117,6 +119,7 @@ export function App({ auth }: { auth: Auth | null }) {
         second: mmRaw === "" ? Math.floor(vt % 60) : 0,
         x,
         y,
+        direction, // normalized later by the goals_flat view
         teamCode: s.code || undefined,
         player: s.player || undefined,
         bodyPart: s.bodyPart || undefined,
@@ -130,7 +133,7 @@ export function App({ auth }: { auth: Auth | null }) {
         setArmed(armed === "pre_assist" ? "assist" : "goal");
       }
     },
-    [awaitingEndFor, armed, matchTeams.length, activeSequenceId, newSequence, yt, sel, matchMinute, addEvent, updateEvent, flash],
+    [awaitingEndFor, armed, matchTeams.length, activeSequenceId, newSequence, yt, sel, matchMinute, direction, addEvent, updateEvent, flash],
   );
 
   // Keyboard shortcuts.
@@ -327,7 +330,20 @@ export function App({ auth }: { auth: Auth | null }) {
                   onChange={(e) => setMatchMinute(e.target.value)}
                   placeholder="e.g. 25"
                 />
-                <span className="muted">applied to actions you plot (real match clock, not video time)</span>
+                <label style={{ marginLeft: 6 }}>Attacking</label>
+                <div className="dir-toggle">
+                  {DIRECTIONS.map((d) => (
+                    <button
+                      key={d.value}
+                      type="button"
+                      className={direction === d.value ? "on" : ""}
+                      onClick={() => setDirection(d.value)}
+                    >
+                      {d.value === "ltr" ? "→ L-R" : "← R-L"}
+                    </button>
+                  ))}
+                </div>
+                <span className="muted">set per half — R-L is mirrored to normalize the data</span>
               </div>
               <div className="actions">
                 {EVENT_ORDER.map((t) => {

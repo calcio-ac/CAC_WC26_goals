@@ -23,6 +23,18 @@ export const EVENT_META: Record<
 /** Every recorded sequence ends in a goal. */
 export type SequenceOutcome = "goal";
 
+/**
+ * Direction the scoring team attacks in the video for this action.
+ * Coordinates are stored RAW (as clicked on the fixed 0→105 pitch); the
+ * goals_flat view mirrors "rtl" actions so the dashboard is always L→R.
+ */
+export type AttackDirection = "ltr" | "rtl";
+
+export const DIRECTIONS: { value: AttackDirection; label: string }[] = [
+  { value: "ltr", label: "Left → Right" },
+  { value: "rtl", label: "Right → Left" },
+];
+
 /** Body part used to perform the action. */
 export type BodyPart = "right_foot" | "left_foot" | "head" | "other";
 
@@ -54,6 +66,8 @@ export interface TaggedEvent {
   teamCode?: string;
   /** Body part used (foot/head/other). */
   bodyPart?: BodyPart;
+  /** Attack direction in the video; the view mirrors "rtl" to normalize. */
+  direction?: AttackDirection;
   notes?: string;
   createdAt: string;
 }

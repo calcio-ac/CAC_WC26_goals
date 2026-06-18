@@ -85,13 +85,20 @@ create table if not exists public.events (
   team_code   text references public.teams(code),
   player      text,
   body_part   body_part,
+  direction   text not null default 'ltr' check (direction in ('ltr','rtl')), -- attack dir
   notes       text,
   created_at  timestamptz not null default now()
 );
--- add shot-end columns if the table already existed without them
+-- add columns if the table already existed without them
 alter table public.events
   add column if not exists end_x numeric(5,2) check (end_x between 0 and 105),
   add column if not exists end_y numeric(5,2) check (end_y between 0 and 68);
+alter table public.events
+  add column if not exists direction text not null default 'ltr';
+do $$ begin
+  alter table public.events add constraint events_direction_check
+    check (direction in ('ltr','rtl'));
+exception when duplicate_object then null; end $$;
 
 create index if not exists events_sequence_idx on public.events (sequence_id);
 create index if not exists events_type_idx     on public.events (type);
@@ -115,10 +122,12 @@ select
   g.minute,
   g.second,
   g.video_time                 as goal_video_time,
-  g.x      as goal_x,
-  g.y      as goal_y,
-  g.end_x  as shot_end_x,
-  g.end_y  as shot_end_y,
+  -- normalize to left→right: mirror (point-reflection) when attack was right→left
+  case when g.direction = 'rtl' then 105 - g.x else g.x end as goal_x,
+  case when g.direction = 'rtl' then 68  - g.y else g.y end as goal_y,
+  case when g.direction = 'rtl' then 105 - g.end_x else g.end_x end as shot_end_x,
+  case when g.direction = 'rtl' then 68  - g.end_y else g.end_y end as shot_end_y,
+  g.direction                  as goal_direction,
   a.player                     as assist_by,
   a.team_code                  as assist_team,
   p.player                     as pre_assist_by,
