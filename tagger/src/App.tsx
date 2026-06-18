@@ -35,6 +35,8 @@ export function App({ auth }: { auth: Auth | null }) {
   const [toast, setToast] = useState<string | null>(null);
   const [urlInput, setUrlInput] = useState(project.match.videoUrl);
   const [syncing, setSyncing] = useState(false);
+  // Actual match minute (manual) — highlight videos don't carry the real clock.
+  const [matchMinute, setMatchMinute] = useState<string>("");
   // When set, the next pitch click records the shot END location for this event.
   const [awaitingEndFor, setAwaitingEndFor] = useState<string | null>(null);
 
@@ -104,12 +106,15 @@ export function App({ auth }: { auth: Auth | null }) {
       if (!seqId) seqId = newSequence().id;
       const vt = yt.getTime();
       const s = sel[armed];
+      // Match minute is entered manually (highlight video time ≠ real match clock).
+      const mmRaw = matchMinute.trim();
+      const mm = mmRaw === "" ? Math.floor(vt / 60) : parseInt(mmRaw, 10);
       const ev = addEvent({
         sequenceId: seqId,
         type: armed,
-        videoTime: Math.round(vt * 100) / 100,
-        minute: Math.floor(vt / 60),
-        second: Math.floor(vt % 60),
+        videoTime: Math.round(vt * 100) / 100, // video position → for replay
+        minute: Number.isFinite(mm) ? mm : Math.floor(vt / 60), // real match minute
+        second: mmRaw === "" ? Math.floor(vt % 60) : 0,
         x,
         y,
         teamCode: s.code || undefined,
@@ -125,7 +130,7 @@ export function App({ auth }: { auth: Auth | null }) {
         setArmed(armed === "pre_assist" ? "assist" : "goal");
       }
     },
-    [awaitingEndFor, armed, matchTeams.length, activeSequenceId, newSequence, yt, sel, addEvent, updateEvent, flash],
+    [awaitingEndFor, armed, matchTeams.length, activeSequenceId, newSequence, yt, sel, matchMinute, addEvent, updateEvent, flash],
   );
 
   // Keyboard shortcuts.
@@ -311,6 +316,19 @@ export function App({ auth }: { auth: Auth | null }) {
             {matchTeams.length < 2 ? (
               <p className="empty">Pick both teams in Match Setup to enable player selection.</p>
             ) : (
+              <>
+              <div className="minute-row">
+                <label>Match minute</label>
+                <input
+                  type="number"
+                  min={0}
+                  max={130}
+                  value={matchMinute}
+                  onChange={(e) => setMatchMinute(e.target.value)}
+                  placeholder="e.g. 25"
+                />
+                <span className="muted">applied to actions you plot (real match clock, not video time)</span>
+              </div>
               <div className="actions">
                 {EVENT_ORDER.map((t) => {
                   const squad = byCode(sel[t].code);
@@ -357,6 +375,7 @@ export function App({ auth }: { auth: Auth | null }) {
                   );
                 })}
               </div>
+              </>
             )}
             <div className="legend">
               <span><span className="kbd">P</span>/<span className="kbd">A</span>/<span className="kbd">G</span> arm</span>

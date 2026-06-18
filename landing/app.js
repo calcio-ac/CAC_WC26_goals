@@ -21,6 +21,7 @@ const PITCH_L = 105;
 const PITCH_W = 68;
 
 let ALL_GOALS = []; // goals_flat rows
+let RENDERED = []; // currently shown (filtered) rows — index source for clicks
 let TEAM_NAMES = {}; // code -> name
 
 // ── Pitch SVG ─────────────────────────────────────────────────────────
@@ -47,24 +48,26 @@ function pitchSvg(goals) {
     p += `<rect x="${px}" y="${(H - pbH) / 2}" width="${pbW}" height="${pbH}" ${line}/>`;
     p += `<rect x="${gx}" y="${(H - gbH) / 2}" width="${gbW}" height="${gbH}" ${line}/>`;
   }
-  for (const g of goals) {
-    if (g.goal_x == null || g.goal_y == null) continue;
+  goals.forEach((g, i) => {
+    if (g.goal_x == null || g.goal_y == null) return;
     const cx = (g.goal_x / PITCH_L) * W;
     const cy = (g.goal_y / PITCH_W) * H;
     const hasEnd = g.shot_end_x != null && g.shot_end_y != null;
     const tip = `${g.scorer || "Goal"}${g.scoring_team ? " (" + g.scoring_team + ")" : ""}${
-      g.goal_body_part ? " · " + g.goal_body_part.replace("_", " ") : ""
-    }`;
-    p += `<g><title>${esc(tip)}</title>`;
+      g.minute != null ? " · " + g.minute + "'" : ""
+    }${g.goal_body_part ? " · " + g.goal_body_part.replace("_", " ") : ""}`;
+    p += `<g class="goal-dot" data-idx="${i}" style="cursor:pointer">`;
+    p += `<title>${esc(tip)} — click to watch</title>`;
     if (hasEnd) {
       const ex = (g.shot_end_x / PITCH_L) * W;
       const ey = (g.shot_end_y / PITCH_W) * H;
       p += `<line x1="${cx}" y1="${cy}" x2="${ex}" y2="${ey}" stroke="#f59e0b" stroke-width="2" stroke-dasharray="4 3" opacity="0.8"/>`;
       p += `<circle cx="${ex}" cy="${ey}" r="4" fill="none" stroke="#f59e0b" stroke-width="2"/>`;
     }
+    p += `<circle cx="${cx}" cy="${cy}" r="9" fill="transparent"/>`; // larger hit area
     p += `<circle cx="${cx}" cy="${cy}" r="6" fill="#6bdb58" stroke="#0c0f0a" stroke-width="1.5"/>`;
     p += `</g>`;
-  }
+  });
   p += `</svg>`;
   return p;
 }
@@ -99,6 +102,8 @@ function renderGoals(goals) {
     .slice()
     .sort((a, b) => (a.minute ?? 999) - (b.minute ?? 999))
     .map((g) => {
+      const idx = RENDERED.indexOf(g);
+      const playable = !!g.video_id;
       const chain = [
         g.pre_assist_by && `<span class="seg pa">PA ${esc(g.pre_assist_by)}</span>`,
         g.assist_by && `<span class="seg a">A ${esc(g.assist_by)}</span>`,
@@ -106,15 +111,43 @@ function renderGoals(goals) {
       ]
         .filter(Boolean)
         .join('<span class="arr">→</span>');
-      return `<article class="goal-card">
+      return `<article class="goal-card${playable ? " playable" : ""}" data-idx="${idx}">
         <div class="gc-top">
           <span class="team-pill">${esc(g.scoring_team || "")}</span>
           <span class="gc-match">${esc(g.home_team || "")} v ${esc(g.away_team || "")}</span>
           ${g.minute != null ? `<span class="gc-min">${g.minute}'</span>` : ""}
           ${g.goal_body_part ? `<span class="gc-bp">${esc(g.goal_body_part.replace("_", " "))}</span>` : ""}
+          ${playable ? `<span class="gc-play">▶ watch</span>` : ""}
         </div>
         <div class="gc-chain">${chain}</div>
       </article>`;
+    })
+    .join("");
+}
+
+// ── Goal timing histogram (5-minute windows) ──────────────────────────
+function renderTiming(goals) {
+  const el = document.getElementById("timingChart");
+  const withMin = goals.filter((g) => g.minute != null);
+  if (!withMin.length) {
+    el.innerHTML = emptyMsg("No timing data yet.");
+    return;
+  }
+  // buckets: 0-5, 5-10 … 85-90, 90+
+  const buckets = Array.from({ length: 19 }, () => 0);
+  for (const g of withMin) {
+    const b = Math.min(18, Math.floor(g.minute / 5));
+    buckets[b]++;
+  }
+  const max = Math.max(...buckets, 1);
+  el.innerHTML = buckets
+    .map((n, i) => {
+      const label = i === 18 ? "90+" : `${i * 5}`;
+      return `<div class="tcol" title="${label}': ${n} goal${n === 1 ? "" : "s"}">
+        <span class="tcount">${n || ""}</span>
+        <span class="tbar" style="height:${(n / max) * 100}%"></span>
+        <span class="tlabel">${label}</span>
+      </div>`;
     })
     .join("");
 }
@@ -155,13 +188,69 @@ function renderLeaders(goals) {
 }
 
 function renderAll(goals) {
+  RENDERED = goals;
   renderStats(goals);
   renderShotMap(goals);
+  renderTiming(goals);
   renderGoals(goals);
   renderLeaders(goals);
   const fc = document.getElementById("filterCount");
   fc.textContent = `${goals.length} goal${goals.length === 1 ? "" : "s"}`;
 }
+
+// ── Goal video modal ──────────────────────────────────────────────────
+function openGoalVideo(g) {
+  if (!g) return;
+  const modal = document.getElementById("videoModal");
+  const title = document.getElementById("modalTitle");
+  const video = document.getElementById("modalVideo");
+  const meta = document.getElementById("modalMeta");
+
+  title.textContent =
+    `${g.scorer || "Goal"}${g.scoring_team ? " · " + (TEAM_NAMES[g.scoring_team] || g.scoring_team) : ""}` +
+    `${g.minute != null ? " · " + g.minute + "'" : ""}`;
+  meta.textContent =
+    `${g.home_team || ""} v ${g.away_team || ""}` +
+    `${g.assist_by ? " · assist " + g.assist_by : ""}` +
+    `${g.goal_body_part ? " · " + g.goal_body_part.replace("_", " ") : ""}`;
+
+  if (g.video_id) {
+    const start = Math.max(0, Math.floor(g.goal_video_time || 0));
+    const watchUrl = `https://www.youtube.com/watch?v=${encodeURIComponent(g.video_id)}&t=${start}s`;
+    video.innerHTML =
+      `<iframe src="https://www.youtube.com/embed/${encodeURIComponent(
+        g.video_id,
+      )}?start=${start}&autoplay=1&rel=0" title="Goal highlight" frameborder="0" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>`;
+    // Fallback link — some clips (e.g. FIFA official) block embedding.
+    meta.innerHTML +=
+      ` · <a class="yt-link" href="${watchUrl}" target="_blank" rel="noopener">Watch on YouTube ↗</a>`;
+  } else {
+    video.innerHTML = emptyMsg("No video linked for this goal.");
+  }
+  // pause the anthem so it doesn't clash with the clip
+  if (typeof anthem !== "undefined") anthem.pause();
+  modal.hidden = false;
+  document.body.style.overflow = "hidden";
+}
+
+function closeGoalVideo() {
+  const modal = document.getElementById("videoModal");
+  document.getElementById("modalVideo").innerHTML = ""; // stops playback
+  modal.hidden = true;
+  document.body.style.overflow = "";
+}
+
+// click delegation: pitch dots + feed cards
+document.addEventListener("click", (e) => {
+  if (e.target.closest("[data-close]")) return closeGoalVideo();
+  const dot = e.target.closest(".goal-dot");
+  const card = e.target.closest(".goal-card");
+  const node = dot || card;
+  if (node && node.dataset.idx != null) openGoalVideo(RENDERED[+node.dataset.idx]);
+});
+document.addEventListener("keydown", (e) => {
+  if (e.key === "Escape") closeGoalVideo();
+});
 
 // ── Filtering ─────────────────────────────────────────────────────────
 function applyFilter() {

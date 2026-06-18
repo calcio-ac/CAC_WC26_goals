@@ -76,6 +76,16 @@
           </div>
         </div>
         <div id="pitchWrap" class="pitch-wrap"></div>
+        <p class="hint muted">Click a goal to watch the highlight.</p>
+      </section>
+
+      <!-- goal timing -->
+      <section id="timing" class="panel">
+        <div class="panel-head">
+          <h2>When Goals Are Scored</h2>
+          <span class="muted">by 5-minute window of the match</span>
+        </div>
+        <div id="timingChart" class="timing-chart"></div>
       </section>
 
       <div class="two-col">
@@ -115,6 +125,17 @@
       </div>
     </footer>
 
-    <script src="app.js"></script>
+    <!-- ── Goal video modal ── -->
+    <div id="videoModal" class="modal" hidden>
+      <div class="modal-backdrop" data-close></div>
+      <div class="modal-card">
+        <button class="modal-close" data-close aria-label="Close">✕</button>
+        <div class="modal-title" id="modalTitle"></div>
+        <div class="modal-video" id="modalVideo"></div>
+        <div class="modal-meta" id="modalMeta"></div>
+      </div>
+    </div>
+
+    <script src="app.js?v=3"></script>
   </body>
 </html>

@@ -277,6 +277,38 @@ a.brand:hover img.cac {
   font-size: 14px;
 }
 
+/* ── match minute ── */
+.minute-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+  flex-wrap: wrap;
+}
+.minute-row label {
+  font-size: 11px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.minute-row input {
+  width: 80px;
+  background: #0e120b;
+  border: 1px solid var(--line);
+  color: var(--text);
+  border-radius: 7px;
+  padding: 7px 9px;
+  font-family: var(--body-font);
+  font-size: 14px;
+}
+.minute-row input:focus {
+  outline: none;
+  border-color: var(--cac-green-dim);
+}
+.minute-row .muted {
+  font-size: 11px;
+}
+
 /* ── action rows (arm + country + player) ── */
 .actions {
   display: flex;
