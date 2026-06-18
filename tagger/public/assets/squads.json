@@ -1,0 +1,6533 @@
+{
+ "tournament": "FIFA World Cup 2026",
+ "teams": [
+  {
+   "name": "Algeria",
+   "code": "ALG",
+   "players": [
+    {
+     "number": 1,
+     "pos": "GK",
+     "name": "MASTIL"
+    },
+    {
+     "number": 2,
+     "pos": "DF",
+     "name": "MANDI"
+    },
+    {
+     "number": 3,
+     "pos": "DF",
+     "name": "ABADA"
+    },
+    {
+     "number": 4,
+     "pos": "DF",
+     "name": "TOUGAI"
+    },
+    {
+     "number": 5,
+     "pos": "DF",
+     "name": "BELAID"
+    },
+    {
+     "number": 6,
+     "pos": "MF",
+     "name": "ZERROUKI"
+    },
+    {
+     "number": 7,
+     "pos": "FW",
+     "name": "MAHREZ"
+    },
+    {
+     "number": 8,
+     "pos": "MF",
+     "name": "AOUAR"
+    },
+    {
+     "number": 9,
+     "pos": "FW",
+     "name": "GOUIRI"
+    },
+    {
+     "number": 10,
+     "pos": "MF",
+     "name": "CHAIBI"
+    },
+    {
+     "number": 11,
+     "pos": "FW",
+     "name": "HADJ MOUSSA"
+    },
+    {
+     "number": 12,
+     "pos": "FW",
+     "name": "BENBOUALI"
+    },
+    {
+     "number": 13,
+     "pos": "DF",
+     "name": "HADJAM"
+    },
+    {
+     "number": 14,
+     "pos": "MF",
+     "name": "BOUDAOUI"
+    },
+    {
+     "number": 15,
+     "pos": "DF",
+     "name": "AIT NOURI"
+    },
+    {
+     "number": 16,
+     "pos": "GK",
+     "name": "BENBOT"
+    },
+    {
+     "number": 17,
+     "pos": "DF",
+     "name": "BELGHALI"
+    },
+    {
+     "number": 18,
+     "pos": "FW",
+     "name": "AMOURA"
+    },
+    {
+     "number": 19,
+     "pos": "MF",
+     "name": "BENTALEB"
+    },
+    {
+     "number": 20,
+     "pos": "FW",
+     "name": "BOULBINA"
+    },
+    {
+     "number": 21,
+     "pos": "DF",
+     "name": "BENSEBAINI"
+    },
+    {
+     "number": 22,
+     "pos": "MF",
+     "name": "MAZA"
+    },
+    {
+     "number": 23,
+     "pos": "GK",
+     "name": "ZIDANE"
+    },
+    {
+     "number": 24,
+     "pos": "MF",
+     "name": "TITRAOUI"
+    },
+    {
+     "number": 25,
+     "pos": "FW",
+     "name": "GHEDJEMIS"
+    },
+    {
+     "number": 26,
+     "pos": "DF",
+     "name": "CHERGUI"
+    }
+   ]
+  },
+  {
+   "name": "Argentina",
+   "code": "ARG",
+   "players": [
+    {
+     "number": 1,
+     "pos": "GK",
+     "name": "MUSSO"
+    },
+    {
+     "number": 2,
+     "pos": "DF",
+     "name": "SENESI"
+    },
+    {
+     "number": 3,
+     "pos": "DF",
+     "name": "TAGLIAFICO"
+    },
+    {
+     "number": 4,
+     "pos": "DF",
+     "name": "MONTIEL"
+    },
+    {
+     "number": 5,
+     "pos": "MF",
+     "name": "PAREDES"
+    },
+    {
+     "number": 6,
+     "pos": "DF",
+     "name": "MARTÍNEZ"
+    },
+    {
+     "number": 7,
+     "pos": "MF",
+     "name": "DE PAUL"
+    },
+    {
+     "number": 8,
+     "pos": "MF",
+     "name": "BARCO"
+    },
+    {
+     "number": 9,
+     "pos": "FW",
+     "name": "J. ALVAREZ"
+    },
+    {
+     "number": 10,
+     "pos": "FW",
+     "name": "MESSI"
+    },
+    {
+     "number": 11,
+     "pos": "MF",
+     "name": "LO CELSO"
+    },
+    {
+     "number": 12,
+     "pos": "GK",
+     "name": "RULLI"
+    },
+    {
+     "number": 13,
+     "pos": "DF",
+     "name": "ROMERO"
+    },
+    {
+     "number": 14,
+     "pos": "MF",
+     "name": "PALACIOS"
+    },
+    {
+     "number": 15,
+     "pos": "MF",
+     "name": "N. GONZALEZ"
+    },
+    {
+     "number": 16,
+     "pos": "FW",
+     "name": "ALMADA"
+    },
+    {
+     "number": 17,
+     "pos": "FW",
+     "name": "SIMEONE"
+    },
+    {
+     "number": 18,
+     "pos": "FW",
+     "name": "NICO PAZ"
+    },
+    {
+     "number": 19,
+     "pos": "DF",
+     "name": "OTAMENDI"
+    },
+    {
+     "number": 20,
+     "pos": "MF",
+     "name": "MAC ALLISTER"
+    },
+    {
+     "number": 21,
+     "pos": "FW",
+     "name": "LOPEZ"
+    },
+    {
+     "number": 22,
+     "pos": "FW",
+     "name": "L. MARTINEZ"
+    },
+    {
+     "number": 23,
+     "pos": "GK",
+     "name": "E. MARTINEZ"
+    },
+    {
+     "number": 24,
+     "pos": "MF",
+     "name": "E. FERNANDEZ"
+    },
+    {
+     "number": 25,
+     "pos": "DF",
+     "name": "MEDINA"
+    },
+    {
+     "number": 26,
+     "pos": "DF",
+     "name": "MOLINA"
+    }
+   ]
+  },
+  {
+   "name": "Australia",
+   "code": "AUS",
+   "players": [
+    {
+     "number": 1,
+     "pos": "GK",
+     "name": "RYAN"
+    },
+    {
+     "number": 2,
+     "pos": "DF",
+     "name": "DEGENEK"
+    },
+    {
+     "number": 3,
+     "pos": "DF",
+     "name": "CIRCATI"
+    },
+    {
+     "number": 4,
+     "pos": "DF",
+     "name": "ITALIANO"
+    },
+    {
+     "number": 5,
+     "pos": "DF",
+     "name": "BOS"
+    },
+    {
+     "number": 6,
+     "pos": "DF",
+     "name": "GERIA"
+    },
+    {
+     "number": 7,
+     "pos": "FW",
+     "name": "LECKIE"
+    },
+    {
+     "number": 8,
+     "pos": "MF",
+     "name": "METCALFE"
+    },
+    {
+     "number": 9,
+     "pos": "FW",
+     "name": "TOURE"
+    },
+    {
+     "number": 10,
+     "pos": "FW",
+     "name": "HRUSTIC"
+    },
+    {
+     "number": 11,
+     "pos": "FW",
+     "name": "MABIL"
+    },
+    {
+     "number": 12,
+     "pos": "GK",
+     "name": "IZZO"
+    },
+    {
+     "number": 13,
+     "pos": "MF",
+     "name": "O'NEILL"
+    },
+    {
+     "number": 14,
+     "pos": "MF",
+     "name": "DEVLIN"
+    },
+    {
+     "number": 15,
+     "pos": "DF",
+     "name": "TREWIN"
+    },
+    {
+     "number": 16,
+     "pos": "DF",
+     "name": "BEHICH"
+    },
+    {
+     "number": 17,
+     "pos": "FW",
+     "name": "IRANKUNDA"
+    },
+    {
+     "number": 18,
+     "pos": "GK",
+     "name": "BEACH"
+    },
+    {
+     "number": 19,
+     "pos": "DF",
+     "name": "SOUTTAR"
+    },
+    {
+     "number": 20,
+     "pos": "FW",
+     "name": "VOLPATO"
+    },
+    {
+     "number": 21,
+     "pos": "DF",
+     "name": "BURGESS"
+    },
+    {
+     "number": 22,
+     "pos": "MF",
+     "name": "IRVINE"
+    },
+    {
+     "number": 23,
+     "pos": "FW",
+     "name": "VELUPILLAY"
+    },
+    {
+     "number": 24,
+     "pos": "MF",
+     "name": "OKON-ENGSTLER"
+    },
+    {
+     "number": 25,
+     "pos": "DF",
+     "name": "HERRINGTON"
+    },
+    {
+     "number": 26,
+     "pos": "FW",
+     "name": "YENGI"
+    }
+   ]
+  },
+  {
+   "name": "Austria",
+   "code": "AUT",
+   "players": [
+    {
+     "number": 1,
+     "pos": "GK",
+     "name": "SCHLAGER"
+    },
+    {
+     "number": 2,
+     "pos": "DF",
+     "name": "AFFENGRUBER"
+    },
+    {
+     "number": 3,
+     "pos": "DF",
+     "name": "DANSO"
+    },
+    {
+     "number": 4,
+     "pos": "MF",
+     "name": "XAVER"
+    },
+    {
+     "number": 5,
+     "pos": "DF",
+     "name": "POSCH"
+    },
+    {
+     "number": 6,
+     "pos": "MF",
+     "name": "SEIWALD"
+    },
+    {
+     "number": 7,
+     "pos": "FW",
+     "name": "ARNAUTOVIC"
+    },
+    {
+     "number": 8,
+     "pos": "DF",
+     "name": "ALABA"
+    },
+    {
+     "number": 9,
+     "pos": "MF",
+     "name": "SABITZER"
+    },
+    {
+     "number": 10,
+     "pos": "MF",
+     "name": "GRILLITSCH"
+    },
+    {
+     "number": 11,
+     "pos": "FW",
+     "name": "GREGORITSCH"
+    },
+    {
+     "number": 12,
+     "pos": "GK",
+     "name": "WIEGELE"
+    },
+    {
+     "number": 13,
+     "pos": "GK",
+     "name": "PENTZ"
+    },
+    {
+     "number": 14,
+     "pos": "FW",
+     "name": "KALAJDZIC"
+    },
+    {
+     "number": 15,
+     "pos": "DF",
+     "name": "LIENHART"
+    },
+    {
+     "number": 16,
+     "pos": "DF",
+     "name": "MWENE"
+    },
+    {
+     "number": 17,
+     "pos": "MF",
+     "name": "CHUKWUEMEKA"
+    },
+    {
+     "number": 18,
+     "pos": "MF",
+     "name": "SCHMID"
+    },
+    {
+     "number": 19,
+     "pos": "MF",
+     "name": "LJUBICIC"
+    },
+    {
+     "number": 20,
+     "pos": "MF",
+     "name": "LAIMER"
+    },
+    {
+     "number": 21,
+     "pos": "FW",
+     "name": "WIMMER"
+    },
+    {
+     "number": 22,
+     "pos": "MF",
+     "name": "PRASS"
+    },
+    {
+     "number": 23,
+     "pos": "DF",
+     "name": "FRIEDL"
+    },
+    {
+     "number": 24,
+     "pos": "MF",
+     "name": "WANNER"
+    },
+    {
+     "number": 25,
+     "pos": "DF",
+     "name": "SVOBODA"
+    },
+    {
+     "number": 26,
+     "pos": "MF",
+     "name": "SCHÖPF"
+    }
+   ]
+  },
+  {
+   "name": "Belgium",
+   "code": "BEL",
+   "players": [
+    {
+     "number": 1,
+     "pos": "GK",
+     "name": "COURTOIS"
+    },
+    {
+     "number": 2,
+     "pos": "DF",
+     "name": "DEBAST"
+    },
+    {
+     "number": 3,
+     "pos": "DF",
+     "name": "THEATE"
+    },
+    {
+     "number": 4,
+     "pos": "DF",
+     "name": "MECHELE"
+    },
+    {
+     "number": 5,
+     "pos": "DF",
+     "name": "DE CUYPER"
+    },
+    {
+     "number": 6,
+     "pos": "MF",
+     "name": "WITSEL"
+    },
+    {
+     "number": 7,
+     "pos": "MF",
+     "name": "DE BRUYNE"
+    },
+    {
+     "number": 8,
+     "pos": "MF",
+     "name": "TIELEMANS"
+    },
+    {
+     "number": 9,
+     "pos": "FW",
+     "name": "LUKAKU"
+    },
+    {
+     "number": 10,
+     "pos": "FW",
+     "name": "TROSSARD"
+    },
+    {
+     "number": 11,
+     "pos": "FW",
+     "name": "DOKU"
+    },
+    {
+     "number": 12,
+     "pos": "GK",
+     "name": "LAMMENS"
+    },
+    {
+     "number": 13,
+     "pos": "GK",
+     "name": "PENDERS"
+    },
+    {
+     "number": 14,
+     "pos": "FW",
+     "name": "LUKEBAKIO"
+    },
+    {
+     "number": 15,
+     "pos": "DF",
+     "name": "MEUNIER"
+    },
+    {
+     "number": 16,
+     "pos": "DF",
+     "name": "DE WINTER"
+    },
+    {
+     "number": 17,
+     "pos": "FW",
+     "name": "DE KETELAERE"
+    },
+    {
+     "number": 18,
+     "pos": "DF",
+     "name": "SEYS"
+    },
+    {
+     "number": 19,
+     "pos": "MF",
+     "name": "MOREIRA JR"
+    },
+    {
+     "number": 20,
+     "pos": "MF",
+     "name": "VANAKEN"
+    },
+    {
+     "number": 21,
+     "pos": "DF",
+     "name": "CASTAGNE"
+    },
+    {
+     "number": 22,
+     "pos": "MF",
+     "name": "SAELEMAEKERS"
+    },
+    {
+     "number": 23,
+     "pos": "MF",
+     "name": "RASKIN"
+    },
+    {
+     "number": 24,
+     "pos": "MF",
+     "name": "ONANA"
+    },
+    {
+     "number": 25,
+     "pos": "DF",
+     "name": "NGOY"
+    },
+    {
+     "number": 26,
+     "pos": "FW",
+     "name": "FERNANDEZ-PARDO"
+    }
+   ]
+  },
+  {
+   "name": "Bosnia And Herzegovina",
+   "code": "BIH",
+   "players": [
+    {
+     "number": 1,
+     "pos": "GK",
+     "name": "VASILJ"
+    },
+    {
+     "number": 2,
+     "pos": "DF",
+     "name": "MUJAKIĆ"
+    },
+    {
+     "number": 3,
+     "pos": "DF",
+     "name": "HADŽIKADUNIĆ"
+    },
+    {
+     "number": 4,
+     "pos": "DF",
+     "name": "MUHAREMOVIĆ"
+    },
+    {
+     "number": 5,
+     "pos": "DF",
+     "name": "KOLAŠINAC"
+    },
+    {
+     "number": 6,
+     "pos": "MF",
+     "name": "TAHIROVIĆ"
+    },
+    {
+     "number": 7,
+     "pos": "DF",
+     "name": "DEDIĆ"
+    },
+    {
+     "number": 8,
+     "pos": "MF",
+     "name": "GIGOVIĆ"
+    },
+    {
+     "number": 9,
+     "pos": "FW",
+     "name": "BAŽDAR"
+    },
+    {
+     "number": 10,
+     "pos": "FW",
+     "name": "DEMIROVIĆ"
+    },
+    {
+     "number": 11,
+     "pos": "FW",
+     "name": "DŽEKO"
+    },
+    {
+     "number": 12,
+     "pos": "GK",
+     "name": "JURKAS"
+    },
+    {
+     "number": 13,
+     "pos": "MF",
+     "name": "BAŠIĆ"
+    },
+    {
+     "number": 14,
+     "pos": "MF",
+     "name": "ŠUNJIĆ"
+    },
+    {
+     "number": 15,
+     "pos": "MF",
+     "name": "MEMIĆ"
+    },
+    {
+     "number": 16,
+     "pos": "MF",
+     "name": "HADŽIAHMETOVIĆ"
+    },
+    {
+     "number": 17,
+     "pos": "MF",
+     "name": "BURNIĆ"
+    },
+    {
+     "number": 18,
+     "pos": "DF",
+     "name": "KATIĆ"
+    },
+    {
+     "number": 19,
+     "pos": "FW",
+     "name": "ALAJBEGOVIĆ"
+    },
+    {
+     "number": 20,
+     "pos": "FW",
+     "name": "BAJRAKTAREVIĆ"
+    },
+    {
+     "number": 21,
+     "pos": "DF",
+     "name": "RADELJIĆ"
+    },
+    {
+     "number": 22,
+     "pos": "GK",
+     "name": "ZLOMISLIĆ"
+    },
+    {
+     "number": 23,
+     "pos": "FW",
+     "name": "TABAKOVIĆ"
+    },
+    {
+     "number": 24,
+     "pos": "DF",
+     "name": "MALIĆ"
+    },
+    {
+     "number": 25,
+     "pos": "FW",
+     "name": "LUKIĆ"
+    },
+    {
+     "number": 26,
+     "pos": "MF",
+     "name": "MAHMIĆ"
+    }
+   ]
+  },
+  {
+   "name": "Brazil",
+   "code": "BRA",
+   "players": [
+    {
+     "number": 1,
+     "pos": "GK",
+     "name": "A. BECKER"
+    },
+    {
+     "number": 2,
+     "pos": "MF",
+     "name": "ÉDERSON S."
+    },
+    {
+     "number": 3,
+     "pos": "DF",
+     "name": "GABRIEL"
+    },
+    {
+     "number": 4,
+     "pos": "DF",
+     "name": "MARQUINHOS"
+    },
+    {
+     "number": 5,
+     "pos": "MF",
+     "name": "CASEMIRO"
+    },
+    {
+     "number": 6,
+     "pos": "DF",
+     "name": "ALEX SANDRO"
+    },
+    {
+     "number": 7,
+     "pos": "FW",
+     "name": "VINI JR."
+    },
+    {
+     "number": 8,
+     "pos": "MF",
+     "name": "BRUNO G."
+    },
+    {
+     "number": 9,
+     "pos": "FW",
+     "name": "CUNHA"
+    },
+    {
+     "number": 10,
+     "pos": "FW",
+     "name": "NEYMAR JR"
+    },
+    {
+     "number": 11,
+     "pos": "FW",
+     "name": "RAPHINHA"
+    },
+    {
+     "number": 12,
+     "pos": "GK",
+     "name": "WEVERTON"
+    },
+    {
+     "number": 13,
+     "pos": "DF",
+     "name": "DANILO"
+    },
+    {
+     "number": 14,
+     "pos": "DF",
+     "name": "BREMER"
+    },
+    {
+     "number": 15,
+     "pos": "DF",
+     "name": "LÉO PEREIRA"
+    },
+    {
+     "number": 16,
+     "pos": "DF",
+     "name": "DOUGLAS S."
+    },
+    {
+     "number": 17,
+     "pos": "MF",
+     "name": "FABINHO"
+    },
+    {
+     "number": 18,
+     "pos": "MF",
+     "name": "DANILO S."
+    },
+    {
+     "number": 19,
+     "pos": "FW",
+     "name": "ENDRICK"
+    },
+    {
+     "number": 20,
+     "pos": "MF",
+     "name": "L. PAQUETÁ"
+    },
+    {
+     "number": 21,
+     "pos": "FW",
+     "name": "L. HENRIQUE"
+    },
+    {
+     "number": 22,
+     "pos": "FW",
+     "name": "MARTINELLI"
+    },
+    {
+     "number": 23,
+     "pos": "GK",
+     "name": "EDERSON"
+    },
+    {
+     "number": 24,
+     "pos": "DF",
+     "name": "IBAÑEZ"
+    },
+    {
+     "number": 25,
+     "pos": "FW",
+     "name": "THIAGO"
+    },
+    {
+     "number": 26,
+     "pos": "FW",
+     "name": "RAYAN"
+    }
+   ]
+  },
+  {
+   "name": "Cabo Verde",
+   "code": "CPV",
+   "players": [
+    {
+     "number": 1,
+     "pos": "GK",
+     "name": "VOZINHA"
+    },
+    {
+     "number": 2,
+     "pos": "DF",
+     "name": "STOPIRA"
+    },
+    {
+     "number": 3,
+     "pos": "DF",
+     "name": "BORGES"
+    },
+    {
+     "number": 4,
+     "pos": "DF",
+     "name": "LOPES"
+    },
+    {
+     "number": 5,
+     "pos": "DF",
+     "name": "COSTA"
+    },
+    {
+     "number": 6,
+     "pos": "MF",
+     "name": "KEVIN L."
+    },
+    {
+     "number": 7,
+     "pos": "MF",
+     "name": "JOVANE"
+    },
+    {
+     "number": 8,
+     "pos": "MF",
+     "name": "JOÃO PAULO"
+    },
+    {
+     "number": 9,
+     "pos": "FW",
+     "name": "BENCHIMOL"
+    },
+    {
+     "number": 10,
+     "pos": "MF",
+     "name": "MONTEIRO"
+    },
+    {
+     "number": 11,
+     "pos": "MF",
+     "name": "RODRIGUES"
+    },
+    {
+     "number": 12,
+     "pos": "GK",
+     "name": "MARCIO"
+    },
+    {
+     "number": 13,
+     "pos": "DF",
+     "name": "LOPES CABRAL"
+    },
+    {
+     "number": 14,
+     "pos": "MF",
+     "name": "D. DUARTE"
+    },
+    {
+     "number": 15,
+     "pos": "MF",
+     "name": "L. DUARTE"
+    },
+    {
+     "number": 16,
+     "pos": "MF",
+     "name": "Y. SEMEDO"
+    },
+    {
+     "number": 17,
+     "pos": "MF",
+     "name": "SEMEDO"
+    },
+    {
+     "number": 18,
+     "pos": "MF",
+     "name": "ARCANJO"
+    },
+    {
+     "number": 19,
+     "pos": "FW",
+     "name": "LIVRAMENTO"
+    },
+    {
+     "number": 20,
+     "pos": "FW",
+     "name": "RYAN"
+    },
+    {
+     "number": 21,
+     "pos": "MF",
+     "name": "DA COSTA"
+    },
+    {
+     "number": 22,
+     "pos": "DF",
+     "name": "MOREIRA"
+    },
+    {
+     "number": 23,
+     "pos": "GK",
+     "name": "DOS SANTOS"
+    },
+    {
+     "number": 24,
+     "pos": "DF",
+     "name": "WAGNER P."
+    },
+    {
+     "number": 25,
+     "pos": "DF",
+     "name": "KELVIN"
+    },
+    {
+     "number": 26,
+     "pos": "MF",
+     "name": "HÉLIO"
+    }
+   ]
+  },
+  {
+   "name": "Canada",
+   "code": "CAN",
+   "players": [
+    {
+     "number": 1,
+     "pos": "GK",
+     "name": "ST. CLAIR"
+    },
+    {
+     "number": 2,
+     "pos": "DF",
+     "name": "JOHNSTON"
+    },
+    {
+     "number": 3,
+     "pos": "DF",
+     "name": "JONES"
+    },
+    {
+     "number": 4,
+     "pos": "DF",
+     "name": "DE FOUGEROLLES"
+    },
+    {
+     "number": 5,
+     "pos": "DF",
+     "name": "WATERMAN"
+    },
+    {
+     "number": 6,
+     "pos": "MF",
+     "name": "CHOINIÈRE"
+    },
+    {
+     "number": 7,
+     "pos": "MF",
+     "name": "EUSTÁQUIO"
+    },
+    {
+     "number": 8,
+     "pos": "MF",
+     "name": "KONÉ"
+    },
+    {
+     "number": 9,
+     "pos": "FW",
+     "name": "LARIN"
+    },
+    {
+     "number": 10,
+     "pos": "FW",
+     "name": "J. DAVID"
+    },
+    {
+     "number": 11,
+     "pos": "MF",
+     "name": "MILLAR"
+    },
+    {
+     "number": 12,
+     "pos": "FW",
+     "name": "OLUWASEYI"
+    },
+    {
+     "number": 13,
+     "pos": "DF",
+     "name": "CORNELIUS"
+    },
+    {
+     "number": 14,
+     "pos": "MF",
+     "name": "SHAFFELBURG"
+    },
+    {
+     "number": 15,
+     "pos": "DF",
+     "name": "BOMBITO"
+    },
+    {
+     "number": 16,
+     "pos": "GK",
+     "name": "CRÉPEAU"
+    },
+    {
+     "number": 17,
+     "pos": "FW",
+     "name": "BUCHANAN"
+    },
+    {
+     "number": 18,
+     "pos": "GK",
+     "name": "GOODMAN"
+    },
+    {
+     "number": 19,
+     "pos": "DF",
+     "name": "DAVIES"
+    },
+    {
+     "number": 20,
+     "pos": "FW",
+     "name": "AHMED"
+    },
+    {
+     "number": 21,
+     "pos": "MF",
+     "name": "OSORIO"
+    },
+    {
+     "number": 22,
+     "pos": "DF",
+     "name": "LARYEA"
+    },
+    {
+     "number": 23,
+     "pos": "DF",
+     "name": "SIGUR"
+    },
+    {
+     "number": 24,
+     "pos": "FW",
+     "name": "PROMISE"
+    },
+    {
+     "number": 25,
+     "pos": "MF",
+     "name": "SALIBA"
+    },
+    {
+     "number": 26,
+     "pos": "FW",
+     "name": "NELSON"
+    }
+   ]
+  },
+  {
+   "name": "Colombia",
+   "code": "COL",
+   "players": [
+    {
+     "number": 1,
+     "pos": "GK",
+     "name": "OSPINA"
+    },
+    {
+     "number": 2,
+     "pos": "DF",
+     "name": "D. MUÑOZ"
+    },
+    {
+     "number": 3,
+     "pos": "DF",
+     "name": "J. LUCUMI"
+    },
+    {
+     "number": 4,
+     "pos": "DF",
+     "name": "ARIAS"
+    },
+    {
+     "number": 5,
+     "pos": "MF",
+     "name": "K. CASTAÑO"
+    },
+    {
+     "number": 6,
+     "pos": "MF",
+     "name": "RICHARD RIOS"
+    },
+    {
+     "number": 7,
+     "pos": "FW",
+     "name": "LUIS DIAZ"
+    },
+    {
+     "number": 8,
+     "pos": "MF",
+     "name": "CARRASCAL"
+    },
+    {
+     "number": 9,
+     "pos": "FW",
+     "name": "CORDOBA"
+    },
+    {
+     "number": 10,
+     "pos": "MF",
+     "name": "JAMES"
+    },
+    {
+     "number": 11,
+     "pos": "MF",
+     "name": "J. ARIAS"
+    },
+    {
+     "number": 12,
+     "pos": "GK",
+     "name": "C. VARGAS"
+    },
+    {
+     "number": 13,
+     "pos": "DF",
+     "name": "Y. MINA"
+    },
+    {
+     "number": 14,
+     "pos": "DF",
+     "name": "PUERTA"
+    },
+    {
+     "number": 15,
+     "pos": "MF",
+     "name": "PORTILLA"
+    },
+    {
+     "number": 16,
+     "pos": "MF",
+     "name": "J. LERMA"
+    },
+    {
+     "number": 17,
+     "pos": "DF",
+     "name": "J. MOJICA"
+    },
+    {
+     "number": 18,
+     "pos": "DF",
+     "name": "W. DITTA"
+    },
+    {
+     "number": 19,
+     "pos": "FW",
+     "name": "C. HERNANDEZ"
+    },
+    {
+     "number": 20,
+     "pos": "MF",
+     "name": "QUINTERO"
+    },
+    {
+     "number": 21,
+     "pos": "FW",
+     "name": "CAMPAZ"
+    },
+    {
+     "number": 22,
+     "pos": "DF",
+     "name": "MACHADO"
+    },
+    {
+     "number": 23,
+     "pos": "DF",
+     "name": "SANCHEZ"
+    },
+    {
+     "number": 24,
+     "pos": "GK",
+     "name": "MONTERO"
+    },
+    {
+     "number": 25,
+     "pos": "FW",
+     "name": "SUAREZ"
+    },
+    {
+     "number": 26,
+     "pos": "FW",
+     "name": "A. GOMEZ"
+    }
+   ]
+  },
+  {
+   "name": "Congo DR",
+   "code": "COD",
+   "players": [
+    {
+     "number": 1,
+     "pos": "GK",
+     "name": "MPASI"
+    },
+    {
+     "number": 2,
+     "pos": "DF",
+     "name": "WAN BISSAKA"
+    },
+    {
+     "number": 3,
+     "pos": "DF",
+     "name": "KAPUADI"
+    },
+    {
+     "number": 4,
+     "pos": "DF",
+     "name": "TUANZEBE"
+    },
+    {
+     "number": 5,
+     "pos": "DF",
+     "name": "BATUBINSIKA"
+    },
+    {
+     "number": 6,
+     "pos": "MF",
+     "name": "MUKAU"
+    },
+    {
+     "number": 7,
+     "pos": "MF",
+     "name": "MBUKU"
+    },
+    {
+     "number": 8,
+     "pos": "MF",
+     "name": "MOUTOUSSAMY"
+    },
+    {
+     "number": 9,
+     "pos": "FW",
+     "name": "CIPENGA"
+    },
+    {
+     "number": 10,
+     "pos": "MF",
+     "name": "BONGONDA"
+    },
+    {
+     "number": 11,
+     "pos": "FW",
+     "name": "KAKUTA"
+    },
+    {
+     "number": 12,
+     "pos": "DF",
+     "name": "J. KAYEMBE"
+    },
+    {
+     "number": 13,
+     "pos": "FW",
+     "name": "MESCHACK"
+    },
+    {
+     "number": 14,
+     "pos": "MF",
+     "name": "SADIKI"
+    },
+    {
+     "number": 15,
+     "pos": "MF",
+     "name": "TSHIBOLA"
+    },
+    {
+     "number": 16,
+     "pos": "GK",
+     "name": "FAYULU"
+    },
+    {
+     "number": 17,
+     "pos": "FW",
+     "name": "BAKAMBU"
+    },
+    {
+     "number": 18,
+     "pos": "MF",
+     "name": "PICKEL"
+    },
+    {
+     "number": 19,
+     "pos": "FW",
+     "name": "MAYELE"
+    },
+    {
+     "number": 20,
+     "pos": "FW",
+     "name": "WISSA"
+    },
+    {
+     "number": 21,
+     "pos": "GK",
+     "name": "EPOLO"
+    },
+    {
+     "number": 22,
+     "pos": "DF",
+     "name": "MBEMBA"
+    },
+    {
+     "number": 23,
+     "pos": "FW",
+     "name": "BANZA"
+    },
+    {
+     "number": 24,
+     "pos": "DF",
+     "name": "KALULU"
+    },
+    {
+     "number": 25,
+     "pos": "MF",
+     "name": "E. KAYEMBE"
+    },
+    {
+     "number": 26,
+     "pos": "DF",
+     "name": "MASUAKU"
+    }
+   ]
+  },
+  {
+   "name": "Croatia",
+   "code": "CRO",
+   "players": [
+    {
+     "number": 1,
+     "pos": "GK",
+     "name": "LIVAKOVIĆ"
+    },
+    {
+     "number": 2,
+     "pos": "DF",
+     "name": "STANIŠIĆ"
+    },
+    {
+     "number": 3,
+     "pos": "DF",
+     "name": "PONGRAČIĆ"
+    },
+    {
+     "number": 4,
+     "pos": "DF",
+     "name": "GVARDIOL"
+    },
+    {
+     "number": 5,
+     "pos": "DF",
+     "name": "ĆALETA-CAR"
+    },
+    {
+     "number": 6,
+     "pos": "DF",
+     "name": "ŠUTALO"
+    },
+    {
+     "number": 7,
+     "pos": "MF",
+     "name": "MORO"
+    },
+    {
+     "number": 8,
+     "pos": "MF",
+     "name": "KOVAČIĆ"
+    },
+    {
+     "number": 9,
+     "pos": "FW",
+     "name": "KRAMARIĆ"
+    },
+    {
+     "number": 10,
+     "pos": "MF",
+     "name": "MODRIĆ"
+    },
+    {
+     "number": 11,
+     "pos": "FW",
+     "name": "BUDIMIR"
+    },
+    {
+     "number": 12,
+     "pos": "GK",
+     "name": "PANDUR"
+    },
+    {
+     "number": 13,
+     "pos": "MF",
+     "name": "VLAŠIĆ"
+    },
+    {
+     "number": 14,
+     "pos": "FW",
+     "name": "PERIŠIĆ"
+    },
+    {
+     "number": 15,
+     "pos": "MF",
+     "name": "PAŠALIĆ"
+    },
+    {
+     "number": 16,
+     "pos": "MF",
+     "name": "BATURINA"
+    },
+    {
+     "number": 17,
+     "pos": "MF",
+     "name": "P. SUČIĆ"
+    },
+    {
+     "number": 18,
+     "pos": "DF",
+     "name": "JAKIĆ"
+    },
+    {
+     "number": 19,
+     "pos": "MF",
+     "name": "FRUK"
+    },
+    {
+     "number": 20,
+     "pos": "FW",
+     "name": "MATANOVIĆ"
+    },
+    {
+     "number": 21,
+     "pos": "MF",
+     "name": "SUČIĆ"
+    },
+    {
+     "number": 22,
+     "pos": "DF",
+     "name": "VUŠKOVIĆ"
+    },
+    {
+     "number": 23,
+     "pos": "GK",
+     "name": "KOTARSKI"
+    },
+    {
+     "number": 24,
+     "pos": "FW",
+     "name": "M. PAŠALIĆ"
+    },
+    {
+     "number": 25,
+     "pos": "DF",
+     "name": "ERLIĆ"
+    },
+    {
+     "number": 26,
+     "pos": "FW",
+     "name": "MUSA"
+    }
+   ]
+  },
+  {
+   "name": "Curaçao",
+   "code": "CUW",
+   "players": [
+    {
+     "number": 1,
+     "pos": "GK",
+     "name": "ROOM"
+    },
+    {
+     "number": 2,
+     "pos": "DF",
+     "name": "SAMBO"
+    },
+    {
+     "number": 3,
+     "pos": "DF",
+     "name": "GAARI"
+    },
+    {
+     "number": 4,
+     "pos": "DF",
+     "name": "VAN EIJMA"
+    },
+    {
+     "number": 5,
+     "pos": "DF",
+     "name": "FLORANUS"
+    },
+    {
+     "number": 6,
+     "pos": "MF",
+     "name": "ROEMERATOE"
+    },
+    {
+     "number": 7,
+     "pos": "MF",
+     "name": "J. BACUNA"
+    },
+    {
+     "number": 8,
+     "pos": "MF",
+     "name": "COMENENCIA"
+    },
+    {
+     "number": 9,
+     "pos": "FW",
+     "name": "LOCADIA"
+    },
+    {
+     "number": 10,
+     "pos": "MF",
+     "name": "L. BACUNA"
+    },
+    {
+     "number": 11,
+     "pos": "FW",
+     "name": "ANTONISSE"
+    },
+    {
+     "number": 12,
+     "pos": "FW",
+     "name": "HANSEN"
+    },
+    {
+     "number": 13,
+     "pos": "FW",
+     "name": "NOSLIN"
+    },
+    {
+     "number": 14,
+     "pos": "FW",
+     "name": "GORRÉ"
+    },
+    {
+     "number": 15,
+     "pos": "MF",
+     "name": "MARTHA"
+    },
+    {
+     "number": 16,
+     "pos": "FW",
+     "name": "MARGARITHA"
+    },
+    {
+     "number": 17,
+     "pos": "FW",
+     "name": "KUWAS"
+    },
+    {
+     "number": 18,
+     "pos": "DF",
+     "name": "OBISPO"
+    },
+    {
+     "number": 19,
+     "pos": "FW",
+     "name": "KASTANEER"
+    },
+    {
+     "number": 20,
+     "pos": "DF",
+     "name": "BRENET"
+    },
+    {
+     "number": 21,
+     "pos": "MF",
+     "name": "CHONG"
+    },
+    {
+     "number": 22,
+     "pos": "MF",
+     "name": "FELIDA"
+    },
+    {
+     "number": 23,
+     "pos": "DF",
+     "name": "BAZOER"
+    },
+    {
+     "number": 24,
+     "pos": "DF",
+     "name": "FONVILLE"
+    },
+    {
+     "number": 25,
+     "pos": "GK",
+     "name": "BODAK"
+    },
+    {
+     "number": 26,
+     "pos": "GK",
+     "name": "DOORNBUSCH"
+    }
+   ]
+  },
+  {
+   "name": "Czechia",
+   "code": "CZE",
+   "players": [
+    {
+     "number": 1,
+     "pos": "GK",
+     "name": "KOVÁŘ"
+    },
+    {
+     "number": 2,
+     "pos": "DF",
+     "name": "ZIMA"
+    },
+    {
+     "number": 3,
+     "pos": "DF",
+     "name": "HOLEŠ"
+    },
+    {
+     "number": 4,
+     "pos": "DF",
+     "name": "HRANÁČ"
+    },
+    {
+     "number": 5,
+     "pos": "DF",
+     "name": "COUFAL"
+    },
+    {
+     "number": 6,
+     "pos": "DF",
+     "name": "CHALOUPEK"
+    },
+    {
+     "number": 7,
+     "pos": "DF",
+     "name": "KREJČÍ"
+    },
+    {
+     "number": 8,
+     "pos": "MF",
+     "name": "DARIDA"
+    },
+    {
+     "number": 9,
+     "pos": "FW",
+     "name": "HLOŽEK"
+    },
+    {
+     "number": 10,
+     "pos": "FW",
+     "name": "SCHICK"
+    },
+    {
+     "number": 11,
+     "pos": "FW",
+     "name": "KUCHTA"
+    },
+    {
+     "number": 12,
+     "pos": "MF",
+     "name": "ČERV"
+    },
+    {
+     "number": 13,
+     "pos": "FW",
+     "name": "CHYTIL"
+    },
+    {
+     "number": 14,
+     "pos": "DF",
+     "name": "JURÁSEK"
+    },
+    {
+     "number": 15,
+     "pos": "FW",
+     "name": "ŠULC"
+    },
+    {
+     "number": 16,
+     "pos": "GK",
+     "name": "STANĚK"
+    },
+    {
+     "number": 17,
+     "pos": "MF",
+     "name": "PROVOD"
+    },
+    {
+     "number": 18,
+     "pos": "MF",
+     "name": "SADÍLEK"
+    },
+    {
+     "number": 19,
+     "pos": "FW",
+     "name": "CHORÝ"
+    },
+    {
+     "number": 20,
+     "pos": "DF",
+     "name": "ZELENÝ"
+    },
+    {
+     "number": 21,
+     "pos": "DF",
+     "name": "DOUDĚRA"
+    },
+    {
+     "number": 22,
+     "pos": "MF",
+     "name": "SOUČEK"
+    },
+    {
+     "number": 23,
+     "pos": "GK",
+     "name": "HORNÍČEK"
+    },
+    {
+     "number": 24,
+     "pos": "MF",
+     "name": "SOJKA"
+    },
+    {
+     "number": 25,
+     "pos": "MF",
+     "name": "SOCHŮREK"
+    },
+    {
+     "number": 26,
+     "pos": "FW",
+     "name": "VIŠINSKÝ"
+    }
+   ]
+  },
+  {
+   "name": "Côte D'Ivoire",
+   "code": "CIV",
+   "players": [
+    {
+     "number": 1,
+     "pos": "GK",
+     "name": "Y. FOFANA"
+    },
+    {
+     "number": 2,
+     "pos": "DF",
+     "name": "O. DIOMANDE"
+    },
+    {
+     "number": 3,
+     "pos": "DF",
+     "name": "G. KONAN"
+    },
+    {
+     "number": 4,
+     "pos": "MF",
+     "name": "SERI"
+    },
+    {
+     "number": 5,
+     "pos": "DF",
+     "name": "SINGO"
+    },
+    {
+     "number": 6,
+     "pos": "MF",
+     "name": "FOFANA"
+    },
+    {
+     "number": 7,
+     "pos": "DF",
+     "name": "KOSSOUNOU"
+    },
+    {
+     "number": 8,
+     "pos": "MF",
+     "name": "KESSIE"
+    },
+    {
+     "number": 9,
+     "pos": "FW",
+     "name": "BONNY"
+    },
+    {
+     "number": 10,
+     "pos": "FW",
+     "name": "ADINGRA"
+    },
+    {
+     "number": 11,
+     "pos": "FW",
+     "name": "YAN DIOMANDE"
+    },
+    {
+     "number": 12,
+     "pos": "FW",
+     "name": "WAHI"
+    },
+    {
+     "number": 13,
+     "pos": "DF",
+     "name": "OPERI"
+    },
+    {
+     "number": 14,
+     "pos": "FW",
+     "name": "DIAKITE"
+    },
+    {
+     "number": 15,
+     "pos": "FW",
+     "name": "AMAD"
+    },
+    {
+     "number": 16,
+     "pos": "GK",
+     "name": "KONE"
+    },
+    {
+     "number": 17,
+     "pos": "DF",
+     "name": "G. DOUE"
+    },
+    {
+     "number": 18,
+     "pos": "MF",
+     "name": "SANGARE"
+    },
+    {
+     "number": 19,
+     "pos": "FW",
+     "name": "PEPE"
+    },
+    {
+     "number": 20,
+     "pos": "DF",
+     "name": "AGBADOU"
+    },
+    {
+     "number": 21,
+     "pos": "DF",
+     "name": "NDICKA"
+    },
+    {
+     "number": 22,
+     "pos": "FW",
+     "name": "GUESSAND"
+    },
+    {
+     "number": 23,
+     "pos": "GK",
+     "name": "LAFONT"
+    },
+    {
+     "number": 24,
+     "pos": "FW",
+     "name": "TOURE"
+    },
+    {
+     "number": 25,
+     "pos": "MF",
+     "name": "GUIAGON"
+    },
+    {
+     "number": 26,
+     "pos": "MF",
+     "name": "INAO"
+    }
+   ]
+  },
+  {
+   "name": "Ecuador",
+   "code": "ECU",
+   "players": [
+    {
+     "number": 1,
+     "pos": "GK",
+     "name": "GALINDEZ"
+    },
+    {
+     "number": 2,
+     "pos": "DF",
+     "name": "TORRES"
+    },
+    {
+     "number": 3,
+     "pos": "DF",
+     "name": "HINCAPIE"
+    },
+    {
+     "number": 4,
+     "pos": "DF",
+     "name": "ORDÓÑEZ"
+    },
+    {
+     "number": 5,
+     "pos": "MF",
+     "name": "ALCIVAR"
+    },
+    {
+     "number": 6,
+     "pos": "DF",
+     "name": "PACHO"
+    },
+    {
+     "number": 7,
+     "pos": "DF",
+     "name": "ESTUPIÑÁN"
+    },
+    {
+     "number": 8,
+     "pos": "MF",
+     "name": "A. VALENCIA"
+    },
+    {
+     "number": 9,
+     "pos": "FW",
+     "name": "YEBOAH ZAMORA"
+    },
+    {
+     "number": 10,
+     "pos": "MF",
+     "name": "KENDRY"
+    },
+    {
+     "number": 11,
+     "pos": "FW",
+     "name": "RODRIGUEZ"
+    },
+    {
+     "number": 12,
+     "pos": "GK",
+     "name": "RAMÍREZ"
+    },
+    {
+     "number": 13,
+     "pos": "FW",
+     "name": "E. VALENCIA"
+    },
+    {
+     "number": 14,
+     "pos": "MF",
+     "name": "MINDA"
+    },
+    {
+     "number": 15,
+     "pos": "MF",
+     "name": "VITE"
+    },
+    {
+     "number": 16,
+     "pos": "FW",
+     "name": "J. CAICEDO"
+    },
+    {
+     "number": 17,
+     "pos": "DF",
+     "name": "PRECIADO"
+    },
+    {
+     "number": 18,
+     "pos": "MF",
+     "name": "CASTILLO"
+    },
+    {
+     "number": 19,
+     "pos": "FW",
+     "name": "PLATA"
+    },
+    {
+     "number": 20,
+     "pos": "FW",
+     "name": "ANGULO"
+    },
+    {
+     "number": 21,
+     "pos": "MF",
+     "name": "FRANCO"
+    },
+    {
+     "number": 22,
+     "pos": "GK",
+     "name": "VALLE"
+    },
+    {
+     "number": 23,
+     "pos": "MF",
+     "name": "M. CAICEDO"
+    },
+    {
+     "number": 24,
+     "pos": "FW",
+     "name": "AREVALO"
+    },
+    {
+     "number": 25,
+     "pos": "DF",
+     "name": "POROZO"
+    },
+    {
+     "number": 26,
+     "pos": "DF",
+     "name": "MEDINA"
+    }
+   ]
+  },
+  {
+   "name": "Egypt",
+   "code": "EGY",
+   "players": [
+    {
+     "number": 1,
+     "pos": "GK",
+     "name": "M. ELSHENAWY"
+    },
+    {
+     "number": 2,
+     "pos": "DF",
+     "name": "YASSER"
+    },
+    {
+     "number": 3,
+     "pos": "DF",
+     "name": "M. HANY"
+    },
+    {
+     "number": 4,
+     "pos": "DF",
+     "name": "HOSSAM"
+    },
+    {
+     "number": 5,
+     "pos": "DF",
+     "name": "R. RABIAA"
+    },
+    {
+     "number": 6,
+     "pos": "DF",
+     "name": "M. ABDELMONIEM"
+    },
+    {
+     "number": 7,
+     "pos": "FW",
+     "name": "M. TREZEGUET"
+    },
+    {
+     "number": 8,
+     "pos": "MF",
+     "name": "E. ASHOUR"
+    },
+    {
+     "number": 9,
+     "pos": "FW",
+     "name": "ABDELKARIM"
+    },
+    {
+     "number": 10,
+     "pos": "FW",
+     "name": "M. SALAH"
+    },
+    {
+     "number": 11,
+     "pos": "MF",
+     "name": "ZICO"
+    },
+    {
+     "number": 12,
+     "pos": "FW",
+     "name": "H. HASSAN"
+    },
+    {
+     "number": 13,
+     "pos": "DF",
+     "name": "A. FATOUH"
+    },
+    {
+     "number": 14,
+     "pos": "MF",
+     "name": "H. FATHY"
+    },
+    {
+     "number": 15,
+     "pos": "DF",
+     "name": "K. HAFEZ"
+    },
+    {
+     "number": 16,
+     "pos": "GK",
+     "name": "M. SOLIMAN"
+    },
+    {
+     "number": 17,
+     "pos": "MF",
+     "name": "M. LASHIN"
+    },
+    {
+     "number": 18,
+     "pos": "MF",
+     "name": "DONGA"
+    },
+    {
+     "number": 19,
+     "pos": "MF",
+     "name": "M. ATTIA"
+    },
+    {
+     "number": 20,
+     "pos": "FW",
+     "name": "I. ADEL"
+    },
+    {
+     "number": 21,
+     "pos": "MF",
+     "name": "M. SABER"
+    },
+    {
+     "number": 22,
+     "pos": "FW",
+     "name": "MARMOUSH"
+    },
+    {
+     "number": 23,
+     "pos": "GK",
+     "name": "SHOUBIR"
+    },
+    {
+     "number": 24,
+     "pos": "DF",
+     "name": "T. ALAA"
+    },
+    {
+     "number": 25,
+     "pos": "FW",
+     "name": "ZIZO"
+    },
+    {
+     "number": 26,
+     "pos": "GK",
+     "name": "M. ALAA"
+    }
+   ]
+  },
+  {
+   "name": "England",
+   "code": "ENG",
+   "players": [
+    {
+     "number": 1,
+     "pos": "GK",
+     "name": "PICKFORD"
+    },
+    {
+     "number": 2,
+     "pos": "DF",
+     "name": "KONSA"
+    },
+    {
+     "number": 3,
+     "pos": "DF",
+     "name": "O'REILLY"
+    },
+    {
+     "number": 4,
+     "pos": "MF",
+     "name": "RICE"
+    },
+    {
+     "number": 5,
+     "pos": "DF",
+     "name": "STONES"
+    },
+    {
+     "number": 6,
+     "pos": "DF",
+     "name": "GUÉHI"
+    },
+    {
+     "number": 7,
+     "pos": "FW",
+     "name": "SAKA"
+    },
+    {
+     "number": 8,
+     "pos": "MF",
+     "name": "ANDERSON"
+    },
+    {
+     "number": 9,
+     "pos": "FW",
+     "name": "KANE"
+    },
+    {
+     "number": 10,
+     "pos": "MF",
+     "name": "BELLINGHAM"
+    },
+    {
+     "number": 11,
+     "pos": "FW",
+     "name": "RASHFORD"
+    },
+    {
+     "number": 12,
+     "pos": "DF",
+     "name": "CHALOBAH"
+    },
+    {
+     "number": 13,
+     "pos": "GK",
+     "name": "D. HENDERSON"
+    },
+    {
+     "number": 14,
+     "pos": "MF",
+     "name": "HENDERSON"
+    },
+    {
+     "number": 15,
+     "pos": "DF",
+     "name": "BURN"
+    },
+    {
+     "number": 16,
+     "pos": "MF",
+     "name": "MAINOO"
+    },
+    {
+     "number": 17,
+     "pos": "MF",
+     "name": "ROGERS"
+    },
+    {
+     "number": 18,
+     "pos": "FW",
+     "name": "GORDON"
+    },
+    {
+     "number": 19,
+     "pos": "FW",
+     "name": "WATKINS"
+    },
+    {
+     "number": 20,
+     "pos": "FW",
+     "name": "MADUEKE"
+    },
+    {
+     "number": 21,
+     "pos": "MF",
+     "name": "EZE"
+    },
+    {
+     "number": 22,
+     "pos": "FW",
+     "name": "TONEY"
+    },
+    {
+     "number": 23,
+     "pos": "GK",
+     "name": "TRAFFORD"
+    },
+    {
+     "number": 24,
+     "pos": "DF",
+     "name": "JAMES"
+    },
+    {
+     "number": 25,
+     "pos": "DF",
+     "name": "SPENCE"
+    },
+    {
+     "number": 26,
+     "pos": "DF",
+     "name": "QUANSAH"
+    }
+   ]
+  },
+  {
+   "name": "France",
+   "code": "FRA",
+   "players": [
+    {
+     "number": 1,
+     "pos": "GK",
+     "name": "SAMBA"
+    },
+    {
+     "number": 2,
+     "pos": "DF",
+     "name": "GUSTO"
+    },
+    {
+     "number": 3,
+     "pos": "DF",
+     "name": "DIGNE"
+    },
+    {
+     "number": 4,
+     "pos": "DF",
+     "name": "UPAMECANO"
+    },
+    {
+     "number": 5,
+     "pos": "DF",
+     "name": "KOUNDE"
+    },
+    {
+     "number": 6,
+     "pos": "MF",
+     "name": "KONE"
+    },
+    {
+     "number": 7,
+     "pos": "FW",
+     "name": "DEMBELE"
+    },
+    {
+     "number": 8,
+     "pos": "MF",
+     "name": "TCHOUAMENI"
+    },
+    {
+     "number": 9,
+     "pos": "FW",
+     "name": "THURAM"
+    },
+    {
+     "number": 10,
+     "pos": "FW",
+     "name": "MBAPPE"
+    },
+    {
+     "number": 11,
+     "pos": "FW",
+     "name": "OLISE"
+    },
+    {
+     "number": 12,
+     "pos": "FW",
+     "name": "BARCOLA"
+    },
+    {
+     "number": 13,
+     "pos": "MF",
+     "name": "KANTE"
+    },
+    {
+     "number": 14,
+     "pos": "MF",
+     "name": "RABIOT"
+    },
+    {
+     "number": 15,
+     "pos": "DF",
+     "name": "KONATE"
+    },
+    {
+     "number": 16,
+     "pos": "GK",
+     "name": "MAIGNAN"
+    },
+    {
+     "number": 17,
+     "pos": "DF",
+     "name": "SALIBA"
+    },
+    {
+     "number": 18,
+     "pos": "MF",
+     "name": "ZAIRE-EMERY"
+    },
+    {
+     "number": 19,
+     "pos": "DF",
+     "name": "T. HERNANDEZ"
+    },
+    {
+     "number": 20,
+     "pos": "FW",
+     "name": "DOUE"
+    },
+    {
+     "number": 21,
+     "pos": "DF",
+     "name": "L. HERNANDEZ"
+    },
+    {
+     "number": 22,
+     "pos": "FW",
+     "name": "MATETA"
+    },
+    {
+     "number": 23,
+     "pos": "GK",
+     "name": "RISSER"
+    },
+    {
+     "number": 24,
+     "pos": "MF",
+     "name": "CHERKI"
+    },
+    {
+     "number": 25,
+     "pos": "MF",
+     "name": "AKLIOUCHE"
+    },
+    {
+     "number": 26,
+     "pos": "DF",
+     "name": "LACROIX"
+    }
+   ]
+  },
+  {
+   "name": "Germany",
+   "code": "GER",
+   "players": [
+    {
+     "number": 1,
+     "pos": "GK",
+     "name": "NEUER"
+    },
+    {
+     "number": 2,
+     "pos": "DF",
+     "name": "RÜDIGER"
+    },
+    {
+     "number": 3,
+     "pos": "DF",
+     "name": "ANTON"
+    },
+    {
+     "number": 4,
+     "pos": "DF",
+     "name": "TAH"
+    },
+    {
+     "number": 5,
+     "pos": "MF",
+     "name": "PAVLOVIĆ"
+    },
+    {
+     "number": 6,
+     "pos": "DF",
+     "name": "KIMMICH"
+    },
+    {
+     "number": 7,
+     "pos": "FW",
+     "name": "HAVERTZ"
+    },
+    {
+     "number": 8,
+     "pos": "MF",
+     "name": "GORETZKA"
+    },
+    {
+     "number": 9,
+     "pos": "MF",
+     "name": "LEWELING"
+    },
+    {
+     "number": 10,
+     "pos": "MF",
+     "name": "MUSIALA"
+    },
+    {
+     "number": 11,
+     "pos": "FW",
+     "name": "WOLTEMADE"
+    },
+    {
+     "number": 12,
+     "pos": "GK",
+     "name": "BAUMANN"
+    },
+    {
+     "number": 13,
+     "pos": "MF",
+     "name": "GROß"
+    },
+    {
+     "number": 14,
+     "pos": "FW",
+     "name": "BEIER"
+    },
+    {
+     "number": 15,
+     "pos": "DF",
+     "name": "SCHLOTTERBECK"
+    },
+    {
+     "number": 16,
+     "pos": "MF",
+     "name": "STILLER"
+    },
+    {
+     "number": 17,
+     "pos": "MF",
+     "name": "WIRTZ"
+    },
+    {
+     "number": 18,
+     "pos": "DF",
+     "name": "BROWN"
+    },
+    {
+     "number": 19,
+     "pos": "MF",
+     "name": "SANÉ"
+    },
+    {
+     "number": 20,
+     "pos": "MF",
+     "name": "AMIRI"
+    },
+    {
+     "number": 21,
+     "pos": "GK",
+     "name": "NÜBEL"
+    },
+    {
+     "number": 22,
+     "pos": "DF",
+     "name": "RAUM"
+    },
+    {
+     "number": 23,
+     "pos": "MF",
+     "name": "NMECHA"
+    },
+    {
+     "number": 24,
+     "pos": "DF",
+     "name": "THIAW"
+    },
+    {
+     "number": 25,
+     "pos": "MF",
+     "name": "OUÉDRAOGO"
+    },
+    {
+     "number": 26,
+     "pos": "FW",
+     "name": "UNDAV"
+    }
+   ]
+  },
+  {
+   "name": "Ghana",
+   "code": "GHA",
+   "players": [
+    {
+     "number": 1,
+     "pos": "GK",
+     "name": "ZIGI"
+    },
+    {
+     "number": 2,
+     "pos": "DF",
+     "name": "ALIDU SEIDU"
+    },
+    {
+     "number": 3,
+     "pos": "MF",
+     "name": "YIRENKYI"
+    },
+    {
+     "number": 4,
+     "pos": "DF",
+     "name": "ADJETEY"
+    },
+    {
+     "number": 5,
+     "pos": "MF",
+     "name": "PARTEY"
+    },
+    {
+     "number": 6,
+     "pos": "DF",
+     "name": "A. MUMIN"
+    },
+    {
+     "number": 7,
+     "pos": "FW",
+     "name": "A. FATAWU"
+    },
+    {
+     "number": 8,
+     "pos": "MF",
+     "name": "SIBO"
+    },
+    {
+     "number": 9,
+     "pos": "FW",
+     "name": "J. AYEW"
+    },
+    {
+     "number": 10,
+     "pos": "FW",
+     "name": "ASANTE"
+    },
+    {
+     "number": 11,
+     "pos": "MF",
+     "name": "SEMENYO"
+    },
+    {
+     "number": 12,
+     "pos": "GK",
+     "name": "ANANG"
+    },
+    {
+     "number": 13,
+     "pos": "FW",
+     "name": "BONSU BAAH"
+    },
+    {
+     "number": 14,
+     "pos": "DF",
+     "name": "MENSAH"
+    },
+    {
+     "number": 15,
+     "pos": "MF",
+     "name": "OWUSU"
+    },
+    {
+     "number": 16,
+     "pos": "GK",
+     "name": "B. ASARE"
+    },
+    {
+     "number": 17,
+     "pos": "DF",
+     "name": "BABA"
+    },
+    {
+     "number": 18,
+     "pos": "DF",
+     "name": "OPOKU"
+    },
+    {
+     "number": 19,
+     "pos": "FW",
+     "name": "WILLIAMS"
+    },
+    {
+     "number": 20,
+     "pos": "MF",
+     "name": "BOAKYE"
+    },
+    {
+     "number": 21,
+     "pos": "DF",
+     "name": "OPPONG"
+    },
+    {
+     "number": 22,
+     "pos": "FW",
+     "name": "KAMALDEEN"
+    },
+    {
+     "number": 23,
+     "pos": "DF",
+     "name": "LUCKASSEN"
+    },
+    {
+     "number": 24,
+     "pos": "FW",
+     "name": "NUAMAH"
+    },
+    {
+     "number": 25,
+     "pos": "FW",
+     "name": "PRINCE"
+    },
+    {
+     "number": 26,
+     "pos": "DF",
+     "name": "SENEYA"
+    }
+   ]
+  },
+  {
+   "name": "Haiti",
+   "code": "HAI",
+   "players": [
+    {
+     "number": 1,
+     "pos": "GK",
+     "name": "PLACIDE"
+    },
+    {
+     "number": 2,
+     "pos": "DF",
+     "name": "ARCUS"
+    },
+    {
+     "number": 3,
+     "pos": "DF",
+     "name": "THERMONCY"
+    },
+    {
+     "number": 4,
+     "pos": "DF",
+     "name": "ADE"
+    },
+    {
+     "number": 5,
+     "pos": "DF",
+     "name": "DELCROIX"
+    },
+    {
+     "number": 6,
+     "pos": "MF",
+     "name": "SAINTE"
+    },
+    {
+     "number": 7,
+     "pos": "FW",
+     "name": "ETIENNE JR"
+    },
+    {
+     "number": 8,
+     "pos": "DF",
+     "name": "EXPERIENCE"
+    },
+    {
+     "number": 9,
+     "pos": "FW",
+     "name": "NAZON"
+    },
+    {
+     "number": 10,
+     "pos": "MF",
+     "name": "BELLEGARDE"
+    },
+    {
+     "number": 11,
+     "pos": "FW",
+     "name": "LOUICIUS"
+    },
+    {
+     "number": 12,
+     "pos": "GK",
+     "name": "A. PIERRE"
+    },
+    {
+     "number": 13,
+     "pos": "DF",
+     "name": "LACROIX"
+    },
+    {
+     "number": 14,
+     "pos": "DF",
+     "name": "METUSALA"
+    },
+    {
+     "number": 15,
+     "pos": "FW",
+     "name": "PROVIDENCE"
+    },
+    {
+     "number": 16,
+     "pos": "FW",
+     "name": "JOSEPH"
+    },
+    {
+     "number": 17,
+     "pos": "MF",
+     "name": "JEAN-JACQUES"
+    },
+    {
+     "number": 18,
+     "pos": "FW",
+     "name": "ISIDOR"
+    },
+    {
+     "number": 19,
+     "pos": "FW",
+     "name": "FORTUNE"
+    },
+    {
+     "number": 20,
+     "pos": "FW",
+     "name": "PIERROT"
+    },
+    {
+     "number": 21,
+     "pos": "FW",
+     "name": "CASIMIR"
+    },
+    {
+     "number": 22,
+     "pos": "DF",
+     "name": "DUVERNE"
+    },
+    {
+     "number": 23,
+     "pos": "GK",
+     "name": "DUVERGER"
+    },
+    {
+     "number": 24,
+     "pos": "DF",
+     "name": "PAUGAIN"
+    },
+    {
+     "number": 25,
+     "pos": "MF",
+     "name": "SIMON"
+    },
+    {
+     "number": 26,
+     "pos": "MF",
+     "name": "W. PIERRE"
+    }
+   ]
+  },
+  {
+   "name": "IR Iran",
+   "code": "IRN",
+   "players": [
+    {
+     "number": 1,
+     "pos": "GK",
+     "name": "BEIRANVAND"
+    },
+    {
+     "number": 2,
+     "pos": "DF",
+     "name": "SALEH"
+    },
+    {
+     "number": 3,
+     "pos": "DF",
+     "name": "E. HAJISAFI"
+    },
+    {
+     "number": 4,
+     "pos": "DF",
+     "name": "SHOJA"
+    },
+    {
+     "number": 5,
+     "pos": "DF",
+     "name": "M. MOHAMMADI"
+    },
+    {
+     "number": 6,
+     "pos": "MF",
+     "name": "S. EZATOLAHI"
+    },
+    {
+     "number": 7,
+     "pos": "MF",
+     "name": "A. JAHANBAKHSH"
+    },
+    {
+     "number": 8,
+     "pos": "MF",
+     "name": "M. MOHEBBI"
+    },
+    {
+     "number": 9,
+     "pos": "FW",
+     "name": "TAREMI"
+    },
+    {
+     "number": 10,
+     "pos": "FW",
+     "name": "MEHDI GHAYEDI"
+    },
+    {
+     "number": 11,
+     "pos": "FW",
+     "name": "A. ALIPOUR"
+    },
+    {
+     "number": 12,
+     "pos": "GK",
+     "name": "PAYAM"
+    },
+    {
+     "number": 13,
+     "pos": "DF",
+     "name": "KANANI"
+    },
+    {
+     "number": 14,
+     "pos": "MF",
+     "name": "GHODDOS"
+    },
+    {
+     "number": 15,
+     "pos": "MF",
+     "name": "ROOZBEH"
+    },
+    {
+     "number": 16,
+     "pos": "MF",
+     "name": "M. TORABI"
+    },
+    {
+     "number": 17,
+     "pos": "DF",
+     "name": "ARYA"
+    },
+    {
+     "number": 18,
+     "pos": "FW",
+     "name": "AMIRHOSSEIN"
+    },
+    {
+     "number": 19,
+     "pos": "DF",
+     "name": "ALI"
+    },
+    {
+     "number": 20,
+     "pos": "FW",
+     "name": "SHAHRIYAR"
+    },
+    {
+     "number": 21,
+     "pos": "MF",
+     "name": "MOHAMMAD"
+    },
+    {
+     "number": 22,
+     "pos": "GK",
+     "name": "HOSSEINI"
+    },
+    {
+     "number": 23,
+     "pos": "DF",
+     "name": "RAMIN"
+    },
+    {
+     "number": 24,
+     "pos": "FW",
+     "name": "DARGAHI"
+    },
+    {
+     "number": 25,
+     "pos": "DF",
+     "name": "DANIAL"
+    },
+    {
+     "number": 26,
+     "pos": "MF",
+     "name": "RAZAGH"
+    }
+   ]
+  },
+  {
+   "name": "Iraq",
+   "code": "IRQ",
+   "players": [
+    {
+     "number": 1,
+     "pos": "GK",
+     "name": "FAHAD"
+    },
+    {
+     "number": 2,
+     "pos": "DF",
+     "name": "REBIN"
+    },
+    {
+     "number": 3,
+     "pos": "DF",
+     "name": "HUSSEIN"
+    },
+    {
+     "number": 4,
+     "pos": "DF",
+     "name": "ZAID T."
+    },
+    {
+     "number": 5,
+     "pos": "DF",
+     "name": "AKAM"
+    },
+    {
+     "number": 6,
+     "pos": "DF",
+     "name": "MUNAF"
+    },
+    {
+     "number": 7,
+     "pos": "MF",
+     "name": "YOUSSEF"
+    },
+    {
+     "number": 8,
+     "pos": "MF",
+     "name": "IBRAHIM"
+    },
+    {
+     "number": 9,
+     "pos": "FW",
+     "name": "AL-HAMADI"
+    },
+    {
+     "number": 10,
+     "pos": "FW",
+     "name": "MOHANAD"
+    },
+    {
+     "number": 11,
+     "pos": "FW",
+     "name": "AHMED Q."
+    },
+    {
+     "number": 12,
+     "pos": "GK",
+     "name": "JALAL"
+    },
+    {
+     "number": 13,
+     "pos": "FW",
+     "name": "ALI Y."
+    },
+    {
+     "number": 14,
+     "pos": "MF",
+     "name": "Z. IQBAL"
+    },
+    {
+     "number": 15,
+     "pos": "DF",
+     "name": "AHMED H."
+    },
+    {
+     "number": 16,
+     "pos": "MF",
+     "name": "AL-AMMARI"
+    },
+    {
+     "number": 17,
+     "pos": "FW",
+     "name": "ALI J."
+    },
+    {
+     "number": 18,
+     "pos": "FW",
+     "name": "AYMEN"
+    },
+    {
+     "number": 19,
+     "pos": "MF",
+     "name": "K. YAKOB"
+    },
+    {
+     "number": 20,
+     "pos": "MF",
+     "name": "AIMAR"
+    },
+    {
+     "number": 21,
+     "pos": "FW",
+     "name": "MARKO"
+    },
+    {
+     "number": 22,
+     "pos": "GK",
+     "name": "AHMED B."
+    },
+    {
+     "number": 23,
+     "pos": "DF",
+     "name": "DOSKI"
+    },
+    {
+     "number": 24,
+     "pos": "MF",
+     "name": "ZAID I."
+    },
+    {
+     "number": 25,
+     "pos": "DF",
+     "name": "MUSTAFA"
+    },
+    {
+     "number": 26,
+     "pos": "DF",
+     "name": "FRANS"
+    }
+   ]
+  },
+  {
+   "name": "Japan",
+   "code": "JPN",
+   "players": [
+    {
+     "number": 1,
+     "pos": "GK",
+     "name": "SUZUKI"
+    },
+    {
+     "number": 2,
+     "pos": "DF",
+     "name": "SUGAWARA"
+    },
+    {
+     "number": 3,
+     "pos": "DF",
+     "name": "TANIGUCHI"
+    },
+    {
+     "number": 4,
+     "pos": "DF",
+     "name": "ITAKURA"
+    },
+    {
+     "number": 5,
+     "pos": "DF",
+     "name": "NAGATOMO"
+    },
+    {
+     "number": 6,
+     "pos": "FW",
+     "name": "MACHINO"
+    },
+    {
+     "number": 7,
+     "pos": "MF",
+     "name": "TANAKA"
+    },
+    {
+     "number": 8,
+     "pos": "MF",
+     "name": "KUBO"
+    },
+    {
+     "number": 9,
+     "pos": "FW",
+     "name": "GOTO"
+    },
+    {
+     "number": 10,
+     "pos": "MF",
+     "name": "DOAN"
+    },
+    {
+     "number": 11,
+     "pos": "MF",
+     "name": "DAIZEN"
+    },
+    {
+     "number": 12,
+     "pos": "GK",
+     "name": "OSAKO"
+    },
+    {
+     "number": 13,
+     "pos": "MF",
+     "name": "NAKAMURA"
+    },
+    {
+     "number": 14,
+     "pos": "MF",
+     "name": "ITO"
+    },
+    {
+     "number": 15,
+     "pos": "MF",
+     "name": "KAMADA"
+    },
+    {
+     "number": 16,
+     "pos": "DF",
+     "name": "WATANABE"
+    },
+    {
+     "number": 17,
+     "pos": "MF",
+     "name": "Y. SUZUKI"
+    },
+    {
+     "number": 18,
+     "pos": "FW",
+     "name": "AYASE"
+    },
+    {
+     "number": 19,
+     "pos": "FW",
+     "name": "OGAWA"
+    },
+    {
+     "number": 20,
+     "pos": "DF",
+     "name": "SEKO"
+    },
+    {
+     "number": 21,
+     "pos": "DF",
+     "name": "H. ITO"
+    },
+    {
+     "number": 22,
+     "pos": "DF",
+     "name": "TOMIYASU"
+    },
+    {
+     "number": 23,
+     "pos": "GK",
+     "name": "HAYAKAWA"
+    },
+    {
+     "number": 24,
+     "pos": "MF",
+     "name": "SANO"
+    },
+    {
+     "number": 25,
+     "pos": "DF",
+     "name": "J. SUZUKI"
+    },
+    {
+     "number": 26,
+     "pos": "FW",
+     "name": "SHIOGAI"
+    }
+   ]
+  },
+  {
+   "name": "Jordan",
+   "code": "JOR",
+   "players": [
+    {
+     "number": 1,
+     "pos": "GK",
+     "name": "YAZEED"
+    },
+    {
+     "number": 2,
+     "pos": "DF",
+     "name": "ABU HASHEESH"
+    },
+    {
+     "number": 3,
+     "pos": "DF",
+     "name": "NASIB"
+    },
+    {
+     "number": 4,
+     "pos": "DF",
+     "name": "ABU DAHAB"
+    },
+    {
+     "number": 5,
+     "pos": "DF",
+     "name": "ALARAB"
+    },
+    {
+     "number": 6,
+     "pos": "MF",
+     "name": "JAMOUS"
+    },
+    {
+     "number": 7,
+     "pos": "FW",
+     "name": "ABU ZRAIQ"
+    },
+    {
+     "number": 8,
+     "pos": "MF",
+     "name": "ALRAWABDEH"
+    },
+    {
+     "number": 9,
+     "pos": "FW",
+     "name": "OLWAN"
+    },
+    {
+     "number": 10,
+     "pos": "FW",
+     "name": "ALTAMARI"
+    },
+    {
+     "number": 11,
+     "pos": "FW",
+     "name": "ODEH"
+    },
+    {
+     "number": 12,
+     "pos": "GK",
+     "name": "BANI ATEYAH"
+    },
+    {
+     "number": 13,
+     "pos": "FW",
+     "name": "ALMARDI"
+    },
+    {
+     "number": 14,
+     "pos": "MF",
+     "name": "RAJA'EI"
+    },
+    {
+     "number": 15,
+     "pos": "MF",
+     "name": "SA'DEH"
+    },
+    {
+     "number": 16,
+     "pos": "DF",
+     "name": "ABU ALNADI"
+    },
+    {
+     "number": 17,
+     "pos": "DF",
+     "name": "SALEEM"
+    },
+    {
+     "number": 18,
+     "pos": "MF",
+     "name": "ABU GHOUSH"
+    },
+    {
+     "number": 19,
+     "pos": "DF",
+     "name": "SA'ED"
+    },
+    {
+     "number": 20,
+     "pos": "MF",
+     "name": "ABU TAHA"
+    },
+    {
+     "number": 21,
+     "pos": "MF",
+     "name": "NIZAR"
+    },
+    {
+     "number": 22,
+     "pos": "GK",
+     "name": "ALFAKHORI"
+    },
+    {
+     "number": 23,
+     "pos": "DF",
+     "name": "EHSAN"
+    },
+    {
+     "number": 24,
+     "pos": "FW",
+     "name": "AZAIZEH"
+    },
+    {
+     "number": 25,
+     "pos": "MF",
+     "name": "ALDAOUD"
+    },
+    {
+     "number": 26,
+     "pos": "DF",
+     "name": "BADAWI"
+    }
+   ]
+  },
+  {
+   "name": "Korea Republic",
+   "code": "KOR",
+   "players": [
+    {
+     "number": 1,
+     "pos": "GK",
+     "name": "SEUNGGYU"
+    },
+    {
+     "number": 2,
+     "pos": "DF",
+     "name": "HANBEOM"
+    },
+    {
+     "number": 3,
+     "pos": "MF",
+     "name": "GIHYUK"
+    },
+    {
+     "number": 4,
+     "pos": "DF",
+     "name": "MINJAE"
+    },
+    {
+     "number": 5,
+     "pos": "DF",
+     "name": "TAEHYEON"
+    },
+    {
+     "number": 6,
+     "pos": "MF",
+     "name": "INBEOM"
+    },
+    {
+     "number": 7,
+     "pos": "FW",
+     "name": "HEUNGMIN"
+    },
+    {
+     "number": 8,
+     "pos": "MF",
+     "name": "SEUNGHO"
+    },
+    {
+     "number": 9,
+     "pos": "FW",
+     "name": "GUESUNG"
+    },
+    {
+     "number": 10,
+     "pos": "MF",
+     "name": "JAESUNG"
+    },
+    {
+     "number": 11,
+     "pos": "MF",
+     "name": "HEECHAN"
+    },
+    {
+     "number": 12,
+     "pos": "GK",
+     "name": "BUMKEUN"
+    },
+    {
+     "number": 13,
+     "pos": "DF",
+     "name": "TAESEOK"
+    },
+    {
+     "number": 14,
+     "pos": "DF",
+     "name": "WIJE"
+    },
+    {
+     "number": 15,
+     "pos": "DF",
+     "name": "MOONHWAN"
+    },
+    {
+     "number": 16,
+     "pos": "DF",
+     "name": "JINSEOB"
+    },
+    {
+     "number": 17,
+     "pos": "MF",
+     "name": "JUNHO"
+    },
+    {
+     "number": 18,
+     "pos": "FW",
+     "name": "HYEONGYU"
+    },
+    {
+     "number": 19,
+     "pos": "MF",
+     "name": "KANGIN"
+    },
+    {
+     "number": 20,
+     "pos": "MF",
+     "name": "HYUNJUN"
+    },
+    {
+     "number": 21,
+     "pos": "GK",
+     "name": "HYEONWOO"
+    },
+    {
+     "number": 22,
+     "pos": "DF",
+     "name": "YOUNGWOO"
+    },
+    {
+     "number": 23,
+     "pos": "DF",
+     "name": "JENS"
+    },
+    {
+     "number": 24,
+     "pos": "MF",
+     "name": "JINGYU"
+    },
+    {
+     "number": 25,
+     "pos": "MF",
+     "name": "JISUNG"
+    },
+    {
+     "number": 26,
+     "pos": "MF",
+     "name": "DONGGYEONG"
+    }
+   ]
+  },
+  {
+   "name": "Mexico",
+   "code": "MEX",
+   "players": [
+    {
+     "number": 1,
+     "pos": "GK",
+     "name": "R. RANGEL"
+    },
+    {
+     "number": 2,
+     "pos": "DF",
+     "name": "J. SÁNCHEZ"
+    },
+    {
+     "number": 3,
+     "pos": "DF",
+     "name": "C. MONTES"
+    },
+    {
+     "number": 4,
+     "pos": "DF",
+     "name": "E. ÁLVAREZ"
+    },
+    {
+     "number": 5,
+     "pos": "DF",
+     "name": "J. VÁSQUEZ"
+    },
+    {
+     "number": 6,
+     "pos": "MF",
+     "name": "E. LIRA"
+    },
+    {
+     "number": 7,
+     "pos": "MF",
+     "name": "L. ROMO"
+    },
+    {
+     "number": 8,
+     "pos": "MF",
+     "name": "FIDALGO"
+    },
+    {
+     "number": 9,
+     "pos": "FW",
+     "name": "RAÚL"
+    },
+    {
+     "number": 10,
+     "pos": "FW",
+     "name": "A. VEGA"
+    },
+    {
+     "number": 11,
+     "pos": "FW",
+     "name": "S. GIMENEZ"
+    },
+    {
+     "number": 12,
+     "pos": "GK",
+     "name": "C. ACEVEDO"
+    },
+    {
+     "number": 13,
+     "pos": "GK",
+     "name": "G. OCHOA"
+    },
+    {
+     "number": 14,
+     "pos": "FW",
+     "name": "A. GONZÁLEZ"
+    },
+    {
+     "number": 15,
+     "pos": "DF",
+     "name": "I. REYES"
+    },
+    {
+     "number": 16,
+     "pos": "FW",
+     "name": "J. QUIÑONES"
+    },
+    {
+     "number": 17,
+     "pos": "MF",
+     "name": "ORBELÍN"
+    },
+    {
+     "number": 18,
+     "pos": "MF",
+     "name": "O. VARGAS"
+    },
+    {
+     "number": 19,
+     "pos": "MF",
+     "name": "G. MORA"
+    },
+    {
+     "number": 20,
+     "pos": "DF",
+     "name": "M. CHÁVEZ"
+    },
+    {
+     "number": 21,
+     "pos": "FW",
+     "name": "C. HUERTA"
+    },
+    {
+     "number": 22,
+     "pos": "FW",
+     "name": "G. MARTÍNEZ"
+    },
+    {
+     "number": 23,
+     "pos": "DF",
+     "name": "J. GALLARDO"
+    },
+    {
+     "number": 24,
+     "pos": "MF",
+     "name": "L. CHÁVEZ"
+    },
+    {
+     "number": 25,
+     "pos": "FW",
+     "name": "R. ALVARADO"
+    },
+    {
+     "number": 26,
+     "pos": "MF",
+     "name": "B. GUTIÉRREZ"
+    }
+   ]
+  },
+  {
+   "name": "Morocco",
+   "code": "MAR",
+   "players": [
+    {
+     "number": 1,
+     "pos": "GK",
+     "name": "BONO"
+    },
+    {
+     "number": 2,
+     "pos": "DF",
+     "name": "HAKIMI"
+    },
+    {
+     "number": 3,
+     "pos": "DF",
+     "name": "MAZRAOUI"
+    },
+    {
+     "number": 4,
+     "pos": "MF",
+     "name": "AMRABAT"
+    },
+    {
+     "number": 5,
+     "pos": "DF",
+     "name": "SAADANE"
+    },
+    {
+     "number": 6,
+     "pos": "MF",
+     "name": "BOUADDI"
+    },
+    {
+     "number": 7,
+     "pos": "MF",
+     "name": "TALBI"
+    },
+    {
+     "number": 8,
+     "pos": "MF",
+     "name": "OUNAHI"
+    },
+    {
+     "number": 9,
+     "pos": "FW",
+     "name": "RAHIMI"
+    },
+    {
+     "number": 10,
+     "pos": "FW",
+     "name": "BRAHIM"
+    },
+    {
+     "number": 11,
+     "pos": "MF",
+     "name": "SAIBARI"
+    },
+    {
+     "number": 12,
+     "pos": "GK",
+     "name": "EL KAJOUI"
+    },
+    {
+     "number": 13,
+     "pos": "DF",
+     "name": "EL OUAHDI"
+    },
+    {
+     "number": 14,
+     "pos": "DF",
+     "name": "ISSA"
+    },
+    {
+     "number": 15,
+     "pos": "MF",
+     "name": "EL MOURABET"
+    },
+    {
+     "number": 16,
+     "pos": "MF",
+     "name": "YASSINE"
+    },
+    {
+     "number": 17,
+     "pos": "FW",
+     "name": "SBAÏ"
+    },
+    {
+     "number": 18,
+     "pos": "DF",
+     "name": "RIAD"
+    },
+    {
+     "number": 19,
+     "pos": "DF",
+     "name": "BELAMMARI"
+    },
+    {
+     "number": 20,
+     "pos": "FW",
+     "name": "EL KAABI"
+    },
+    {
+     "number": 21,
+     "pos": "FW",
+     "name": "AMAIMOUNI"
+    },
+    {
+     "number": 22,
+     "pos": "GK",
+     "name": "TAGNAOUTI"
+    },
+    {
+     "number": 23,
+     "pos": "MF",
+     "name": "EL KHANNOUSS"
+    },
+    {
+     "number": 24,
+     "pos": "MF",
+     "name": "EL AYNAOUI"
+    },
+    {
+     "number": 25,
+     "pos": "DF",
+     "name": "HALHAL"
+    },
+    {
+     "number": 26,
+     "pos": "DF",
+     "name": "SALAH-EDDINE"
+    }
+   ]
+  },
+  {
+   "name": "Netherlands",
+   "code": "NED",
+   "players": [
+    {
+     "number": 1,
+     "pos": "GK",
+     "name": "VERBRUGGEN"
+    },
+    {
+     "number": 2,
+     "pos": "DF",
+     "name": "GEERTRUIDA"
+    },
+    {
+     "number": 3,
+     "pos": "MF",
+     "name": "DE ROON"
+    },
+    {
+     "number": 4,
+     "pos": "DF",
+     "name": "VIRGIL"
+    },
+    {
+     "number": 5,
+     "pos": "DF",
+     "name": "AKÉ"
+    },
+    {
+     "number": 6,
+     "pos": "DF",
+     "name": "VAN HECKE"
+    },
+    {
+     "number": 7,
+     "pos": "MF",
+     "name": "KLUIVERT"
+    },
+    {
+     "number": 8,
+     "pos": "MF",
+     "name": "GRAVENBERCH"
+    },
+    {
+     "number": 9,
+     "pos": "FW",
+     "name": "WEGHORST"
+    },
+    {
+     "number": 10,
+     "pos": "FW",
+     "name": "MEMPHIS"
+    },
+    {
+     "number": 11,
+     "pos": "FW",
+     "name": "GAKPO"
+    },
+    {
+     "number": 12,
+     "pos": "DF",
+     "name": "WIEFFER"
+    },
+    {
+     "number": 13,
+     "pos": "GK",
+     "name": "ROEFS"
+    },
+    {
+     "number": 14,
+     "pos": "MF",
+     "name": "REIJNDERS"
+    },
+    {
+     "number": 15,
+     "pos": "DF",
+     "name": "VAN DE VEN"
+    },
+    {
+     "number": 16,
+     "pos": "MF",
+     "name": "TIL"
+    },
+    {
+     "number": 17,
+     "pos": "FW",
+     "name": "LANG"
+    },
+    {
+     "number": 18,
+     "pos": "FW",
+     "name": "MALEN"
+    },
+    {
+     "number": 19,
+     "pos": "FW",
+     "name": "BROBBEY"
+    },
+    {
+     "number": 20,
+     "pos": "MF",
+     "name": "KOOPMEINERS"
+    },
+    {
+     "number": 21,
+     "pos": "MF",
+     "name": "F. DE JONG"
+    },
+    {
+     "number": 22,
+     "pos": "DF",
+     "name": "DUMFRIES"
+    },
+    {
+     "number": 23,
+     "pos": "GK",
+     "name": "FLEKKEN"
+    },
+    {
+     "number": 24,
+     "pos": "FW",
+     "name": "SUMMERVILLE"
+    },
+    {
+     "number": 25,
+     "pos": "DF",
+     "name": "HATO"
+    },
+    {
+     "number": 26,
+     "pos": "MF",
+     "name": "Q. TIMBER"
+    }
+   ]
+  },
+  {
+   "name": "New Zealand",
+   "code": "NZL",
+   "players": [
+    {
+     "number": 1,
+     "pos": "GK",
+     "name": "CROCOMBE"
+    },
+    {
+     "number": 2,
+     "pos": "DF",
+     "name": "PAYNE"
+    },
+    {
+     "number": 3,
+     "pos": "DF",
+     "name": "DE VRIES"
+    },
+    {
+     "number": 4,
+     "pos": "DF",
+     "name": "BINDON"
+    },
+    {
+     "number": 5,
+     "pos": "DF",
+     "name": "BOXALL"
+    },
+    {
+     "number": 6,
+     "pos": "MF",
+     "name": "BELL"
+    },
+    {
+     "number": 7,
+     "pos": "FW",
+     "name": "ROGERSON"
+    },
+    {
+     "number": 8,
+     "pos": "MF",
+     "name": "STAMENIC"
+    },
+    {
+     "number": 9,
+     "pos": "FW",
+     "name": "WOOD"
+    },
+    {
+     "number": 10,
+     "pos": "MF",
+     "name": "SINGH"
+    },
+    {
+     "number": 11,
+     "pos": "MF",
+     "name": "JUST"
+    },
+    {
+     "number": 12,
+     "pos": "GK",
+     "name": "PAULSEN"
+    },
+    {
+     "number": 13,
+     "pos": "DF",
+     "name": "CACACE"
+    },
+    {
+     "number": 14,
+     "pos": "MF",
+     "name": "RUFER"
+    },
+    {
+     "number": 15,
+     "pos": "DF",
+     "name": "PIJNAKER"
+    },
+    {
+     "number": 16,
+     "pos": "DF",
+     "name": "SURMAN"
+    },
+    {
+     "number": 17,
+     "pos": "FW",
+     "name": "BARBAROUSES"
+    },
+    {
+     "number": 18,
+     "pos": "FW",
+     "name": "WAINE"
+    },
+    {
+     "number": 19,
+     "pos": "MF",
+     "name": "OLD"
+    },
+    {
+     "number": 20,
+     "pos": "MF",
+     "name": "MCCOWATT"
+    },
+    {
+     "number": 21,
+     "pos": "FW",
+     "name": "RANDALL"
+    },
+    {
+     "number": 22,
+     "pos": "GK",
+     "name": "WOUD"
+    },
+    {
+     "number": 23,
+     "pos": "MF",
+     "name": "THOMAS"
+    },
+    {
+     "number": 24,
+     "pos": "DF",
+     "name": "ELLIOT"
+    },
+    {
+     "number": 25,
+     "pos": "MF",
+     "name": "BAYLISS"
+    },
+    {
+     "number": 26,
+     "pos": "DF",
+     "name": "SMITH"
+    }
+   ]
+  },
+  {
+   "name": "Norway",
+   "code": "NOR",
+   "players": [
+    {
+     "number": 1,
+     "pos": "GK",
+     "name": "NYLAND"
+    },
+    {
+     "number": 2,
+     "pos": "MF",
+     "name": "THORSBY"
+    },
+    {
+     "number": 3,
+     "pos": "DF",
+     "name": "VASSBAKK AJER"
+    },
+    {
+     "number": 4,
+     "pos": "DF",
+     "name": "ØSTIGÅRD"
+    },
+    {
+     "number": 5,
+     "pos": "DF",
+     "name": "MØLLER WOLFE"
+    },
+    {
+     "number": 6,
+     "pos": "MF",
+     "name": "BERG"
+    },
+    {
+     "number": 7,
+     "pos": "FW",
+     "name": "SØRLOTH"
+    },
+    {
+     "number": 8,
+     "pos": "MF",
+     "name": "BERGE"
+    },
+    {
+     "number": 9,
+     "pos": "FW",
+     "name": "BRAUT HAALAND"
+    },
+    {
+     "number": 10,
+     "pos": "MF",
+     "name": "ØDEGAARD"
+    },
+    {
+     "number": 11,
+     "pos": "FW",
+     "name": "STRAND LARSEN"
+    },
+    {
+     "number": 12,
+     "pos": "GK",
+     "name": "TANGVIK"
+    },
+    {
+     "number": 13,
+     "pos": "GK",
+     "name": "SELVIK"
+    },
+    {
+     "number": 14,
+     "pos": "MF",
+     "name": "AURSNES"
+    },
+    {
+     "number": 15,
+     "pos": "DF",
+     "name": "BJØRKAN"
+    },
+    {
+     "number": 16,
+     "pos": "DF",
+     "name": "HOLMGREN"
+    },
+    {
+     "number": 17,
+     "pos": "DF",
+     "name": "HEGGEM"
+    },
+    {
+     "number": 18,
+     "pos": "MF",
+     "name": "THORSTVEDT"
+    },
+    {
+     "number": 19,
+     "pos": "MF",
+     "name": "AASGAARD"
+    },
+    {
+     "number": 20,
+     "pos": "FW",
+     "name": "NUSA"
+    },
+    {
+     "number": 21,
+     "pos": "MF",
+     "name": "SCHJELDERUP"
+    },
+    {
+     "number": 22,
+     "pos": "MF",
+     "name": "BOBB"
+    },
+    {
+     "number": 23,
+     "pos": "MF",
+     "name": "HAUGE"
+    },
+    {
+     "number": 24,
+     "pos": "DF",
+     "name": "LANGÅS"
+    },
+    {
+     "number": 25,
+     "pos": "DF",
+     "name": "FALCHENER"
+    },
+    {
+     "number": 26,
+     "pos": "FW",
+     "name": "RYERSON"
+    }
+   ]
+  },
+  {
+   "name": "Panama",
+   "code": "PAN",
+   "players": [
+    {
+     "number": 1,
+     "pos": "GK",
+     "name": "MEJIA"
+    },
+    {
+     "number": 2,
+     "pos": "DF",
+     "name": "BLACKMAN"
+    },
+    {
+     "number": 3,
+     "pos": "DF",
+     "name": "CORDOBA"
+    },
+    {
+     "number": 4,
+     "pos": "DF",
+     "name": "F. ESCOBAR"
+    },
+    {
+     "number": 5,
+     "pos": "DF",
+     "name": "FARIÑA"
+    },
+    {
+     "number": 6,
+     "pos": "MF",
+     "name": "MARTÍNEZ"
+    },
+    {
+     "number": 7,
+     "pos": "MF",
+     "name": "J.L. RODRÍGUEZ"
+    },
+    {
+     "number": 8,
+     "pos": "MF",
+     "name": "CARRASQUILLA"
+    },
+    {
+     "number": 9,
+     "pos": "FW",
+     "name": "T. RODRÍGUEZ"
+    },
+    {
+     "number": 10,
+     "pos": "MF",
+     "name": "ISMAEL"
+    },
+    {
+     "number": 11,
+     "pos": "MF",
+     "name": "BÁRCENAS"
+    },
+    {
+     "number": 12,
+     "pos": "GK",
+     "name": "SAMUDIO"
+    },
+    {
+     "number": 13,
+     "pos": "DF",
+     "name": "RAMOS"
+    },
+    {
+     "number": 14,
+     "pos": "DF",
+     "name": "HARVEY"
+    },
+    {
+     "number": 15,
+     "pos": "DF",
+     "name": "DAVIS"
+    },
+    {
+     "number": 16,
+     "pos": "DF",
+     "name": "ANDRADE"
+    },
+    {
+     "number": 17,
+     "pos": "FW",
+     "name": "FAJARDO"
+    },
+    {
+     "number": 18,
+     "pos": "FW",
+     "name": "WATERMAN"
+    },
+    {
+     "number": 19,
+     "pos": "MF",
+     "name": "QUINTERO"
+    },
+    {
+     "number": 20,
+     "pos": "MF",
+     "name": "GODOY"
+    },
+    {
+     "number": 21,
+     "pos": "MF",
+     "name": "YANIS"
+    },
+    {
+     "number": 22,
+     "pos": "GK",
+     "name": "MOSQUERA"
+    },
+    {
+     "number": 23,
+     "pos": "DF",
+     "name": "A. MURILLO"
+    },
+    {
+     "number": 24,
+     "pos": "FW",
+     "name": "LONDOÑO"
+    },
+    {
+     "number": 25,
+     "pos": "DF",
+     "name": "MILLER"
+    },
+    {
+     "number": 26,
+     "pos": "DF",
+     "name": "GUTIÉRREZ"
+    }
+   ]
+  },
+  {
+   "name": "Paraguay",
+   "code": "PAR",
+   "players": [
+    {
+     "number": 1,
+     "pos": "GK",
+     "name": "FERNÁNDEZ"
+    },
+    {
+     "number": 2,
+     "pos": "DF",
+     "name": "VELÁZQUEZ"
+    },
+    {
+     "number": 3,
+     "pos": "DF",
+     "name": "ALDERETE"
+    },
+    {
+     "number": 4,
+     "pos": "DF",
+     "name": "CÁCERES"
+    },
+    {
+     "number": 5,
+     "pos": "DF",
+     "name": "BALBUENA"
+    },
+    {
+     "number": 6,
+     "pos": "DF",
+     "name": "ALONSO"
+    },
+    {
+     "number": 7,
+     "pos": "MF",
+     "name": "SOSA"
+    },
+    {
+     "number": 8,
+     "pos": "MF",
+     "name": "D. GÓMEZ"
+    },
+    {
+     "number": 9,
+     "pos": "FW",
+     "name": "SANABRIA"
+    },
+    {
+     "number": 10,
+     "pos": "MF",
+     "name": "ALMIRÓN"
+    },
+    {
+     "number": 11,
+     "pos": "MF",
+     "name": "MAURICIO"
+    },
+    {
+     "number": 12,
+     "pos": "GK",
+     "name": "O. GILL"
+    },
+    {
+     "number": 13,
+     "pos": "DF",
+     "name": "CANALE"
+    },
+    {
+     "number": 14,
+     "pos": "MF",
+     "name": "CUBAS"
+    },
+    {
+     "number": 15,
+     "pos": "DF",
+     "name": "G. GÓMEZ"
+    },
+    {
+     "number": 16,
+     "pos": "MF",
+     "name": "BOBADILLA"
+    },
+    {
+     "number": 17,
+     "pos": "FW",
+     "name": "R. GAMARRA"
+    },
+    {
+     "number": 18,
+     "pos": "FW",
+     "name": "ARCE"
+    },
+    {
+     "number": 19,
+     "pos": "FW",
+     "name": "ENCISO"
+    },
+    {
+     "number": 20,
+     "pos": "MF",
+     "name": "OJEDA"
+    },
+    {
+     "number": 21,
+     "pos": "FW",
+     "name": "AVALOS"
+    },
+    {
+     "number": 22,
+     "pos": "GK",
+     "name": "OLVEIRA"
+    },
+    {
+     "number": 23,
+     "pos": "MF",
+     "name": "GALARZA"
+    },
+    {
+     "number": 24,
+     "pos": "MF",
+     "name": "CABALLERO"
+    },
+    {
+     "number": 25,
+     "pos": "FW",
+     "name": "PITTA"
+    },
+    {
+     "number": 26,
+     "pos": "DF",
+     "name": "MAIDANA"
+    }
+   ]
+  },
+  {
+   "name": "Portugal",
+   "code": "POR",
+   "players": [
+    {
+     "number": 1,
+     "pos": "GK",
+     "name": "DIOGO COSTA"
+    },
+    {
+     "number": 2,
+     "pos": "DF",
+     "name": "N. SEMEDO"
+    },
+    {
+     "number": 3,
+     "pos": "DF",
+     "name": "RÚBEN DIAS"
+    },
+    {
+     "number": 4,
+     "pos": "DF",
+     "name": "TOMÁS A."
+    },
+    {
+     "number": 5,
+     "pos": "DF",
+     "name": "DALOT"
+    },
+    {
+     "number": 6,
+     "pos": "MF",
+     "name": "MATHEUS N."
+    },
+    {
+     "number": 7,
+     "pos": "FW",
+     "name": "RONALDO"
+    },
+    {
+     "number": 8,
+     "pos": "MF",
+     "name": "B. FERNANDES"
+    },
+    {
+     "number": 9,
+     "pos": "FW",
+     "name": "G. RAMOS"
+    },
+    {
+     "number": 10,
+     "pos": "MF",
+     "name": "BERNARDO"
+    },
+    {
+     "number": 11,
+     "pos": "FW",
+     "name": "JOÃO FÉLIX"
+    },
+    {
+     "number": 12,
+     "pos": "GK",
+     "name": "JOSÉ SÁ"
+    },
+    {
+     "number": 13,
+     "pos": "DF",
+     "name": "RENATO VEIGA"
+    },
+    {
+     "number": 14,
+     "pos": "DF",
+     "name": "G. INÁCIO"
+    },
+    {
+     "number": 15,
+     "pos": "MF",
+     "name": "JOÃO NEVES"
+    },
+    {
+     "number": 16,
+     "pos": "FW",
+     "name": "TRINCÃO"
+    },
+    {
+     "number": 17,
+     "pos": "FW",
+     "name": "RAFA LEÃO"
+    },
+    {
+     "number": 18,
+     "pos": "FW",
+     "name": "NETO"
+    },
+    {
+     "number": 19,
+     "pos": "FW",
+     "name": "G. GUEDES"
+    },
+    {
+     "number": 20,
+     "pos": "DF",
+     "name": "JOÃO CANCELO"
+    },
+    {
+     "number": 21,
+     "pos": "MF",
+     "name": "R. NEVES"
+    },
+    {
+     "number": 22,
+     "pos": "GK",
+     "name": "RUI SILVA"
+    },
+    {
+     "number": 23,
+     "pos": "MF",
+     "name": "VITINHA"
+    },
+    {
+     "number": 24,
+     "pos": "DF",
+     "name": "SAMU"
+    },
+    {
+     "number": 25,
+     "pos": "DF",
+     "name": "N. MENDES"
+    },
+    {
+     "number": 26,
+     "pos": "FW",
+     "name": "F. CONCEIÇÃO"
+    }
+   ]
+  },
+  {
+   "name": "Qatar",
+   "code": "QAT",
+   "players": [
+    {
+     "number": 1,
+     "pos": "GK",
+     "name": "ABUNADA"
+    },
+    {
+     "number": 2,
+     "pos": "DF",
+     "name": "PEDRO"
+    },
+    {
+     "number": 3,
+     "pos": "DF",
+     "name": "L.MENDES"
+    },
+    {
+     "number": 4,
+     "pos": "DF",
+     "name": "GUEYE"
+    },
+    {
+     "number": 5,
+     "pos": "DF",
+     "name": "JASSEM"
+    },
+    {
+     "number": 6,
+     "pos": "MF",
+     "name": "A. AZIZ"
+    },
+    {
+     "number": 7,
+     "pos": "FW",
+     "name": "ALAAELDIN"
+    },
+    {
+     "number": 8,
+     "pos": "FW",
+     "name": "EDMILSON JR."
+    },
+    {
+     "number": 9,
+     "pos": "FW",
+     "name": "MUNTARI"
+    },
+    {
+     "number": 10,
+     "pos": "FW",
+     "name": "ALHAYDOS"
+    },
+    {
+     "number": 11,
+     "pos": "FW",
+     "name": "AFIF"
+    },
+    {
+     "number": 12,
+     "pos": "MF",
+     "name": "KARIM"
+    },
+    {
+     "number": 13,
+     "pos": "DF",
+     "name": "AYOUB"
+    },
+    {
+     "number": 14,
+     "pos": "DF",
+     "name": "HOMAM"
+    },
+    {
+     "number": 15,
+     "pos": "FW",
+     "name": "YUSUF"
+    },
+    {
+     "number": 16,
+     "pos": "DF",
+     "name": "KHOUKHI"
+    },
+    {
+     "number": 17,
+     "pos": "MF",
+     "name": "A. ALGANEHI"
+    },
+    {
+     "number": 18,
+     "pos": "DF",
+     "name": "SULTAN"
+    },
+    {
+     "number": 19,
+     "pos": "FW",
+     "name": "ALMOEZ"
+    },
+    {
+     "number": 20,
+     "pos": "MF",
+     "name": "A. FATHY"
+    },
+    {
+     "number": 21,
+     "pos": "GK",
+     "name": "SALAH"
+    },
+    {
+     "number": 22,
+     "pos": "GK",
+     "name": "BARSHAM"
+    },
+    {
+     "number": 23,
+     "pos": "MF",
+     "name": "MADIBO"
+    },
+    {
+     "number": 24,
+     "pos": "FW",
+     "name": "TAHSIN"
+    },
+    {
+     "number": 25,
+     "pos": "DF",
+     "name": "ALHASHMI"
+    },
+    {
+     "number": 26,
+     "pos": "FW",
+     "name": "MANAI"
+    }
+   ]
+  },
+  {
+   "name": "Saudi Arabia",
+   "code": "KSA",
+   "players": [
+    {
+     "number": 1,
+     "pos": "GK",
+     "name": "ALAQIDI"
+    },
+    {
+     "number": 2,
+     "pos": "DF",
+     "name": "MAJRASHI"
+    },
+    {
+     "number": 3,
+     "pos": "DF",
+     "name": "LAJAMI"
+    },
+    {
+     "number": 4,
+     "pos": "DF",
+     "name": "ALAMRI"
+    },
+    {
+     "number": 5,
+     "pos": "DF",
+     "name": "ALTAMBAKTI"
+    },
+    {
+     "number": 6,
+     "pos": "MF",
+     "name": "NASSER"
+    },
+    {
+     "number": 7,
+     "pos": "MF",
+     "name": "MUSAB"
+    },
+    {
+     "number": 8,
+     "pos": "FW",
+     "name": "AIMAN"
+    },
+    {
+     "number": 9,
+     "pos": "FW",
+     "name": "FERAS"
+    },
+    {
+     "number": 10,
+     "pos": "FW",
+     "name": "SALEM"
+    },
+    {
+     "number": 11,
+     "pos": "FW",
+     "name": "ALSHEHRI"
+    },
+    {
+     "number": 12,
+     "pos": "DF",
+     "name": "SAUD"
+    },
+    {
+     "number": 13,
+     "pos": "DF",
+     "name": "NAWAF"
+    },
+    {
+     "number": 14,
+     "pos": "DF",
+     "name": "KADISH"
+    },
+    {
+     "number": 15,
+     "pos": "MF",
+     "name": "ALKHAIBARI"
+    },
+    {
+     "number": 16,
+     "pos": "MF",
+     "name": "ZIYAD"
+    },
+    {
+     "number": 17,
+     "pos": "FW",
+     "name": "KHALID"
+    },
+    {
+     "number": 18,
+     "pos": "MF",
+     "name": "ALHAJJI"
+    },
+    {
+     "number": 19,
+     "pos": "FW",
+     "name": "ALHAMDDAN"
+    },
+    {
+     "number": 20,
+     "pos": "FW",
+     "name": "MANDASH"
+    },
+    {
+     "number": 21,
+     "pos": "GK",
+     "name": "ALOWAIS"
+    },
+    {
+     "number": 22,
+     "pos": "GK",
+     "name": "ALKASSAR"
+    },
+    {
+     "number": 23,
+     "pos": "MF",
+     "name": "KANNO"
+    },
+    {
+     "number": 24,
+     "pos": "DF",
+     "name": "MOTEB"
+    },
+    {
+     "number": 25,
+     "pos": "DF",
+     "name": "JEHAD"
+    },
+    {
+     "number": 26,
+     "pos": "DF",
+     "name": "MOHAMMED"
+    }
+   ]
+  },
+  {
+   "name": "Scotland",
+   "code": "SCO",
+   "players": [
+    {
+     "number": 1,
+     "pos": "GK",
+     "name": "GUNN"
+    },
+    {
+     "number": 2,
+     "pos": "DF",
+     "name": "HICKEY"
+    },
+    {
+     "number": 3,
+     "pos": "DF",
+     "name": "ROBERTSON"
+    },
+    {
+     "number": 4,
+     "pos": "MF",
+     "name": "MCTOMINAY"
+    },
+    {
+     "number": 5,
+     "pos": "DF",
+     "name": "HANLEY"
+    },
+    {
+     "number": 6,
+     "pos": "DF",
+     "name": "TIERNEY"
+    },
+    {
+     "number": 7,
+     "pos": "MF",
+     "name": "MCGINN"
+    },
+    {
+     "number": 8,
+     "pos": "MF",
+     "name": "FLETCHER"
+    },
+    {
+     "number": 9,
+     "pos": "FW",
+     "name": "DYKES"
+    },
+    {
+     "number": 10,
+     "pos": "FW",
+     "name": "ADAMS"
+    },
+    {
+     "number": 11,
+     "pos": "MF",
+     "name": "CHRISTIE"
+    },
+    {
+     "number": 12,
+     "pos": "GK",
+     "name": "KELLY"
+    },
+    {
+     "number": 13,
+     "pos": "DF",
+     "name": "HENDRY"
+    },
+    {
+     "number": 14,
+     "pos": "FW",
+     "name": "STEWART"
+    },
+    {
+     "number": 15,
+     "pos": "DF",
+     "name": "SOUTTAR"
+    },
+    {
+     "number": 16,
+     "pos": "DF",
+     "name": "HYAM"
+    },
+    {
+     "number": 17,
+     "pos": "FW",
+     "name": "GANNON DOAK"
+    },
+    {
+     "number": 18,
+     "pos": "FW",
+     "name": "HIRST"
+    },
+    {
+     "number": 19,
+     "pos": "MF",
+     "name": "FERGUSON"
+    },
+    {
+     "number": 20,
+     "pos": "FW",
+     "name": "SHANKLAND"
+    },
+    {
+     "number": 21,
+     "pos": "GK",
+     "name": "GORDON"
+    },
+    {
+     "number": 22,
+     "pos": "DF",
+     "name": "PATTERSON"
+    },
+    {
+     "number": 23,
+     "pos": "MF",
+     "name": "MCLEAN"
+    },
+    {
+     "number": 24,
+     "pos": "DF",
+     "name": "RALSTON"
+    },
+    {
+     "number": 25,
+     "pos": "FW",
+     "name": "CURTIS"
+    },
+    {
+     "number": 26,
+     "pos": "DF",
+     "name": "MCKENNA"
+    }
+   ]
+  },
+  {
+   "name": "Senegal",
+   "code": "SEN",
+   "players": [
+    {
+     "number": 1,
+     "pos": "GK",
+     "name": "Y. DIOUF"
+    },
+    {
+     "number": 2,
+     "pos": "DF",
+     "name": "SARR"
+    },
+    {
+     "number": 3,
+     "pos": "DF",
+     "name": "KOULIBALY"
+    },
+    {
+     "number": 4,
+     "pos": "DF",
+     "name": "SECK"
+    },
+    {
+     "number": 5,
+     "pos": "MF",
+     "name": "GANA"
+    },
+    {
+     "number": 6,
+     "pos": "MF",
+     "name": "P.I. CISS"
+    },
+    {
+     "number": 7,
+     "pos": "FW",
+     "name": "A. DIAO"
+    },
+    {
+     "number": 8,
+     "pos": "MF",
+     "name": "LAMINE"
+    },
+    {
+     "number": 9,
+     "pos": "FW",
+     "name": "BAMBA"
+    },
+    {
+     "number": 10,
+     "pos": "FW",
+     "name": "MANÉ"
+    },
+    {
+     "number": 11,
+     "pos": "FW",
+     "name": "N. JACKSON"
+    },
+    {
+     "number": 12,
+     "pos": "FW",
+     "name": "CHÉRIF"
+    },
+    {
+     "number": 13,
+     "pos": "FW",
+     "name": "NDIAYE"
+    },
+    {
+     "number": 14,
+     "pos": "DF",
+     "name": "JAKOBS"
+    },
+    {
+     "number": 15,
+     "pos": "DF",
+     "name": "DIATTA"
+    },
+    {
+     "number": 16,
+     "pos": "GK",
+     "name": "MENDY"
+    },
+    {
+     "number": 17,
+     "pos": "MF",
+     "name": "P.M. SARR"
+    },
+    {
+     "number": 18,
+     "pos": "FW",
+     "name": "ISMAÏLA"
+    },
+    {
+     "number": 19,
+     "pos": "DF",
+     "name": "NIAKHATÉ"
+    },
+    {
+     "number": 20,
+     "pos": "FW",
+     "name": "I. MBAYE"
+    },
+    {
+     "number": 21,
+     "pos": "MF",
+     "name": "H. DIARRA"
+    },
+    {
+     "number": 22,
+     "pos": "MF",
+     "name": "BARA"
+    },
+    {
+     "number": 23,
+     "pos": "GK",
+     "name": "DIAW"
+    },
+    {
+     "number": 24,
+     "pos": "DF",
+     "name": "A. MENDY"
+    },
+    {
+     "number": 25,
+     "pos": "DF",
+     "name": "DIOUF"
+    },
+    {
+     "number": 26,
+     "pos": "MF",
+     "name": "GUEYE"
+    }
+   ]
+  },
+  {
+   "name": "South Africa",
+   "code": "RSA",
+   "players": [
+    {
+     "number": 1,
+     "pos": "GK",
+     "name": "WILLIAMS"
+    },
+    {
+     "number": 2,
+     "pos": "DF",
+     "name": "MATULUDI"
+    },
+    {
+     "number": 3,
+     "pos": "DF",
+     "name": "NDAMANE"
+    },
+    {
+     "number": 4,
+     "pos": "MF",
+     "name": "MOKOENA"
+    },
+    {
+     "number": 5,
+     "pos": "MF",
+     "name": "MBATHA"
+    },
+    {
+     "number": 6,
+     "pos": "DF",
+     "name": "MODIBA"
+    },
+    {
+     "number": 7,
+     "pos": "FW",
+     "name": "APPOLLIS"
+    },
+    {
+     "number": 8,
+     "pos": "FW",
+     "name": "MOREMI"
+    },
+    {
+     "number": 9,
+     "pos": "FW",
+     "name": "FOSTER"
+    },
+    {
+     "number": 10,
+     "pos": "FW",
+     "name": "MOFOKENG"
+    },
+    {
+     "number": 11,
+     "pos": "MF",
+     "name": "ZWANE"
+    },
+    {
+     "number": 12,
+     "pos": "FW",
+     "name": "MASEKO"
+    },
+    {
+     "number": 13,
+     "pos": "MF",
+     "name": "SITHOLE"
+    },
+    {
+     "number": 14,
+     "pos": "DF",
+     "name": "MBOKAZI"
+    },
+    {
+     "number": 15,
+     "pos": "FW",
+     "name": "RAYNERS"
+    },
+    {
+     "number": 16,
+     "pos": "GK",
+     "name": "CHAINE"
+    },
+    {
+     "number": 17,
+     "pos": "FW",
+     "name": "MAKGPA"
+    },
+    {
+     "number": 18,
+     "pos": "DF",
+     "name": "KABINI"
+    },
+    {
+     "number": 19,
+     "pos": "DF",
+     "name": "SIBISI"
+    },
+    {
+     "number": 20,
+     "pos": "DF",
+     "name": "MUDAU"
+    },
+    {
+     "number": 21,
+     "pos": "DF",
+     "name": "OKON"
+    },
+    {
+     "number": 22,
+     "pos": "GK",
+     "name": "GOSS"
+    },
+    {
+     "number": 23,
+     "pos": "MF",
+     "name": "ADAMS"
+    },
+    {
+     "number": 24,
+     "pos": "DF",
+     "name": "MAKHANYA"
+    },
+    {
+     "number": 25,
+     "pos": "FW",
+     "name": "SEBELEBELE"
+    },
+    {
+     "number": 26,
+     "pos": "DF",
+     "name": "CROSS"
+    }
+   ]
+  },
+  {
+   "name": "Spain",
+   "code": "ESP",
+   "players": [
+    {
+     "number": 1,
+     "pos": "GK",
+     "name": "RAYA"
+    },
+    {
+     "number": 2,
+     "pos": "DF",
+     "name": "MARC PUBILL"
+    },
+    {
+     "number": 3,
+     "pos": "DF",
+     "name": "GRIMALDO"
+    },
+    {
+     "number": 4,
+     "pos": "DF",
+     "name": "ERIC"
+    },
+    {
+     "number": 5,
+     "pos": "DF",
+     "name": "M. LLORENTE"
+    },
+    {
+     "number": 6,
+     "pos": "MF",
+     "name": "MERINO"
+    },
+    {
+     "number": 7,
+     "pos": "FW",
+     "name": "FERRAN"
+    },
+    {
+     "number": 8,
+     "pos": "MF",
+     "name": "FABIÁN"
+    },
+    {
+     "number": 9,
+     "pos": "MF",
+     "name": "GAVI"
+    },
+    {
+     "number": 10,
+     "pos": "FW",
+     "name": "OLMO"
+    },
+    {
+     "number": 11,
+     "pos": "FW",
+     "name": "YEREMY"
+    },
+    {
+     "number": 12,
+     "pos": "DF",
+     "name": "PEDRO PORRO"
+    },
+    {
+     "number": 13,
+     "pos": "GK",
+     "name": "JOAN GARCIA"
+    },
+    {
+     "number": 14,
+     "pos": "DF",
+     "name": "LAPORTE"
+    },
+    {
+     "number": 15,
+     "pos": "MF",
+     "name": "ALEX B."
+    },
+    {
+     "number": 16,
+     "pos": "MF",
+     "name": "RODRIGO"
+    },
+    {
+     "number": 17,
+     "pos": "FW",
+     "name": "WILLIAMS JR."
+    },
+    {
+     "number": 18,
+     "pos": "MF",
+     "name": "ZUBIMENDI"
+    },
+    {
+     "number": 19,
+     "pos": "FW",
+     "name": "LAMINE YAMAL"
+    },
+    {
+     "number": 20,
+     "pos": "MF",
+     "name": "PEDRI"
+    },
+    {
+     "number": 21,
+     "pos": "FW",
+     "name": "OYARZABAL"
+    },
+    {
+     "number": 22,
+     "pos": "DF",
+     "name": "CUBARSÍ"
+    },
+    {
+     "number": 23,
+     "pos": "GK",
+     "name": "UNAI SIMÓN"
+    },
+    {
+     "number": 24,
+     "pos": "DF",
+     "name": "CUCURELLA"
+    },
+    {
+     "number": 25,
+     "pos": "FW",
+     "name": "VICTOR M.V."
+    },
+    {
+     "number": 26,
+     "pos": "FW",
+     "name": "B. IGLESIAS"
+    }
+   ]
+  },
+  {
+   "name": "Sweden",
+   "code": "SWE",
+   "players": [
+    {
+     "number": 1,
+     "pos": "GK",
+     "name": "ZETTERSTRÖM"
+    },
+    {
+     "number": 2,
+     "pos": "DF",
+     "name": "LAGERBIELKE"
+    },
+    {
+     "number": 3,
+     "pos": "DF",
+     "name": "LINDELÖF"
+    },
+    {
+     "number": 4,
+     "pos": "DF",
+     "name": "HIEN"
+    },
+    {
+     "number": 5,
+     "pos": "DF",
+     "name": "GUDMUNDSSON"
+    },
+    {
+     "number": 6,
+     "pos": "DF",
+     "name": "H. JOHANSSON"
+    },
+    {
+     "number": 7,
+     "pos": "MF",
+     "name": "BERGVALL"
+    },
+    {
+     "number": 8,
+     "pos": "DF",
+     "name": "SVENSSON"
+    },
+    {
+     "number": 9,
+     "pos": "FW",
+     "name": "ISAK"
+    },
+    {
+     "number": 10,
+     "pos": "MF",
+     "name": "NYGREN"
+    },
+    {
+     "number": 11,
+     "pos": "FW",
+     "name": "ELANGA"
+    },
+    {
+     "number": 12,
+     "pos": "GK",
+     "name": "V. JOHANSSON"
+    },
+    {
+     "number": 13,
+     "pos": "MF",
+     "name": "SEMA"
+    },
+    {
+     "number": 14,
+     "pos": "DF",
+     "name": "EKDAL"
+    },
+    {
+     "number": 15,
+     "pos": "DF",
+     "name": "STARFELT"
+    },
+    {
+     "number": 16,
+     "pos": "MF",
+     "name": "KARLSTRÖM"
+    },
+    {
+     "number": 17,
+     "pos": "FW",
+     "name": "GYÖKERES"
+    },
+    {
+     "number": 18,
+     "pos": "MF",
+     "name": "AYARI"
+    },
+    {
+     "number": 19,
+     "pos": "MF",
+     "name": "SVANBERG"
+    },
+    {
+     "number": 20,
+     "pos": "DF",
+     "name": "SMITH"
+    },
+    {
+     "number": 21,
+     "pos": "DF",
+     "name": "BERNHARDSSON"
+    },
+    {
+     "number": 22,
+     "pos": "MF",
+     "name": "ZENELI"
+    },
+    {
+     "number": 23,
+     "pos": "GK",
+     "name": "NORDFELDT"
+    },
+    {
+     "number": 24,
+     "pos": "DF",
+     "name": "STROUD"
+    },
+    {
+     "number": 25,
+     "pos": "FW",
+     "name": "NILSSON"
+    },
+    {
+     "number": 26,
+     "pos": "FW",
+     "name": "ALI"
+    }
+   ]
+  },
+  {
+   "name": "Switzerland",
+   "code": "SUI",
+   "players": [
+    {
+     "number": 1,
+     "pos": "GK",
+     "name": "KOBEL"
+    },
+    {
+     "number": 2,
+     "pos": "DF",
+     "name": "MUHEIM"
+    },
+    {
+     "number": 3,
+     "pos": "DF",
+     "name": "WIDMER"
+    },
+    {
+     "number": 4,
+     "pos": "DF",
+     "name": "ELVEDI"
+    },
+    {
+     "number": 5,
+     "pos": "DF",
+     "name": "AKANJI"
+    },
+    {
+     "number": 6,
+     "pos": "MF",
+     "name": "ZAKARIA"
+    },
+    {
+     "number": 7,
+     "pos": "FW",
+     "name": "EMBOLO"
+    },
+    {
+     "number": 8,
+     "pos": "MF",
+     "name": "FREULER"
+    },
+    {
+     "number": 9,
+     "pos": "MF",
+     "name": "MANZAMBI"
+    },
+    {
+     "number": 10,
+     "pos": "MF",
+     "name": "XHAKA"
+    },
+    {
+     "number": 11,
+     "pos": "FW",
+     "name": "NDOYE"
+    },
+    {
+     "number": 12,
+     "pos": "GK",
+     "name": "MVOGO"
+    },
+    {
+     "number": 13,
+     "pos": "DF",
+     "name": "RODRIGUEZ"
+    },
+    {
+     "number": 14,
+     "pos": "MF",
+     "name": "JASHARI"
+    },
+    {
+     "number": 15,
+     "pos": "MF",
+     "name": "SOW"
+    },
+    {
+     "number": 16,
+     "pos": "FW",
+     "name": "FASSNACHT"
+    },
+    {
+     "number": 17,
+     "pos": "FW",
+     "name": "VARGAS"
+    },
+    {
+     "number": 18,
+     "pos": "DF",
+     "name": "CÖMERT"
+    },
+    {
+     "number": 19,
+     "pos": "FW",
+     "name": "OKAFOR"
+    },
+    {
+     "number": 20,
+     "pos": "MF",
+     "name": "AEBISCHER"
+    },
+    {
+     "number": 21,
+     "pos": "GK",
+     "name": "KELLER"
+    },
+    {
+     "number": 22,
+     "pos": "MF",
+     "name": "RIEDER"
+    },
+    {
+     "number": 23,
+     "pos": "FW",
+     "name": "AMDOUNI"
+    },
+    {
+     "number": 24,
+     "pos": "DF",
+     "name": "AMENDA"
+    },
+    {
+     "number": 25,
+     "pos": "DF",
+     "name": "JAQUEZ"
+    },
+    {
+     "number": 26,
+     "pos": "FW",
+     "name": "ITTEN"
+    }
+   ]
+  },
+  {
+   "name": "Tunisia",
+   "code": "TUN",
+   "players": [
+    {
+     "number": 1,
+     "pos": "GK",
+     "name": "CHAMAKH"
+    },
+    {
+     "number": 2,
+     "pos": "DF",
+     "name": "ABDI"
+    },
+    {
+     "number": 3,
+     "pos": "DF",
+     "name": "TALBI"
+    },
+    {
+     "number": 4,
+     "pos": "DF",
+     "name": "REKIK"
+    },
+    {
+     "number": 5,
+     "pos": "DF",
+     "name": "AROUS"
+    },
+    {
+     "number": 6,
+     "pos": "DF",
+     "name": "BRONN"
+    },
+    {
+     "number": 7,
+     "pos": "FW",
+     "name": "ACHOURI"
+    },
+    {
+     "number": 8,
+     "pos": "FW",
+     "name": "SAAD"
+    },
+    {
+     "number": 9,
+     "pos": "FW",
+     "name": "MASTOURI"
+    },
+    {
+     "number": 10,
+     "pos": "MF",
+     "name": "HANNIBAL"
+    },
+    {
+     "number": 11,
+     "pos": "MF",
+     "name": "GHARBI"
+    },
+    {
+     "number": 12,
+     "pos": "DF",
+     "name": "BEN OUANES"
+    },
+    {
+     "number": 13,
+     "pos": "MF",
+     "name": "KHEDIRA"
+    },
+    {
+     "number": 14,
+     "pos": "MF",
+     "name": "AYARI"
+    },
+    {
+     "number": 15,
+     "pos": "MF",
+     "name": "HADJ MAHMOUD"
+    },
+    {
+     "number": 16,
+     "pos": "GK",
+     "name": "DAHMEN"
+    },
+    {
+     "number": 17,
+     "pos": "MF",
+     "name": "SKHIRI"
+    },
+    {
+     "number": 18,
+     "pos": "FW",
+     "name": "ELLOUMI"
+    },
+    {
+     "number": 19,
+     "pos": "FW",
+     "name": "CHAOUAT"
+    },
+    {
+     "number": 20,
+     "pos": "DF",
+     "name": "VALERY"
+    },
+    {
+     "number": 21,
+     "pos": "DF",
+     "name": "BEN HMIDA"
+    },
+    {
+     "number": 22,
+     "pos": "GK",
+     "name": "BEN HESSEN"
+    },
+    {
+     "number": 23,
+     "pos": "DF",
+     "name": "NEFFATI"
+    },
+    {
+     "number": 24,
+     "pos": "DF",
+     "name": "CHIKHAOUI"
+    },
+    {
+     "number": 25,
+     "pos": "MF",
+     "name": "SLIMANE"
+    },
+    {
+     "number": 26,
+     "pos": "MF",
+     "name": "TOUNEKTI"
+    }
+   ]
+  },
+  {
+   "name": "Türkiye",
+   "code": "TUR",
+   "players": [
+    {
+     "number": 1,
+     "pos": "GK",
+     "name": "MERT"
+    },
+    {
+     "number": 2,
+     "pos": "DF",
+     "name": "ZEKİ ÇELİK"
+    },
+    {
+     "number": 3,
+     "pos": "DF",
+     "name": "DEMİRAL"
+    },
+    {
+     "number": 4,
+     "pos": "DF",
+     "name": "ÇAĞLAR"
+    },
+    {
+     "number": 5,
+     "pos": "MF",
+     "name": "ÖZCAN"
+    },
+    {
+     "number": 6,
+     "pos": "MF",
+     "name": "ORKUN KÖKÇÜ"
+    },
+    {
+     "number": 7,
+     "pos": "FW",
+     "name": "AKTÜRKOĞLU"
+    },
+    {
+     "number": 8,
+     "pos": "FW",
+     "name": "ARDA GÜLER"
+    },
+    {
+     "number": 9,
+     "pos": "FW",
+     "name": "DENİZ GÜL"
+    },
+    {
+     "number": 10,
+     "pos": "MF",
+     "name": "ÇALHANOĞLU"
+    },
+    {
+     "number": 11,
+     "pos": "FW",
+     "name": "YILDIZ"
+    },
+    {
+     "number": 12,
+     "pos": "GK",
+     "name": "ALTAY"
+    },
+    {
+     "number": 13,
+     "pos": "DF",
+     "name": "EREN ELMALI"
+    },
+    {
+     "number": 14,
+     "pos": "DF",
+     "name": "ABDÜLKERİM"
+    },
+    {
+     "number": 15,
+     "pos": "DF",
+     "name": "OZAN KABAK"
+    },
+    {
+     "number": 16,
+     "pos": "MF",
+     "name": "İSMAİL"
+    },
+    {
+     "number": 17,
+     "pos": "FW",
+     "name": "KAHVECİ"
+    },
+    {
+     "number": 18,
+     "pos": "DF",
+     "name": "MERT MÜLDÜR"
+    },
+    {
+     "number": 19,
+     "pos": "FW",
+     "name": "YUNUS"
+    },
+    {
+     "number": 20,
+     "pos": "DF",
+     "name": "F. KADIOĞLU"
+    },
+    {
+     "number": 21,
+     "pos": "FW",
+     "name": "BARIŞ"
+    },
+    {
+     "number": 22,
+     "pos": "MF",
+     "name": "KAAN"
+    },
+    {
+     "number": 23,
+     "pos": "GK",
+     "name": "UĞURCAN"
+    },
+    {
+     "number": 24,
+     "pos": "FW",
+     "name": "OĞUZ"
+    },
+    {
+     "number": 25,
+     "pos": "DF",
+     "name": "SAMET AKAYDIN"
+    },
+    {
+     "number": 26,
+     "pos": "FW",
+     "name": "CAN UZUN"
+    }
+   ]
+  },
+  {
+   "name": "USA",
+   "code": "USA",
+   "players": [
+    {
+     "number": 1,
+     "pos": "GK",
+     "name": "TURNER"
+    },
+    {
+     "number": 2,
+     "pos": "DF",
+     "name": "DEST"
+    },
+    {
+     "number": 3,
+     "pos": "DF",
+     "name": "RICHARDS"
+    },
+    {
+     "number": 4,
+     "pos": "MF",
+     "name": "ADAMS"
+    },
+    {
+     "number": 5,
+     "pos": "DF",
+     "name": "A. ROBINSON"
+    },
+    {
+     "number": 6,
+     "pos": "DF",
+     "name": "TRUSTY"
+    },
+    {
+     "number": 7,
+     "pos": "MF",
+     "name": "REYNA"
+    },
+    {
+     "number": 8,
+     "pos": "MF",
+     "name": "MCKENNIE"
+    },
+    {
+     "number": 9,
+     "pos": "FW",
+     "name": "PEPI"
+    },
+    {
+     "number": 10,
+     "pos": "FW",
+     "name": "PULISIC"
+    },
+    {
+     "number": 11,
+     "pos": "FW",
+     "name": "AARONSON"
+    },
+    {
+     "number": 12,
+     "pos": "DF",
+     "name": "M. ROBINSON"
+    },
+    {
+     "number": 13,
+     "pos": "DF",
+     "name": "REAM"
+    },
+    {
+     "number": 14,
+     "pos": "MF",
+     "name": "BERHALTER"
+    },
+    {
+     "number": 15,
+     "pos": "MF",
+     "name": "ROLDAN"
+    },
+    {
+     "number": 16,
+     "pos": "DF",
+     "name": "FREEMAN"
+    },
+    {
+     "number": 17,
+     "pos": "MF",
+     "name": "TILLMAN"
+    },
+    {
+     "number": 18,
+     "pos": "DF",
+     "name": "ARFSTEN"
+    },
+    {
+     "number": 19,
+     "pos": "FW",
+     "name": "WRIGHT"
+    },
+    {
+     "number": 20,
+     "pos": "FW",
+     "name": "BALOGUN"
+    },
+    {
+     "number": 21,
+     "pos": "FW",
+     "name": "WEAH"
+    },
+    {
+     "number": 22,
+     "pos": "DF",
+     "name": "MCKENZIE"
+    },
+    {
+     "number": 23,
+     "pos": "DF",
+     "name": "SCALLY"
+    },
+    {
+     "number": 24,
+     "pos": "GK",
+     "name": "FREESE"
+    },
+    {
+     "number": 25,
+     "pos": "GK",
+     "name": "BRADY"
+    },
+    {
+     "number": 26,
+     "pos": "FW",
+     "name": "ZENDEJAS"
+    }
+   ]
+  },
+  {
+   "name": "Uruguay",
+   "code": "URU",
+   "players": [
+    {
+     "number": 1,
+     "pos": "GK",
+     "name": "S. ROCHET"
+    },
+    {
+     "number": 2,
+     "pos": "DF",
+     "name": "J.M. GIMÉNEZ"
+    },
+    {
+     "number": 3,
+     "pos": "DF",
+     "name": "S. CACERES"
+    },
+    {
+     "number": 4,
+     "pos": "DF",
+     "name": "R. ARAUJO"
+    },
+    {
+     "number": 5,
+     "pos": "MF",
+     "name": "M. UGARTE"
+    },
+    {
+     "number": 6,
+     "pos": "MF",
+     "name": "R. BENTANCUR"
+    },
+    {
+     "number": 7,
+     "pos": "MF",
+     "name": "N. DE LA CRUZ"
+    },
+    {
+     "number": 8,
+     "pos": "MF",
+     "name": "F. VALVERDE"
+    },
+    {
+     "number": 9,
+     "pos": "FW",
+     "name": "D. NUÑEZ"
+    },
+    {
+     "number": 10,
+     "pos": "MF",
+     "name": "G. DE ARRASCAETA"
+    },
+    {
+     "number": 11,
+     "pos": "FW",
+     "name": "F. PELLISTRI"
+    },
+    {
+     "number": 12,
+     "pos": "GK",
+     "name": "S. MELE"
+    },
+    {
+     "number": 13,
+     "pos": "DF",
+     "name": "G. VARELA"
+    },
+    {
+     "number": 14,
+     "pos": "MF",
+     "name": "A. CANOBBIO"
+    },
+    {
+     "number": 15,
+     "pos": "MF",
+     "name": "E. MARTINEZ"
+    },
+    {
+     "number": 16,
+     "pos": "DF",
+     "name": "M. OLIVERA"
+    },
+    {
+     "number": 17,
+     "pos": "DF",
+     "name": "M. VIÑA"
+    },
+    {
+     "number": 18,
+     "pos": "FW",
+     "name": "B. RODRIGUEZ"
+    },
+    {
+     "number": 19,
+     "pos": "FW",
+     "name": "R. AGUIRRE"
+    },
+    {
+     "number": 20,
+     "pos": "MF",
+     "name": "M. ARAUJO"
+    },
+    {
+     "number": 21,
+     "pos": "FW",
+     "name": "F. VIÑAS"
+    },
+    {
+     "number": 22,
+     "pos": "MF",
+     "name": "J. PIQUEREZ"
+    },
+    {
+     "number": 23,
+     "pos": "GK",
+     "name": "F. MUSLERA"
+    },
+    {
+     "number": 24,
+     "pos": "DF",
+     "name": "S. BUENO"
+    },
+    {
+     "number": 25,
+     "pos": "MF",
+     "name": "J.M. SANABRIA"
+    },
+    {
+     "number": 26,
+     "pos": "MF",
+     "name": "R. ZALAZAR"
+    }
+   ]
+  },
+  {
+   "name": "Uzbekistan",
+   "code": "UZB",
+   "players": [
+    {
+     "number": 1,
+     "pos": "GK",
+     "name": "YUSUPOV"
+    },
+    {
+     "number": 2,
+     "pos": "DF",
+     "name": "KHUSANOV"
+    },
+    {
+     "number": 3,
+     "pos": "DF",
+     "name": "ALIJONOV"
+    },
+    {
+     "number": 4,
+     "pos": "DF",
+     "name": "SAYFIEV"
+    },
+    {
+     "number": 5,
+     "pos": "DF",
+     "name": "ASHURMATOV"
+    },
+    {
+     "number": 6,
+     "pos": "MF",
+     "name": "MOZGOVOY"
+    },
+    {
+     "number": 7,
+     "pos": "MF",
+     "name": "SHUKUROV"
+    },
+    {
+     "number": 8,
+     "pos": "MF",
+     "name": "ISKANDEROV"
+    },
+    {
+     "number": 9,
+     "pos": "MF",
+     "name": "XAMROBEKOV"
+    },
+    {
+     "number": 10,
+     "pos": "MF",
+     "name": "JIYANOV"
+    },
+    {
+     "number": 11,
+     "pos": "MF",
+     "name": "URUNOV"
+    },
+    {
+     "number": 12,
+     "pos": "GK",
+     "name": "NEMATOV"
+    },
+    {
+     "number": 13,
+     "pos": "DF",
+     "name": "NASRULLAEV"
+    },
+    {
+     "number": 14,
+     "pos": "FW",
+     "name": "SHOMURODOV"
+    },
+    {
+     "number": 15,
+     "pos": "DF",
+     "name": "ESHMURODOV"
+    },
+    {
+     "number": 16,
+     "pos": "GK",
+     "name": "ERGASHEV"
+    },
+    {
+     "number": 17,
+     "pos": "MF",
+     "name": "KHAMDAMOV"
+    },
+    {
+     "number": 18,
+     "pos": "DF",
+     "name": "ABDULLAEV"
+    },
+    {
+     "number": 19,
+     "pos": "MF",
+     "name": "GANIEV"
+    },
+    {
+     "number": 20,
+     "pos": "FW",
+     "name": "AMONOV"
+    },
+    {
+     "number": 21,
+     "pos": "FW",
+     "name": "SERGEEV"
+    },
+    {
+     "number": 22,
+     "pos": "MF",
+     "name": "FAYZULLAEV"
+    },
+    {
+     "number": 23,
+     "pos": "MF",
+     "name": "ESANOV"
+    },
+    {
+     "number": 24,
+     "pos": "DF",
+     "name": "KARIMOV"
+    },
+    {
+     "number": 25,
+     "pos": "DF",
+     "name": "ULMASALIYEV"
+    },
+    {
+     "number": 26,
+     "pos": "DF",
+     "name": "UROZOV"
+    }
+   ]
+  }
+ ]
+}

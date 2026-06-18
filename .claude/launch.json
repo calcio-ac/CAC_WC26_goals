@@ -1,0 +1,17 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "gcip-tagger",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["--prefix", "tagger", "run", "dev"],
+      "port": 5180
+    },
+    {
+      "name": "gcip-landing",
+      "runtimeExecutable": "python3",
+      "runtimeArgs": ["-m", "http.server", "5190", "--directory", "landing"],
+      "port": 5190
+    }
+  ]
+}

@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="assets/CAC.svg" />
+    <title>GCIP · Goal Creation Intelligence</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- ── Background video (hero only) ── -->
+    <div class="bg">
+      <video id="bgvideo" autoplay muted loop playsinline poster="assets/wc2026.png">
+        <source src="assets/hero.mp4" type="video/mp4" />
+      </video>
+      <div class="bg-overlay"></div>
+    </div>
+
+    <!-- ── Hero anthem ── -->
+    <audio id="anthem" src="assets/anthem.mp3" loop></audio>
+    <button id="sound" class="sound" aria-label="Toggle sound">
+      <span class="eq"><i></i><i></i><i></i><i></i></span>
+      <span class="sound-label">Play anthem</span>
+    </button>
+
+    <!-- ── Nav ── -->
+    <header class="nav">
+      <a class="brand" href="https://calcioac.com" target="_blank" rel="noopener">
+        <img src="assets/CAC.svg" alt="Calcio AC" class="cac" />
+      </a>
+      <nav class="links">
+        <a href="#shotmap">Shot Map</a>
+        <a href="#goals">Goals</a>
+        <a href="#leaders">Leaders</a>
+      </nav>
+    </header>
+
+    <!-- ── Hero ── -->
+    <section class="hero">
+      <img src="assets/wc2026.png" alt="FIFA World Cup 2026" class="wc-mark" />
+      <div class="eyebrow">Calcio AC · Football Intelligence</div>
+      <h1>GOAL CREATION<br /><span class="green">INTELLIGENCE</span></h1>
+      <p class="lede">
+        Every goal of the FIFA World Cup 2026, decoded — the
+        <strong>Pre-Assist → Assist → Goal</strong> chain, mapped on the pitch. Explore who
+        creates, who finishes, and how.
+      </p>
+      <div class="hero-stats" id="heroStats">
+        <div class="hstat"><b id="sGoals">—</b><span>goals</span></div>
+        <div class="hstat"><b id="sTeams">—</b><span>teams scored</span></div>
+        <div class="hstat"><b id="sPlayers">—</b><span>scorers</span></div>
+        <div class="hstat"><b id="sAssists">—</b><span>assists</span></div>
+      </div>
+      <a class="btn primary" href="#shotmap">Explore the data ▾</a>
+    </section>
+
+    <!-- ── Dashboard ── -->
+    <main class="dash">
+      <!-- filter bar -->
+      <div class="filterbar">
+        <div class="kicker">Filter</div>
+        <select id="teamFilter">
+          <option value="">All teams</option>
+        </select>
+        <span class="filter-count" id="filterCount"></span>
+      </div>
+
+      <!-- shot map -->
+      <section id="shotmap" class="panel">
+        <div class="panel-head">
+          <h2>Shot Map</h2>
+          <div class="legend">
+            <span><i class="d goal"></i> goal location</span>
+            <span><i class="d end"></i> shot end</span>
+            <span class="muted">line = shot trajectory</span>
+          </div>
+        </div>
+        <div id="pitchWrap" class="pitch-wrap"></div>
+      </section>
+
+      <div class="two-col">
+        <!-- goals feed -->
+        <section id="goals" class="panel">
+          <div class="panel-head"><h2>Goals</h2></div>
+          <div id="goalsList" class="goals-list"></div>
+        </section>
+
+        <!-- leaders -->
+        <section id="leaders" class="panel">
+          <div class="panel-head"><h2>Leaders</h2></div>
+          <h3 class="lead-h">Top scorers</h3>
+          <div id="scorers" class="bars"></div>
+          <h3 class="lead-h">Top assisters</h3>
+          <div id="assisters" class="bars"></div>
+          <h3 class="lead-h">How goals are scored</h3>
+          <div id="bodyparts" class="bars"></div>
+        </section>
+      </div>
+
+      <!-- ── Tagger portal CTA ── -->
+      <section class="portal-cta">
+        <div class="kicker">For the data team</div>
+        <h2>Are you a tagger?</h2>
+        <p>Log goals and build the dataset that powers everything above.</p>
+        <a class="btn primary big" href="http://localhost:5180/">Go to Tagger Portal →</a>
+      </section>
+    </main>
+
+    <!-- ── Footer ── -->
+    <footer class="foot">
+      <img src="assets/CAC.svg" alt="Calcio AC" class="cac" />
+      <div>
+        <strong>Goal Creation Intelligence Platform</strong>
+        <span>© 2026 Calcio AC · <a href="https://calcioac.com" target="_blank" rel="noopener">calcioac.com</a></span>
+      </div>
+    </footer>
+
+    <script src="app.js"></script>
+  </body>
+</html>
