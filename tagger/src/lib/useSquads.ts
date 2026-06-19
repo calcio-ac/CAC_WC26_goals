@@ -9,7 +9,7 @@ export function useSquads() {
 
   useEffect(() => {
     if (cache) return;
-    fetch("/assets/squads.json")
+    fetch(`${import.meta.env.BASE_URL}assets/squads.json`)
       .then((r) => r.json())
       .then((d: SquadData) => {
         cache = d;

@@ -26,7 +26,7 @@ export function Login({ auth }: { auth: Auth }) {
   return (
     <div className="gate">
       <div className="gate-card">
-        <img className="cac" src="/assets/CAC.svg" alt="Calcio AC" />
+        <img className="cac" src={`${import.meta.env.BASE_URL}assets/CAC.svg`} alt="Calcio AC" />
         <div className="gate-title">
           GCIP <span className="accent">·</span> TAGGER
         </div>

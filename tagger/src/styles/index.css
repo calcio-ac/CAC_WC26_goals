@@ -1,12 +1,12 @@
 @font-face {
   font-family: "FWC Black";
-  src: url("/assets/fonts/FWC2026-UltraCondensedBlack.ttf") format("truetype");
+  src: url("../fonts/FWC2026-UltraCondensedBlack.ttf") format("truetype");
   font-weight: 900;
   font-display: swap;
 }
 @font-face {
   font-family: "FWC Light";
-  src: url("/assets/fonts/FWC2026-CondensedLight.ttf") format("truetype");
+  src: url("../fonts/FWC2026-CondensedLight.ttf") format("truetype");
   font-weight: 300;
   font-display: swap;
 }

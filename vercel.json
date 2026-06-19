@@ -1,0 +1,8 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "installCommand": "npm install --prefix tagger",
+  "buildCommand": "npm --prefix tagger run build:base && rm -rf public_out && mkdir -p public_out/tagger && cp -R landing/. public_out/ && cp -R tagger/dist/. public_out/tagger/",
+  "outputDirectory": "public_out",
+  "framework": null,
+  "rewrites": [{ "source": "/tagger", "destination": "/tagger/index.html" }]
+}

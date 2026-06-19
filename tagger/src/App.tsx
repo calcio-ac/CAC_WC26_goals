@@ -183,7 +183,7 @@ export function App({ auth }: { auth: Auth | null }) {
     <div className="app">
       <header className="topbar">
         <a className="brand" href={CAC_URL} target="_blank" rel="noopener noreferrer" title="calcioac.com">
-          <img className="cac" src="/assets/CAC.svg" alt="Calcio AC" />
+          <img className="cac" src={`${import.meta.env.BASE_URL}assets/CAC.svg`} alt="Calcio AC" />
           <div>
             <div className="title">
               GCIP <span className="accent">·</span> TAGGER
