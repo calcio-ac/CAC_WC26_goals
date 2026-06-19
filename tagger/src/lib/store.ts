@@ -104,6 +104,18 @@ export function useProject() {
     setActiveSequenceId(null);
   }, []);
 
+  const startNewMatch = useCallback((patch: Partial<MatchMeta>) => {
+    setProject((p) => ({
+      ...emptyProject(),
+      match: {
+        ...emptyMatch(),
+        tagger: p.match.tagger, // preserve the user's name
+        ...patch,
+      },
+    }));
+    setActiveSequenceId(null);
+  }, []);
+
   return {
     project,
     activeSequenceId,
@@ -116,5 +128,6 @@ export function useProject() {
     deleteEvent,
     importProject,
     resetProject,
+    startNewMatch,
   };
 }

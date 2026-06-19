@@ -27,6 +27,7 @@ export function App({ auth }: { auth: Auth | null }) {
     addEvent,
     updateEvent,
     deleteEvent,
+    startNewMatch,
   } = useProject();
 
   const { teams, byCode } = useSquads();
@@ -98,9 +99,14 @@ export function App({ auth }: { auth: Auth | null }) {
     else updateMatch({ awayCode: code, awayTeam: sq?.name ?? code });
   };
 
-  // Quick-load a scheduled match into the project metadata.
   const loadScheduledMatch = (m: typeof scheduledMatches[0]) => {
-    updateMatch({
+    if (project.sequences.length > 0) {
+      if (!window.confirm(`You have ${project.sequences.length} goals logged in the current workspace. Loading a new match will clear them.\n\nAre you sure you want to switch?`)) {
+        return;
+      }
+    }
+    
+    startNewMatch({
       homeCode: m.home_code,
       homeTeam: m.home_team,
       awayCode: m.away_code,
@@ -109,7 +115,10 @@ export function App({ auth }: { auth: Auth | null }) {
       ...(m.video_url ? { videoUrl: m.video_url } : {}),
       ...(m.video_id ? { videoId: m.video_id } : {}),
     });
+    
     if (m.video_url) setUrlInput(m.video_url);
+    else setUrlInput("");
+    
     setMatchPickerOpen(false);
     flash(`Loaded: ${m.home_team} vs ${m.away_team}`);
   };
