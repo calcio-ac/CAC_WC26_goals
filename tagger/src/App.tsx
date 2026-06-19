@@ -45,6 +45,8 @@ export function App({ auth }: { auth: Auth | null }) {
   const [direction, setDirection] = useState<AttackDirection>("ltr");
   // When set, the next pitch click records the shot END location for this event.
   const [awaitingEndFor, setAwaitingEndFor] = useState<string | null>(null);
+  // When set, the next pitch click MOVES this event to the new location (re-plot).
+  const [editingEventId, setEditingEventId] = useState<string | null>(null);
 
   // Per-action country + player selection (used when plotting on the pitch).
   const [sel, setSel] = useState<Record<EventType, Selection>>({
@@ -125,9 +127,28 @@ export function App({ auth }: { auth: Auth | null }) {
   const setSelField = (type: EventType, patch: Partial<Selection>) =>
     setSel((s) => ({ ...s, [type]: { ...s[type], ...patch } }));
 
+  // Re-plot: move an existing event to a new pitch position.
+  const startReplot = useCallback((id: string) => {
+    setEditingEventId(id);
+    setArmed(null);
+    setAwaitingEndFor(null);
+    flash("Click the pitch to move this event");
+  }, [flash]);
+
+  const cancelReplot = useCallback(() => {
+    setEditingEventId(null);
+  }, []);
+
   // Place the armed action at a pitch coordinate.
   const placeAt = useCallback(
     (x: number, y: number) => {
+      // Re-plot mode: move an existing event's START position.
+      if (editingEventId) {
+        updateEvent(editingEventId, { x, y });
+        flash(`Moved to (${x}, ${y}) m`);
+        setEditingEventId(null);
+        return;
+      }
       // Second click of a goal: record the shot END location.
       if (awaitingEndFor) {
         updateEvent(awaitingEndFor, { endX: x, endY: y });
@@ -167,7 +188,7 @@ export function App({ auth }: { auth: Auth | null }) {
         setArmed(armed === "pre_assist" ? "assist" : "goal");
       }
     },
-    [awaitingEndFor, armed, matchTeams.length, activeSequenceId, newSequence, yt, sel, matchMinute, direction, addEvent, updateEvent, flash],
+    [editingEventId, awaitingEndFor, armed, matchTeams.length, activeSequenceId, newSequence, yt, sel, matchMinute, direction, addEvent, updateEvent, flash],
   );
 
   // Keyboard shortcuts.
@@ -180,7 +201,7 @@ export function App({ auth }: { auth: Auth | null }) {
         case "a": setArmed("assist"); break;
         case "g": setArmed("goal"); break;
         case "n": newSequence(); flash("New goal sequence"); break;
-        case "escape": setArmed(null); setAwaitingEndFor(null); break;
+        case "escape": setArmed(null); setAwaitingEndFor(null); setEditingEventId(null); break;
         case " ": e.preventDefault(); yt.togglePlay(); break;
         case "arrowleft": e.preventDefault(); e.shiftKey ? yt.nudge(-5) : yt.frameStep(-1); break;
         case "arrowright": e.preventDefault(); e.shiftKey ? yt.nudge(5) : yt.frameStep(1); break;
@@ -545,7 +566,13 @@ export function App({ auth }: { auth: Auth | null }) {
                 onSelect={setActiveSequenceId}
                 onDeleteSequence={deleteSequence}
                 onDeleteEvent={deleteEvent}
+                onUpdateEvent={updateEvent}
                 onSeek={(t) => yt.seekTo(t)}
+                editingEventId={editingEventId}
+                onStartReplot={startReplot}
+                onCancelReplot={cancelReplot}
+                matchTeams={matchTeams}
+                byCode={byCode}
               />
             </div>
           </div>
