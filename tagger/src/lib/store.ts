@@ -83,14 +83,27 @@ export function useProject() {
   );
 
   const updateEvent = useCallback((id: string, patch: Partial<TaggedEvent>) => {
-    setProject((p) => ({
-      ...p,
-      events: p.events.map((e) => (e.id === id ? { ...e, ...patch } : e)),
-    }));
+    setProject((p) => {
+      const ev = p.events.find((e) => e.id === id);
+      if (!ev) return p;
+      return {
+        ...p,
+        events: p.events.map((e) => (e.id === id ? { ...e, ...patch } : e)),
+        sequences: p.sequences.map((s) => (s.id === ev.sequenceId ? { ...s, syncedAt: undefined } : s)),
+      };
+    });
   }, []);
 
   const deleteEvent = useCallback((id: string) => {
-    setProject((p) => ({ ...p, events: p.events.filter((e) => e.id !== id) }));
+    setProject((p) => {
+      const ev = p.events.find((e) => e.id === id);
+      if (!ev) return p;
+      return {
+        ...p,
+        events: p.events.filter((e) => e.id !== id),
+        sequences: p.sequences.map((s) => (s.id === ev.sequenceId ? { ...s, syncedAt: undefined } : s)),
+      };
+    });
   }, []);
 
   const importProject = useCallback((next: GcipProject) => {

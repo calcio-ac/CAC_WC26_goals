@@ -94,7 +94,7 @@ export async function pushProject(project: GcipProject): Promise<SyncResult> {
     }));
     const { data: seqs, error: sErr } = await supabase
       .from("attack_sequences")
-      .insert(rows)
+      .upsert(rows, { onConflict: "match_id,seq_index" })
       .select("id, seq_index");
     if (sErr) throw sErr;
     const byIndex = new Map<number, string>();
@@ -125,6 +125,12 @@ export async function pushProject(project: GcipProject): Promise<SyncResult> {
         direction: e.direction || "ltr",
         notes: e.notes || null,
       }));
+    const dbSeqIds = [...idMap.values()];
+    if (dbSeqIds.length) {
+      const { error: delErr } = await supabase.from("events").delete().in("sequence_id", dbSeqIds);
+      if (delErr) throw delErr;
+    }
+    
     if (rows.length) {
       const { error: eErr } = await supabase.from("events").insert(rows);
       if (eErr) throw eErr;
