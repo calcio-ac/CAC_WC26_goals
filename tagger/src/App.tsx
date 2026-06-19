@@ -28,6 +28,7 @@ export function App({ auth }: { auth: Auth | null }) {
     updateEvent,
     deleteEvent,
     startNewMatch,
+    markSequencesSynced,
   } = useProject();
 
   const { teams, byCode } = useSquads();
@@ -245,6 +246,15 @@ export function App({ auth }: { auth: Auth | null }) {
     [editingEventId, awaitingEndFor, armed, armedTime, matchTeams.length, activeSequenceId, newSequence, yt, sel, matchMinute, direction, addEvent, updateEvent, flash],
   );
 
+  const cancelSequence = useCallback(() => {
+    if (activeSequenceId) deleteSequence(activeSequenceId);
+    setSequenceTemplate(null);
+    setArmed(null);
+    setArmedTime(null);
+    setAwaitingEndFor(null);
+    flash("Sequence discarded.");
+  }, [activeSequenceId, deleteSequence, flash]);
+
   // Keyboard shortcuts.
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
@@ -258,7 +268,10 @@ export function App({ auth }: { auth: Auth | null }) {
           if (sequenceTemplate) saveSequence();
           else flash("Pick a sequence template to start");
           break;
-        case "escape": armTag(null); setAwaitingEndFor(null); setEditingEventId(null); break;
+        case "escape": 
+          if (sequenceTemplate) cancelSequence();
+          else { armTag(null); setAwaitingEndFor(null); setEditingEventId(null); }
+          break;
         case " ": e.preventDefault(); yt.togglePlay(); break;
         case "arrowleft": e.preventDefault(); e.shiftKey ? yt.nudge(-5) : yt.frameStep(-1); break;
         case "arrowright": e.preventDefault(); e.shiftKey ? yt.nudge(5) : yt.frameStep(1); break;
@@ -266,15 +279,27 @@ export function App({ auth }: { auth: Auth | null }) {
     };
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
-  }, [yt, newSequence, flash, armTag]);
+  }, [yt, sequenceTemplate, newSequence, flash, armTag, saveSequence, cancelSequence]);
+
+  // Calculate sequences that are completely finished (not currently being drafted)
+  const finalizedSequences = project.sequences.filter(s => !sequenceTemplate || s.id !== activeSequenceId);
+  const unsyncedSequences = finalizedSequences.filter(s => !s.syncedAt);
 
   const syncToSupabase = async () => {
-    if (project.sequences.length === 0) return flash("Nothing to sync yet");
+    if (unsyncedSequences.length === 0) return flash("Nothing to sync yet");
     if (!project.match.homeCode || !project.match.awayCode)
       return flash("Pick both teams before syncing");
+    
+    const syncPayload = {
+      ...project,
+      sequences: unsyncedSequences,
+      events: project.events.filter(e => unsyncedSequences.some(s => s.id === e.sequenceId)),
+    };
+
     setSyncing(true);
     try {
-      const r = await pushProject(project);
+      const r = await pushProject(syncPayload);
+      markSequencesSynced(unsyncedSequences.map(s => s.id));
       flash(`Synced ✓ ${r.sequences} goals · ${r.events} events`);
     } catch (err) {
       const msg = err instanceof Error ? err.message : String(err);
@@ -598,8 +623,11 @@ export function App({ auth }: { auth: Auth | null }) {
                   );
                 })}
               </div>
-              <div style={{ marginTop: 16, textAlign: "right", borderTop: "1px solid var(--line)", paddingTop: 12 }}>
-                <button className="btn primary" onClick={saveSequence}>
+              <div style={{ marginTop: 16, display: "flex", gap: 8, borderTop: "1px solid var(--line)", paddingTop: 12 }}>
+                <button className="btn outline" onClick={cancelSequence} style={{ flex: 1, borderColor: "var(--red)", color: "var(--red)" }}>
+                  ✕ Discard <span className="kbd">Esc</span>
+                </button>
+                <button className="btn primary" onClick={saveSequence} style={{ flex: 1 }}>
                   ✓ Save Sequence <span className="kbd" style={{ background: "transparent" }}>N</span>
                 </button>
               </div>
@@ -652,38 +680,41 @@ export function App({ auth }: { auth: Auth | null }) {
         <section className="col col-goals">
           <div className="card" style={{ flex: 1, display: "flex", flexDirection: "column", minHeight: 0 }}>
             <h3 style={{ display: "flex", alignItems: "center", gap: 8 }}>
-              Goals <span className="count">{project.sequences.length}</span>
+              Goals <span className="count">{finalizedSequences.length}</span>
               <span style={{ flex: 1 }} />
-              <button className="btn sm primary" onClick={() => newSequence()}>+ New <span className="kbd">N</span></button>
             </h3>
             
             <div style={{ overflow: "auto", flex: 1, marginTop: 14 }}>
-              <SequenceList
-                sequences={project.sequences}
-                events={project.events}
-                activeSequenceId={activeSequenceId}
-                onSelect={setActiveSequenceId}
-                onDeleteSequence={deleteSequence}
-                onDeleteEvent={deleteEvent}
-                onUpdateEvent={updateEvent}
-                onSeek={(t) => yt.seekTo(t)}
-                editingEventId={editingEventId}
-                onStartReplot={startReplot}
-                onCancelReplot={cancelReplot}
-                matchTeams={matchTeams}
-                byCode={byCode}
-              />
+              {finalizedSequences.length === 0 ? (
+                <div className="empty" style={{ flex: 1 }}>No goals tagged yet</div>
+              ) : (
+                <SequenceList
+                  sequences={finalizedSequences}
+                  events={project.events}
+                  activeSequenceId={activeSequenceId}
+                  onSelect={setActiveSequenceId}
+                  onDeleteSequence={deleteSequence}
+                  onDeleteEvent={deleteEvent}
+                  onUpdateEvent={updateEvent}
+                  onSeek={(t) => yt.seekTo(t)}
+                  editingEventId={editingEventId}
+                  onStartReplot={startReplot}
+                  onCancelReplot={cancelReplot}
+                  matchTeams={matchTeams}
+                  byCode={byCode}
+                />
+              )}
             </div>
 
             {supabaseConfigured && (
               <div style={{ marginTop: 14, paddingTop: 14, borderTop: "1px solid var(--line)", textAlign: "center" }}>
                 <button 
                   className="btn primary big" 
-                  style={{ width: "100%", padding: "12px" }}
+                  style={{ width: "100%", padding: "12px", opacity: unsyncedSequences.length === 0 ? 0.6 : 1 }}
                   onClick={syncToSupabase} 
-                  disabled={syncing || project.sequences.length === 0}
+                  disabled={syncing || unsyncedSequences.length === 0}
                 >
-                  {syncing ? "Syncing…" : "⬆ Save Logs to Supabase"}
+                  {syncing ? "Syncing…" : unsyncedSequences.length === 0 ? "✓ All Logs Synced" : "⬆ Save Logs to Supabase"}
                 </button>
               </div>
             )}

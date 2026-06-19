@@ -78,6 +78,7 @@ export interface AttackSequence {
   index: number; // ordering within the match
   outcome: SequenceOutcome; // always "goal" — we only record goals
   notes?: string;
+  syncedAt?: string;
   createdAt: string;
 }
 

@@ -17,23 +17,35 @@ export async function pushProject(project: GcipProject): Promise<SyncResult> {
   const { match, sequences, events } = project;
 
   // 1. match
-  const { data: m, error: mErr } = await supabase
-    .from("matches")
-    .insert({
-      competition: match.competition || null,
-      match_date: match.matchDate || null,
-      home_code: match.homeCode || null,
-      home_team: match.homeTeam || null,
-      away_code: match.awayCode || null,
-      away_team: match.awayTeam || null,
-      video_url: match.videoUrl || null,
-      video_id: match.videoId || null,
-      tagger: match.tagger || null,
-    })
-    .select("id")
-    .single();
-  if (mErr) throw mErr;
-  const matchId = m.id as string;
+  let matchId: string | undefined;
+  if (match.videoId) {
+    const { data: existing } = await supabase
+      .from("matches")
+      .select("id")
+      .eq("video_id", match.videoId)
+      .maybeSingle();
+    if (existing) matchId = existing.id;
+  }
+
+  if (!matchId) {
+    const { data: m, error: mErr } = await supabase
+      .from("matches")
+      .insert({
+        competition: match.competition || null,
+        match_date: match.matchDate || null,
+        home_code: match.homeCode || null,
+        home_team: match.homeTeam || null,
+        away_code: match.awayCode || null,
+        away_team: match.awayTeam || null,
+        video_url: match.videoUrl || null,
+        video_id: match.videoId || null,
+        tagger: match.tagger || null,
+      })
+      .select("id")
+      .single();
+    if (mErr) throw mErr;
+    matchId = m.id as string;
+  }
 
   // 2. sequences
   let idMap = new Map<string, string>();

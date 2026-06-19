@@ -116,6 +116,16 @@ export function useProject() {
     setActiveSequenceId(null);
   }, []);
 
+  const markSequencesSynced = useCallback((syncedIds: string[]) => {
+    const now = new Date().toISOString();
+    setProject((p) => ({
+      ...p,
+      sequences: p.sequences.map((s) =>
+        syncedIds.includes(s.id) ? { ...s, syncedAt: s.syncedAt || now } : s
+      ),
+    }));
+  }, []);
+
   return {
     project,
     activeSequenceId,
@@ -129,5 +139,6 @@ export function useProject() {
     importProject,
     resetProject,
     startNewMatch,
+    markSequencesSynced,
   };
 }
