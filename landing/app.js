@@ -30,7 +30,14 @@ function pitchSvg(goals) {
   const W = PITCH_L * S;
   const H = PITCH_W * S;
   const line = `stroke="#3f7d47" stroke-width="1.5" fill="none" opacity="0.7"`;
-  let p = `<svg viewBox="0 0 ${W} ${H}" class="pitch" xmlns="http://www.w3.org/2000/svg">`;
+  const goalPostLine = `stroke="#ffffff" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"`;
+  const goalW = 7.32 * S;
+  const goalH = 2.44 * S;
+  const vbOriginX = -goalH - 2;
+  const vbOriginY = -2;
+  const vbW = W + 2 * (goalH + 2);
+  const vbH = H + 4;
+  let p = `<svg viewBox="${vbOriginX} ${vbOriginY} ${vbW} ${vbH}" class="pitch" xmlns="http://www.w3.org/2000/svg">`;
   for (let i = 0; i < 10; i++)
     p += `<rect x="${(i * W) / 10}" y="0" width="${W / 10}" height="${H}" fill="${
       i % 2 ? "#11240f" : "#0e1f0d"
@@ -47,6 +54,13 @@ function pitchSvg(goals) {
     const gx = left ? 2 : W - 2 - gbW;
     p += `<rect x="${px}" y="${(H - pbH) / 2}" width="${pbW}" height="${pbH}" ${line}/>`;
     p += `<rect x="${gx}" y="${(H - gbH) / 2}" width="${gbW}" height="${gbH}" ${line}/>`;
+    
+    const gy = (H - goalW) / 2;
+    if (left) {
+      p += `<path d="M 2 ${gy} L ${2 - goalH} ${gy} L ${2 - goalH} ${gy + goalW} L 2 ${gy + goalW}" ${goalPostLine}/>`;
+    } else {
+      p += `<path d="M ${W - 2} ${gy} L ${W - 2 + goalH} ${gy} L ${W - 2 + goalH} ${gy + goalW} L ${W - 2} ${gy + goalW}" ${goalPostLine}/>`;
+    }
   }
   goals.forEach((g, i) => {
     if (g.goal_x == null || g.goal_y == null) return;
@@ -103,7 +117,14 @@ function heatMapSvg(goals) {
   const W = PITCH_L * S;
   const H = PITCH_W * S;
   const line = `stroke="#3f7d47" stroke-width="1.5" fill="none" opacity="0.7"`;
-  let p = `<svg viewBox="0 0 ${W} ${H}" class="pitch" xmlns="http://www.w3.org/2000/svg">`;
+  const goalPostLine = `stroke="#ffffff" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"`;
+  const goalW = 7.32 * S;
+  const goalH = 2.44 * S;
+  const vbOriginX = -goalH - 2;
+  const vbOriginY = -2;
+  const vbW = W + 2 * (goalH + 2);
+  const vbH = H + 4;
+  let p = `<svg viewBox="${vbOriginX} ${vbOriginY} ${vbW} ${vbH}" class="pitch" xmlns="http://www.w3.org/2000/svg">`;
   p += `<defs><filter id="heatblur" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="11"/></filter></defs>`;
   p += `<rect x="0" y="0" width="${W}" height="${H}" fill="#0e1f0d"/>`;
 
@@ -141,6 +162,13 @@ function heatMapSvg(goals) {
       pbH = 40.32 * S;
     const px = left ? 2 : W - 2 - pbW;
     p += `<rect x="${px}" y="${(H - pbH) / 2}" width="${pbW}" height="${pbH}" ${line}/>`;
+    
+    const gy = (H - goalW) / 2;
+    if (left) {
+      p += `<path d="M 2 ${gy} L ${2 - goalH} ${gy} L ${2 - goalH} ${gy + goalW} L 2 ${gy + goalW}" ${goalPostLine}/>`;
+    } else {
+      p += `<path d="M ${W - 2} ${gy} L ${W - 2 + goalH} ${gy} L ${W - 2 + goalH} ${gy + goalW} L ${W - 2} ${gy + goalW}" ${goalPostLine}/>`;
+    }
   }
   // assist points
   for (const pt of pts) {
