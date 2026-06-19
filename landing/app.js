@@ -130,9 +130,11 @@ function renderTiming(goals) {
   const el = document.getElementById("timingChart");
   const withMin = goals.filter((g) => g.minute != null);
   if (!withMin.length) {
+    el.style.display = "block"; // don't squish the message into one grid column
     el.innerHTML = emptyMsg("No timing data yet.");
     return;
   }
+  el.style.display = "grid";
   // buckets: 0-5, 5-10 … 85-90, 90+
   const buckets = Array.from({ length: 19 }, () => 0);
   for (const g of withMin) {
@@ -302,6 +304,12 @@ async function init() {
 // expose for manual testing
 window.__renderAll = renderAll;
 init();
+
+// ── Solid nav once scrolled past the hero (avoids logo over headings) ──
+const navEl = document.querySelector(".nav");
+const onScroll = () => navEl.classList.toggle("scrolled", window.scrollY > 80);
+window.addEventListener("scroll", onScroll, { passive: true });
+onScroll();
 
 // ── Hero anthem + reveal (unchanged behaviour) ────────────────────────
 const anthem = document.getElementById("anthem");

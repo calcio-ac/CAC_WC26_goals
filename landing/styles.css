@@ -150,6 +150,14 @@ em {
   justify-content: space-between;
   padding: 18px 36px;
   background: linear-gradient(180deg, #060804cc, transparent);
+  transition: background 0.25s, border-color 0.25s;
+  border-bottom: 1px solid transparent;
+}
+/* solid header once scrolled past the hero (set by app.js) */
+.nav.scrolled {
+  background: #060805f2;
+  border-bottom-color: #1c2317;
+  backdrop-filter: blur(8px);
 }
 .brand .cac {
   height: 30px;
@@ -826,7 +834,12 @@ em {
     grid-template-columns: 1fr;
   }
 }
+
+/* ── phone ── */
 @media (max-width: 720px) {
+  body {
+    font-size: 16px;
+  }
   .links a {
     display: none;
   }
@@ -836,5 +849,120 @@ em {
   }
   .stats {
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* nav */
+  .nav {
+    padding: 12px 18px;
+  }
+  .brand .cac {
+    height: 26px;
+  }
+
+  /* hero */
+  .hero {
+    padding: 96px 20px 64px;
+    min-height: 92vh;
+  }
+  .wc-mark {
+    height: 56px;
+    margin-bottom: 18px;
+  }
+  .eyebrow {
+    font-size: 12px;
+    letter-spacing: 2.5px;
+  }
+  .lede {
+    font-size: 16px;
+    margin: 18px 0 26px;
+  }
+  /* tidy 2×2 stat grid */
+  .hero-stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px 20px;
+    width: 100%;
+  }
+  .hstat b {
+    font-size: 40px;
+  }
+  .hero .btn.primary {
+    width: 100%;
+    text-align: center;
+  }
+
+  /* dashboard */
+  .dash {
+    padding: 28px 12px 72px;
+    border-radius: 16px 16px 0 0;
+  }
+  .panel {
+    padding: 16px 14px;
+  }
+  .panel h2 {
+    font-size: 24px;
+  }
+  .filterbar {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  #teamFilter {
+    flex: 1;
+    min-width: 0;
+  }
+
+  /* leader bars: narrower label column */
+  .bar {
+    grid-template-columns: 92px 1fr 26px;
+    font-size: 13px;
+  }
+
+  /* timing chart: a touch shorter, tighter labels */
+  .timing-chart {
+    height: 170px;
+    gap: 3px;
+  }
+  .tlabel {
+    font-size: 8px;
+  }
+  .tcount {
+    font-size: 11px;
+  }
+
+  /* compact, non-overlapping anthem button (icon only) */
+  .sound {
+    right: 14px;
+    bottom: 14px;
+    padding: 12px;
+    border-radius: 50%;
+  }
+  .sound .sound-label {
+    display: none;
+  }
+
+  /* portal CTA + footer */
+  .portal-cta {
+    padding: 36px 18px;
+  }
+  .btn.big {
+    font-size: 16px;
+    padding: 14px 22px;
+    width: 100%;
+    text-align: center;
+  }
+  .foot {
+    flex-wrap: wrap;
+    padding: 28px 18px 90px;
+  }
+
+  /* video modal */
+  .modal {
+    padding: 14px;
+  }
+  .modal-card {
+    padding: 14px;
+  }
+  .modal-title {
+    font-size: 20px;
   }
 }
