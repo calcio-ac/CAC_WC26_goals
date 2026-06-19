@@ -222,15 +222,65 @@ a.brand:hover img.cac {
   flex: 1;
 }
 
+/* ── Tabs ── */
+.tabs-nav {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  padding: 12px 20px 0;
+  border-bottom: 1px solid var(--line);
+  background: #0e120bcc;
+  backdrop-filter: blur(6px);
+}
+.tab-btn {
+  background: none;
+  border: none;
+  color: var(--muted);
+  font-family: var(--head-font);
+  font-size: 18px;
+  text-transform: uppercase;
+  padding: 10px 24px;
+  cursor: pointer;
+  border-bottom: 3px solid transparent;
+  transition: all 0.2s;
+}
+.tab-btn:hover:not(:disabled) {
+  color: var(--text);
+}
+.tab-btn.active {
+  color: var(--cac-green);
+  border-bottom-color: var(--cac-green);
+}
+.tab-btn:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
 .main {
   flex: 1;
   display: grid;
-  grid-template-columns: minmax(520px, 1.4fr) minmax(340px, 0.9fr) minmax(300px, 0.8fr);
   gap: 14px;
   padding: 14px;
   overflow: hidden;
   min-height: 0;
 }
+.main.setup-view {
+  grid-template-columns: 1fr 1.2fr;
+  max-width: 1000px;
+  margin: 0 auto;
+  width: 100%;
+}
+.main.setup-view .col-tagging,
+.main.setup-view .col-goals {
+  display: none;
+}
+.main.tagging-view {
+  grid-template-columns: minmax(520px, 1.4fr) minmax(340px, 0.9fr) minmax(300px, 0.8fr);
+}
+.main.tagging-view .col-setup {
+  display: none;
+}
+
 .col {
   display: flex;
   flex-direction: column;

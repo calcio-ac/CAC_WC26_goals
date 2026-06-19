@@ -32,7 +32,11 @@ export function App({ auth }: { auth: Auth | null }) {
   const { teams, byCode } = useSquads();
   const { matches: scheduledMatches } = useMatches();
   const yt = useYouTube(YT_CONTAINER, project.match.videoId || null);
+
+  const [activeTab, setActiveTab] = useState<"setup" | "tagging">("setup");
   const [armed, setArmed] = useState<EventType | null>(null);
+  const [armedTime, setArmedTime] = useState<number | null>(null);
+  
   const [toast, setToast] = useState<string | null>(null);
   const [urlInput, setUrlInput] = useState(project.match.videoUrl);
   const [syncing, setSyncing] = useState(false);
@@ -85,6 +89,7 @@ export function App({ auth }: { auth: Auth | null }) {
     const id = parseYouTubeId(urlInput);
     if (!id) return flash("Couldn’t read a YouTube id from that URL");
     updateMatch({ videoUrl: urlInput, videoId: id });
+    setActiveTab("tagging"); // Auto-switch to tagging tab when video loads
   };
 
   const pickTeam = (side: "home" | "away", code: string) => {
@@ -101,7 +106,6 @@ export function App({ auth }: { auth: Auth | null }) {
       awayCode: m.away_code,
       awayTeam: m.away_team,
       matchDate: m.match_date ?? "",
-      // If the DB already has a video URL, pre-fill it too.
       ...(m.video_url ? { videoUrl: m.video_url } : {}),
       ...(m.video_id ? { videoId: m.video_id } : {}),
     });
@@ -130,6 +134,7 @@ export function App({ auth }: { auth: Auth | null }) {
   const startReplot = useCallback((id: string) => {
     setEditingEventId(id);
     setArmed(null);
+    setArmedTime(null);
     setAwaitingEndFor(null);
     flash("Click the pitch to move this event");
   }, [flash]);
@@ -137,6 +142,18 @@ export function App({ auth }: { auth: Auth | null }) {
   const cancelReplot = useCallback(() => {
     setEditingEventId(null);
   }, []);
+
+  const armTag = useCallback((type: EventType | null) => {
+    if (!type) {
+      setArmed(null);
+      setArmedTime(null);
+      return;
+    }
+    setArmed(type);
+    const t = yt.getTime();
+    setArmedTime(t);
+    flash(`Armed ${EVENT_META[type].label} @ ${fmtClock(t)} — Click pitch to plot`);
+  }, [yt, flash]);
 
   // Place the armed action at a pitch coordinate.
   const placeAt = useCallback(
@@ -154,13 +171,15 @@ export function App({ auth }: { auth: Auth | null }) {
         flash(`Shot end @ ${x}, ${y}m`);
         setAwaitingEndFor(null);
         setArmed(null);
+        setArmedTime(null);
         return;
       }
       if (!armed) return flash("Arm a tag first (P / A / G)");
       if (matchTeams.length < 2) return flash("Pick both teams in Match Setup first");
       let seqId = activeSequenceId;
       if (!seqId) seqId = newSequence().id;
-      const vt = yt.getTime();
+      
+      const vt = armedTime !== null ? armedTime : yt.getTime();
       const s = sel[armed];
       // Match minute is entered manually (highlight video time ≠ real match clock).
       const mmRaw = matchMinute.trim();
@@ -186,8 +205,9 @@ export function App({ auth }: { auth: Auth | null }) {
         // Auto-advance the chain.
         setArmed(armed === "pre_assist" ? "assist" : "goal");
       }
+      setArmedTime(null);
     },
-    [editingEventId, awaitingEndFor, armed, matchTeams.length, activeSequenceId, newSequence, yt, sel, matchMinute, direction, addEvent, updateEvent, flash],
+    [editingEventId, awaitingEndFor, armed, armedTime, matchTeams.length, activeSequenceId, newSequence, yt, sel, matchMinute, direction, addEvent, updateEvent, flash],
   );
 
   // Keyboard shortcuts.
@@ -196,11 +216,11 @@ export function App({ auth }: { auth: Auth | null }) {
       const tag = (e.target as HTMLElement)?.tagName;
       if (tag === "INPUT" || tag === "SELECT" || tag === "TEXTAREA") return;
       switch (e.key.toLowerCase()) {
-        case "p": setArmed("pre_assist"); break;
-        case "a": setArmed("assist"); break;
-        case "g": setArmed("goal"); break;
+        case "p": armTag("pre_assist"); break;
+        case "a": armTag("assist"); break;
+        case "g": armTag("goal"); break;
         case "n": newSequence(); flash("New goal sequence"); break;
-        case "escape": setArmed(null); setAwaitingEndFor(null); setEditingEventId(null); break;
+        case "escape": armTag(null); setAwaitingEndFor(null); setEditingEventId(null); break;
         case " ": e.preventDefault(); yt.togglePlay(); break;
         case "arrowleft": e.preventDefault(); e.shiftKey ? yt.nudge(-5) : yt.frameStep(-1); break;
         case "arrowright": e.preventDefault(); e.shiftKey ? yt.nudge(5) : yt.frameStep(1); break;
@@ -208,7 +228,7 @@ export function App({ auth }: { auth: Auth | null }) {
     };
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
-  }, [yt, newSequence, flash]);
+  }, [yt, newSequence, flash, armTag]);
 
   const syncToSupabase = async () => {
     if (project.sequences.length === 0) return flash("Nothing to sync yet");
@@ -249,11 +269,6 @@ export function App({ auth }: { auth: Auth | null }) {
         <span className="muted" style={{ fontSize: 13 }}>
           {project.sequences.length} goals · {project.events.length} events
         </span>
-        {supabaseConfigured && (
-          <button className="btn sm primary" onClick={syncToSupabase} disabled={syncing}>
-            {syncing ? "Syncing…" : "⬆ Push to Supabase"}
-          </button>
-        )}
         {auth?.email && (
           <span className="user-chip">
             <span className="dot-on" />
@@ -265,10 +280,25 @@ export function App({ auth }: { auth: Auth | null }) {
         )}
       </header>
 
-      <main className="main">
-        {/* ── Column 1: setup + video ── */}
-        <section className="col">
-          {/* ── Group Stage Match Picker ── */}
+      <div className="tabs-nav">
+        <button 
+          className={`tab-btn ${activeTab === "setup" ? "active" : ""}`} 
+          onClick={() => setActiveTab("setup")}
+        >
+          1. Match Setup
+        </button>
+        <button 
+          className={`tab-btn ${activeTab === "tagging" ? "active" : ""}`} 
+          onClick={() => setActiveTab("tagging")}
+          disabled={!project.match.videoId}
+        >
+          2. Tagging Workspace
+        </button>
+      </div>
+
+      <main className={`main ${activeTab}-view`}>
+        {/* ── Setup Column ── */}
+        <section className="col col-setup">
           <div className="card match-picker-card">
             <h3
               style={{ cursor: "pointer", userSelect: "none" }}
@@ -330,7 +360,7 @@ export function App({ auth }: { auth: Auth | null }) {
 
           <div className="card">
             <h3>
-              <span className="step">1</span> Match Setup
+              <span className="step">1</span> Match Configuration
             </h3>
             <div className="grid2">
               <div className="field">
@@ -381,40 +411,59 @@ export function App({ auth }: { auth: Auth | null }) {
                 onChange={(e) => setUrlInput(e.target.value)}
                 onKeyDown={(e) => e.key === "Enter" && loadVideo()}
               />
-              <button className="btn primary" onClick={loadVideo}>Load</button>
+              <button className="btn primary" onClick={loadVideo}>Load Video</button>
             </div>
-            <div className="video-wrap" style={{ marginTop: 10 }}>
+          </div>
+        </section>
+
+        {/* ── Video Column (Shared/Persistent) ── */}
+        <section className="col col-video">
+          <div className="card" style={{ flex: 1, display: "flex", flexDirection: "column", minHeight: 0 }}>
+            {activeTab === "setup" ? (
+              <h3 style={{ marginBottom: 10 }}><span className="step">3</span> Verify Video</h3>
+            ) : (
+              <div className="transport" style={{ marginTop: 0, marginBottom: 10, padding: 0, background: "transparent", border: "none" }}>
+                <span className="clock">{fmtClock(yt.time)} / {fmtClock(yt.duration)}</span>
+                <button className="btn sm" onClick={() => yt.togglePlay()}>{yt.playing ? "⏸" : "▶"} <span className="kbd">Space</span></button>
+                <button className="btn sm" onClick={() => yt.frameStep(-1)}>◁ frame</button>
+                <button className="btn sm" onClick={() => yt.frameStep(1)}>frame ▷</button>
+                <button className="btn sm" onClick={() => yt.nudge(-5)}>−5s</button>
+                <button className="btn sm" onClick={() => yt.nudge(5)}>+5s</button>
+                <select
+                  style={{ background: "#0e120b", border: "1px solid var(--line)", color: "var(--text)", borderRadius: 7, padding: "5px 8px" }}
+                  defaultValue="1"
+                  onChange={(e) => yt.setRate(parseFloat(e.target.value))}
+                  title="playback speed"
+                >
+                  {[0.25, 0.5, 1, 1.5, 2].map((r) => (<option key={r} value={r}>{r}×</option>))}
+                </select>
+              </div>
+            )}
+            
+            <div className="video-wrap" style={{ flex: 1 }}>
               <div id={YT_CONTAINER} style={{ width: "100%", height: "100%" }} />
               {!project.match.videoId && (
                 <div className="placeholder">
                   <div>
                     <div style={{ fontFamily: "var(--head-font)", fontSize: 22 }}>NO VIDEO LOADED</div>
-                    <div style={{ marginTop: 6 }}>Paste a YouTube match link above to begin tagging.</div>
+                    <div style={{ marginTop: 6 }}>Paste a YouTube match link in the Setup tab.</div>
                   </div>
                 </div>
               )}
             </div>
-            <div className="transport">
-              <span className="clock">{fmtClock(yt.time)} / {fmtClock(yt.duration)}</span>
-              <button className="btn sm" onClick={() => yt.togglePlay()}>{yt.playing ? "⏸" : "▶"} <span className="kbd">Space</span></button>
-              <button className="btn sm" onClick={() => yt.frameStep(-1)}>◁ frame</button>
-              <button className="btn sm" onClick={() => yt.frameStep(1)}>frame ▷</button>
-              <button className="btn sm" onClick={() => yt.nudge(-5)}>−5s</button>
-              <button className="btn sm" onClick={() => yt.nudge(5)}>+5s</button>
-              <select
-                style={{ background: "#0e120b", border: "1px solid var(--line)", color: "var(--text)", borderRadius: 7, padding: "5px 8px" }}
-                defaultValue="1"
-                onChange={(e) => yt.setRate(parseFloat(e.target.value))}
-                title="playback speed"
-              >
-                {[0.25, 0.5, 1, 1.5, 2].map((r) => (<option key={r} value={r}>{r}×</option>))}
-              </select>
-            </div>
+            
+            {activeTab === "setup" && project.match.videoId && (
+              <div style={{ marginTop: 14, textAlign: "right" }}>
+                <button className="btn primary big" onClick={() => setActiveTab("tagging")}>
+                  Continue to Tagging →
+                </button>
+              </div>
+            )}
           </div>
         </section>
 
-        {/* ── Column 2: tag action + pitch ── */}
-        <section className="col">
+        {/* ── Tagging Column ── */}
+        <section className="col col-tagging">
           <div className="card">
             <h3>
               <span className="step">3</span> Tag Action
@@ -446,7 +495,6 @@ export function App({ auth }: { auth: Auth | null }) {
                     </button>
                   ))}
                 </div>
-                <span className="muted">set per half — R-L is mirrored to normalize the data</span>
               </div>
               <div className="actions">
                 {EVENT_ORDER.map((t) => {
@@ -454,7 +502,7 @@ export function App({ auth }: { auth: Auth | null }) {
                   const isArmed = armed === t;
                   return (
                     <div key={t} className={`action-row ${isArmed ? "armed" : ""}`}>
-                      <button className="action-arm" onClick={() => setArmed(isArmed ? null : t)}>
+                      <button className="action-arm" onClick={() => armTag(isArmed ? null : t)}>
                         <span className="dot" style={{ background: EVENT_META[t].color }} />
                         <span className="name">{EVENT_META[t].label}</span>
                         <span className="kbd">{EVENT_META[t].key}</span>
@@ -497,10 +545,9 @@ export function App({ auth }: { auth: Auth | null }) {
               </>
             )}
             <div className="legend">
-              <span><span className="kbd">P</span>/<span className="kbd">A</span>/<span className="kbd">G</span> arm</span>
+              <span><span className="kbd">P</span>/<span className="kbd">A</span>/<span className="kbd">G</span> capture time & arm</span>
               <span><span className="kbd">N</span> new goal</span>
               <span><span className="kbd">Esc</span> disarm</span>
-              <span><span className="kbd">←</span>/<span className="kbd">→</span> frame · +Shift = 5s</span>
             </div>
           </div>
 
@@ -523,7 +570,7 @@ export function App({ auth }: { auth: Auth | null }) {
                     : ""} — click to plot{armed === "goal" ? " shot start" : ""}
                 </span>
               ) : (
-                "No tag armed — press P / A / G or click an action above"
+                "No tag armed — press P / A / G to capture time and start"
               )}
             </div>
             <Pitch events={project.events} onPick={placeAt} highlightSequenceId={activeSequenceId} />
@@ -538,15 +585,16 @@ export function App({ auth }: { auth: Auth | null }) {
           </div>
         </section>
 
-        {/* ── Column 3: goals ── */}
-        <section className="col">
+        {/* ── Goals Column ── */}
+        <section className="col col-goals">
           <div className="card" style={{ flex: 1, display: "flex", flexDirection: "column", minHeight: 0 }}>
-            <h3>
+            <h3 style={{ display: "flex", alignItems: "center", gap: 8 }}>
               Goals <span className="count">{project.sequences.length}</span>
               <span style={{ flex: 1 }} />
               <button className="btn sm primary" onClick={() => newSequence()}>+ New <span className="kbd">N</span></button>
             </h3>
-            <div style={{ overflow: "auto", flex: 1 }}>
+            
+            <div style={{ overflow: "auto", flex: 1, marginTop: 14 }}>
               <SequenceList
                 sequences={project.sequences}
                 events={project.events}
@@ -563,6 +611,19 @@ export function App({ auth }: { auth: Auth | null }) {
                 byCode={byCode}
               />
             </div>
+
+            {supabaseConfigured && (
+              <div style={{ marginTop: 14, paddingTop: 14, borderTop: "1px solid var(--line)", textAlign: "center" }}>
+                <button 
+                  className="btn primary big" 
+                  style={{ width: "100%", padding: "12px" }}
+                  onClick={syncToSupabase} 
+                  disabled={syncing || project.sequences.length === 0}
+                >
+                  {syncing ? "Syncing…" : "⬆ Save Logs to Supabase"}
+                </button>
+              </div>
+            )}
           </div>
         </section>
       </main>
