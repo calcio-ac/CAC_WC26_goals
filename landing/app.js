@@ -12,6 +12,7 @@ const SB = {
 async function sbGet(path) {
   const res = await fetch(`${SB.url}/${path}`, {
     headers: { apikey: SB.key, Authorization: `Bearer ${SB.key}` },
+    cache: "no-store",
   });
   if (!res.ok) throw new Error(`${res.status} ${await res.text()}`);
   return res.json();
