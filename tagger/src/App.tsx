@@ -3,6 +3,7 @@ import { Pitch } from "./components/Pitch";
 import { SequenceList } from "./components/SequenceList";
 import { useProject } from "./lib/store";
 import { useSquads } from "./lib/useSquads";
+import { useMatches } from "./lib/useMatches";
 import { useYouTube } from "./lib/useYouTube";
 import { AttackDirection, BODY_PARTS, BodyPart, DIRECTIONS, EVENT_META, EVENT_ORDER, EventType } from "./lib/types";
 import { fmtClock, parseYouTubeId } from "./lib/util";
@@ -30,11 +31,14 @@ export function App({ auth }: { auth: Auth | null }) {
   } = useProject();
 
   const { teams, byCode } = useSquads();
+  const { matches: scheduledMatches } = useMatches();
   const yt = useYouTube(YT_CONTAINER, project.match.videoId || null);
   const [armed, setArmed] = useState<EventType | null>(null);
   const [toast, setToast] = useState<string | null>(null);
   const [urlInput, setUrlInput] = useState(project.match.videoUrl);
   const [syncing, setSyncing] = useState(false);
+  const [matchPickerOpen, setMatchPickerOpen] = useState(true);
+  const [matchSearch, setMatchSearch] = useState("");
   // Actual match minute (manual) — highlight videos don't carry the real clock.
   const [matchMinute, setMatchMinute] = useState<string>("");
   // Attack direction this half (teams switch ends) — used to normalize coords.
@@ -87,6 +91,36 @@ export function App({ auth }: { auth: Auth | null }) {
     if (side === "home") updateMatch({ homeCode: code, homeTeam: sq?.name ?? code });
     else updateMatch({ awayCode: code, awayTeam: sq?.name ?? code });
   };
+
+  // Quick-load a scheduled match into the project metadata.
+  const loadScheduledMatch = (m: typeof scheduledMatches[0]) => {
+    updateMatch({
+      homeCode: m.home_code,
+      homeTeam: m.home_team,
+      awayCode: m.away_code,
+      awayTeam: m.away_team,
+      matchDate: m.match_date ?? "",
+      // If the DB already has a video URL, pre-fill it too.
+      ...(m.video_url ? { videoUrl: m.video_url } : {}),
+      ...(m.video_id ? { videoId: m.video_id } : {}),
+    });
+    if (m.video_url) setUrlInput(m.video_url);
+    setMatchPickerOpen(false);
+    flash(`Loaded: ${m.home_team} vs ${m.away_team}`);
+  };
+
+  const filteredMatches = useMemo(() => {
+    const q = matchSearch.trim().toLowerCase();
+    if (!q) return scheduledMatches;
+    return scheduledMatches.filter(
+      (m) =>
+        m.home_team.toLowerCase().includes(q) ||
+        m.away_team.toLowerCase().includes(q) ||
+        m.home_code.toLowerCase().includes(q) ||
+        m.away_code.toLowerCase().includes(q) ||
+        (m.match_date ?? "").includes(q),
+    );
+  }, [scheduledMatches, matchSearch]);
 
   const setSelField = (type: EventType, patch: Partial<Selection>) =>
     setSel((s) => ({ ...s, [type]: { ...s[type], ...patch } }));
@@ -225,6 +259,66 @@ export function App({ auth }: { auth: Auth | null }) {
       <main className="main">
         {/* ── Column 1: setup + video ── */}
         <section className="col">
+          {/* ── Group Stage Match Picker ── */}
+          <div className="card match-picker-card">
+            <h3
+              style={{ cursor: "pointer", userSelect: "none" }}
+              onClick={() => setMatchPickerOpen((o) => !o)}
+            >
+              <span className="step">★</span> Group Stage Matches
+              <span style={{ marginLeft: 6, fontSize: 12, color: "var(--muted)" }}>
+                {scheduledMatches.length} fixtures
+              </span>
+              <span style={{ flex: 1 }} />
+              <span style={{ fontSize: 12, color: "var(--muted)" }}>
+                {matchPickerOpen ? "▲ hide" : "▼ show"}
+              </span>
+            </h3>
+            {matchPickerOpen && (
+              <>
+                <input
+                  className="match-search"
+                  placeholder="Search team or date…"
+                  value={matchSearch}
+                  onChange={(e) => setMatchSearch(e.target.value)}
+                />
+                <div className="match-list">
+                  {filteredMatches.map((m) => {
+                    const isActive =
+                      project.match.homeCode === m.home_code &&
+                      project.match.awayCode === m.away_code &&
+                      project.match.matchDate === (m.match_date ?? "");
+                    const hasVideo = !!m.video_id;
+                    return (
+                      <button
+                        key={m.id}
+                        className={`match-row-btn${isActive ? " active" : ""}${hasVideo ? " tagged" : ""}`}
+                        onClick={() => loadScheduledMatch(m)}
+                      >
+                        <span className="match-date">
+                          {m.match_date
+                            ? new Date(m.match_date + "T00:00:00").toLocaleDateString("en-GB", {
+                                day: "numeric",
+                                month: "short",
+                              })
+                            : "TBD"}
+                        </span>
+                        <span className="match-teams">
+                          <span className="match-code">{m.home_code}</span>
+                          <span className="match-home">{m.home_team}</span>
+                          <span className="match-vs">vs</span>
+                          <span className="match-away">{m.away_team}</span>
+                          <span className="match-code">{m.away_code}</span>
+                        </span>
+                        {hasVideo && <span className="match-tagged" title="Video already loaded">✓</span>}
+                      </button>
+                    );
+                  })}
+                </div>
+              </>
+            )}
+          </div>
+
           <div className="card">
             <h3>
               <span className="step">1</span> Match Setup

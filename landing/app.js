@@ -400,7 +400,24 @@ const onScroll = () => navEl.classList.toggle("scrolled", window.scrollY > 80);
 window.addEventListener("scroll", onScroll, { passive: true });
 onScroll();
 
-// ── Hero anthem + reveal (unchanged behaviour) ────────────────────────
+// ── Background video — force play for Safari (blocks autoplay attr alone) ─
+const bgVideo = document.getElementById("bgvideo");
+if (bgVideo) {
+  // Attempt immediately (works in Chrome/FF with muted+autoplay)
+  bgVideo.play().catch(() => {});
+  // Safari needs a user-gesture; retry on first touch/click
+  function tryBg() {
+    bgVideo.play().catch(() => {});
+    window.removeEventListener("pointerdown", tryBg);
+  }
+  window.addEventListener("pointerdown", tryBg, { passive: true });
+  // Resume if tab becomes visible again
+  document.addEventListener("visibilitychange", () => {
+    if (!document.hidden) bgVideo.play().catch(() => {});
+  });
+}
+
+// ── Hero anthem + reveal ──────────────────────────────────────────────
 const anthem = document.getElementById("anthem");
 const soundBtn = document.getElementById("sound");
 const soundLabel = soundBtn.querySelector(".sound-label");

@@ -27,12 +27,16 @@ export function Pitch({ events, onPick, highlightSequenceId }: Props) {
   };
 
   const line = { stroke: "#9fd6a8", strokeWidth: 1.5, fill: "none", opacity: 0.7 };
+  // Goal dimensions (FIFA standard): 7.32m wide, 2.44m high
+  const goalW = 7.32 * SCALE;
+  const goalH = 2.44 * SCALE;
+  const goalPost = { stroke: "#ffffff", strokeWidth: 4, fill: "none", strokeLinecap: "round" as const, strokeLinejoin: "round" as const };
 
   return (
     <svg
       ref={svgRef}
       className="pitch-svg"
-      viewBox={`0 0 ${W} ${H}`}
+      viewBox={`${-goalH - 2} -2 ${W + 2 * (goalH + 2)} ${H + 4}`}
       onClick={handleClick}
       role="img"
       aria-label="Football pitch, 105 by 68 meters"
@@ -72,6 +76,74 @@ export function Pitch({ events, onPick, highlightSequenceId }: Props) {
           </g>
         );
       })}
+
+      {/* Goal posts — left end */}
+      <g opacity={0.95}>
+        {/* back post line (goal line) — net width */}
+        <line
+          x1={0}
+          y1={(H - goalW) / 2}
+          x2={0}
+          y2={(H + goalW) / 2}
+          {...goalPost}
+        />
+        {/* left post (top bar from goal line into pitch) */}
+        <line
+          x1={0}
+          y1={(H - goalW) / 2}
+          x2={-goalH}
+          y2={(H - goalW) / 2}
+          {...goalPost}
+        />
+        {/* right post */}
+        <line
+          x1={0}
+          y1={(H + goalW) / 2}
+          x2={-goalH}
+          y2={(H + goalW) / 2}
+          {...goalPost}
+        />
+        {/* crossbar */}
+        <line
+          x1={-goalH}
+          y1={(H - goalW) / 2}
+          x2={-goalH}
+          y2={(H + goalW) / 2}
+          {...goalPost}
+        />
+      </g>
+
+      {/* Goal posts — right end */}
+      <g opacity={0.95}>
+        <line
+          x1={W}
+          y1={(H - goalW) / 2}
+          x2={W}
+          y2={(H + goalW) / 2}
+          {...goalPost}
+        />
+        <line
+          x1={W}
+          y1={(H - goalW) / 2}
+          x2={W + goalH}
+          y2={(H - goalW) / 2}
+          {...goalPost}
+        />
+        <line
+          x1={W}
+          y1={(H + goalW) / 2}
+          x2={W + goalH}
+          y2={(H + goalW) / 2}
+          {...goalPost}
+        />
+        <line
+          x1={W + goalH}
+          y1={(H - goalW) / 2}
+          x2={W + goalH}
+          y2={(H + goalW) / 2}
+          {...goalPost}
+        />
+      </g>
 
       {/* plotted events */}
       {events.map((ev) => {

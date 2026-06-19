@@ -680,3 +680,110 @@ a.brand:hover img.cac {
   height: 9px;
   border-radius: 50%;
 }
+
+/* ── match picker ── */
+.match-picker-card h3 {
+  margin-bottom: 8px;
+}
+.match-search {
+  width: 100%;
+  background: #0e120b;
+  border: 1px solid var(--line);
+  color: var(--text);
+  border-radius: 7px;
+  padding: 7px 10px;
+  font-family: var(--body-font);
+  font-size: 13px;
+  margin-bottom: 8px;
+}
+.match-search:focus {
+  outline: none;
+  border-color: var(--cac-green-dim);
+}
+.match-list {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  max-height: 240px;
+  overflow-y: auto;
+  padding-right: 2px;
+}
+.match-list::-webkit-scrollbar {
+  width: 4px;
+}
+.match-list::-webkit-scrollbar-track {
+  background: transparent;
+}
+.match-list::-webkit-scrollbar-thumb {
+  background: var(--line);
+  border-radius: 4px;
+}
+.match-row-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  background: #0e120b;
+  border: 1px solid var(--line);
+  color: var(--text);
+  border-radius: 8px;
+  padding: 6px 9px;
+  font-family: var(--body-font);
+  font-size: 13px;
+  text-align: left;
+  cursor: pointer;
+  transition: background 0.1s, border-color 0.1s;
+}
+.match-row-btn:hover {
+  background: var(--panel-2);
+  border-color: var(--cac-green-dim);
+}
+.match-row-btn.active {
+  border-color: var(--cac-green);
+  background: #142a10;
+}
+.match-row-btn.tagged {
+  opacity: 0.65;
+}
+.match-date {
+  font-size: 11px;
+  color: var(--muted);
+  min-width: 44px;
+  flex: none;
+}
+.match-teams {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  flex: 1;
+  flex-wrap: wrap;
+}
+.match-code {
+  font-size: 10px;
+  font-family: ui-monospace, monospace;
+  background: var(--panel-2);
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  padding: 1px 4px;
+  color: var(--muted);
+  flex: none;
+}
+.match-home {
+  font-weight: 600;
+}
+.match-vs {
+  color: var(--muted);
+  font-size: 11px;
+}
+.match-away {
+  /* normal weight */
+}
+.match-tagged {
+  flex: none;
+  font-size: 12px;
+  color: var(--cac-green);
+  background: #0f2810;
+  border: 1px solid var(--cac-green-dim);
+  border-radius: 20px;
+  padding: 1px 7px;
+}
