@@ -10,6 +10,7 @@ interface YTPlayer {
   getPlayerState(): number;
   setPlaybackRate(rate: number): void;
   loadVideoById(id: string): void;
+  cueVideoById(id: string): void;
   destroy(): void;
 }
 
@@ -52,12 +53,18 @@ export function useYouTube(containerId: string, videoId: string | null) {
     loadApi().then(() => {
       if (disposed || !window.YT) return;
       if (playerRef.current) {
-        playerRef.current.loadVideoById(videoId);
+        playerRef.current.cueVideoById(videoId);
         return;
       }
       playerRef.current = new window.YT.Player(containerId, {
         videoId,
-        playerVars: { modestbranding: 1, rel: 0, controls: 1 },
+        playerVars: { 
+          modestbranding: 1, 
+          rel: 0, 
+          controls: 1,
+          playsinline: 1,
+          origin: window.location.origin
+        },
         events: {
           onReady: () => {
             if (disposed) return;
