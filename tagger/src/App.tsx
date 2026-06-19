@@ -109,6 +109,7 @@ export function App({ auth }: { auth: Auth | null }) {
     }
     
     startNewMatch({
+      id: m.id, // Preserve the database UUID (or fallback ID)
       homeCode: m.home_code,
       homeTeam: m.home_team,
       awayCode: m.away_code,

@@ -17,34 +17,70 @@ export async function pushProject(project: GcipProject): Promise<SyncResult> {
   const { match, sequences, events } = project;
 
   // 1. match
-  let matchId: string | undefined;
-  if (match.videoId) {
-    const { data: existing } = await supabase
-      .from("matches")
-      .select("id")
-      .eq("video_id", match.videoId)
-      .maybeSingle();
-    if (existing) matchId = existing.id;
-  }
+  let matchId = match.id || "";
+  const isUuid = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i.test(matchId);
 
-  if (!matchId) {
-    const { data: m, error: mErr } = await supabase
+  if (isUuid) {
+    // Exact match selected from the Supabase dropdown. Update its row.
+    const { error: mErr } = await supabase
       .from("matches")
-      .insert({
-        competition: match.competition || null,
-        match_date: match.matchDate || null,
-        home_code: match.homeCode || null,
-        home_team: match.homeTeam || null,
-        away_code: match.awayCode || null,
-        away_team: match.awayTeam || null,
+      .update({
         video_url: match.videoUrl || null,
         video_id: match.videoId || null,
         tagger: match.tagger || null,
       })
-      .select("id")
-      .single();
+      .eq("id", matchId);
     if (mErr) throw mErr;
-    matchId = m.id as string;
+  } else {
+    // Client-generated fallback ID or manually created match.
+    // Try to find the exact existing match by teams to prevent duplication.
+    let existingId: string | undefined;
+    if (match.homeCode && match.awayCode) {
+      let query = supabase
+        .from("matches")
+        .select("id")
+        .eq("home_code", match.homeCode)
+        .eq("away_code", match.awayCode);
+      
+      if (match.matchDate) {
+        query = query.eq("match_date", match.matchDate);
+      }
+      
+      const { data: existing } = await query.maybeSingle();
+      if (existing) existingId = existing.id;
+    }
+
+    if (existingId) {
+      matchId = existingId;
+      const { error: mErr } = await supabase
+        .from("matches")
+        .update({
+          video_url: match.videoUrl || null,
+          video_id: match.videoId || null,
+          tagger: match.tagger || null,
+        })
+        .eq("id", matchId);
+      if (mErr) throw mErr;
+    } else {
+      // Complete new row, nothing like it exists in DB.
+      const { data: m, error: mErr } = await supabase
+        .from("matches")
+        .insert({
+          competition: match.competition || null,
+          match_date: match.matchDate || null,
+          home_code: match.homeCode || null,
+          home_team: match.homeTeam || null,
+          away_code: match.awayCode || null,
+          away_team: match.awayTeam || null,
+          video_url: match.videoUrl || null,
+          video_id: match.videoId || null,
+          tagger: match.tagger || null,
+        })
+        .select("id")
+        .single();
+      if (mErr) throw mErr;
+      matchId = m.id as string;
+    }
   }
 
   // 2. sequences
