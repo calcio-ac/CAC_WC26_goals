@@ -403,6 +403,8 @@ onScroll();
 // ── Background video — force play for Safari (blocks autoplay attr alone) ─
 const bgVideo = document.getElementById("bgvideo");
 if (bgVideo) {
+  bgVideo.defaultMuted = true;
+  bgVideo.muted = true;
   // Attempt immediately (works in Chrome/FF with muted+autoplay)
   bgVideo.play().catch(() => {});
   // Safari needs a user-gesture; retry on first touch/click
