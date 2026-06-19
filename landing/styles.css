@@ -72,11 +72,12 @@ em {
   inset: 0;
   z-index: -1;
   background:
-    /* stronger wash so bright footage stays readable */
-    linear-gradient(180deg, #060804e6 0%, #060804b3 28%, #060804cc 65%, #060805 100%),
+    /* darker at the top for hero copy, lighter lower so the video shows
+       through behind the translucent dashboard */
+    linear-gradient(180deg, #060804e6 0%, #06080480 34%, #06080473 70%, #0608049e 100%),
     /* left-anchored darkening behind the hero copy */
-    linear-gradient(90deg, #060804f2 0%, #060804b3 42%, #06080455 70%, transparent 100%),
-    radial-gradient(120% 80% at 50% 0%, transparent 30%, #060804 100%);
+    linear-gradient(90deg, #060804e6 0%, #06080480 42%, transparent 72%),
+    radial-gradient(120% 80% at 50% 0%, transparent 45%, #06080466 100%);
 }
 
 /* ── Sound toggle ── */
@@ -201,10 +202,18 @@ em {
   margin: 0 auto;
   padding: 120px 36px 80px;
 }
+.wc-link {
+  display: inline-block;
+  transition: transform 0.15s;
+}
+.wc-link:hover {
+  transform: scale(1.04);
+}
 .wc-mark {
   height: 72px;
   margin-bottom: 26px;
   filter: drop-shadow(0 4px 24px #000a);
+  display: block;
 }
 .eyebrow {
   font-size: 14px;
@@ -441,7 +450,8 @@ em {
 .dash {
   position: relative;
   z-index: 2;
-  background: #070905;
+  /* translucent so the dimmed WC video shows through behind the panels */
+  background: rgba(7, 9, 5, 0.35);
   padding: 50px 36px 90px;
   max-width: 1200px;
   margin: 0 auto;
@@ -478,8 +488,9 @@ em {
 }
 
 .panel {
-  background: #0d110a;
-  border: 1px solid #1c2317;
+  background: rgba(11, 15, 8, 0.62);
+  backdrop-filter: blur(8px);
+  border: 1px solid #2a3320;
   border-radius: 16px;
   padding: 24px;
   margin-bottom: 22px;
