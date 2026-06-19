@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/svg+xml" href="assets/CAC.svg" />
     <title>GCIP · Goal Creation Intelligence</title>
-    <link rel="stylesheet" href="styles.css?v=4" />
+    <link rel="stylesheet" href="styles.css?v=5" />
   </head>
   <body>
     <!-- ── Background video (hero only) ── -->
@@ -79,6 +79,18 @@
         <p class="hint muted">Click a goal to watch the highlight.</p>
       </section>
 
+      <!-- assist heat map -->
+      <section id="assistmap" class="panel">
+        <div class="panel-head">
+          <h2>Assist Heat Map</h2>
+          <div class="legend">
+            <span>Where assists come from</span>
+            <span class="heat-scale"><i>low</i><span class="heat-bar"></span><i>high</i></span>
+          </div>
+        </div>
+        <div id="heatWrap" class="pitch-wrap"></div>
+      </section>
+
       <!-- goal timing -->
       <section id="timing" class="panel">
         <div class="panel-head">
@@ -136,6 +148,6 @@
       </div>
     </div>
 
-    <script src="app.js?v=5"></script>
+    <script src="app.js?v=6"></script>
   </body>
 </html>

@@ -130,8 +130,13 @@ select
   g.direction                  as goal_direction,
   a.player                     as assist_by,
   a.team_code                  as assist_team,
+  -- assist location, normalized to left→right like the goal coords
+  case when a.direction = 'rtl' then 105 - a.x else a.x end as assist_x,
+  case when a.direction = 'rtl' then 68  - a.y else a.y end as assist_y,
   p.player                     as pre_assist_by,
-  p.team_code                  as pre_assist_team
+  p.team_code                  as pre_assist_team,
+  case when p.direction = 'rtl' then 105 - p.x else p.x end as pre_assist_x,
+  case when p.direction = 'rtl' then 68  - p.y else p.y end as pre_assist_y
 from public.attack_sequences s
 join public.matches m on m.id = s.match_id
 left join public.events g on g.sequence_id = s.id and g.type = 'goal'

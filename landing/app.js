@@ -72,6 +72,94 @@ function pitchSvg(goals) {
   return p;
 }
 
+// ── Assist heat map (binned density on a pitch) ───────────────────────
+function heatColor(t) {
+  // 0 → green, 0.5 → lime/yellow, 1 → orange-red
+  const stops = [
+    [0.0, [46, 125, 50]],
+    [0.5, [155, 219, 58]],
+    [0.8, [245, 158, 11]],
+    [1.0, [239, 68, 68]],
+  ];
+  let a = stops[0],
+    b = stops[stops.length - 1];
+  for (let i = 0; i < stops.length - 1; i++) {
+    if (t >= stops[i][0] && t <= stops[i + 1][0]) {
+      a = stops[i];
+      b = stops[i + 1];
+      break;
+    }
+  }
+  const f = (t - a[0]) / (b[0] - a[0] || 1);
+  const c = a[1].map((v, i) => Math.round(v + (b[1][i] - v) * f));
+  return `rgb(${c[0]},${c[1]},${c[2]})`;
+}
+
+function heatMapSvg(goals) {
+  const pts = goals
+    .filter((g) => g.assist_x != null && g.assist_y != null)
+    .map((g) => ({ x: +g.assist_x, y: +g.assist_y }));
+  const S = 8;
+  const W = PITCH_L * S;
+  const H = PITCH_W * S;
+  const line = `stroke="#3f7d47" stroke-width="1.5" fill="none" opacity="0.7"`;
+  let p = `<svg viewBox="0 0 ${W} ${H}" class="pitch" xmlns="http://www.w3.org/2000/svg">`;
+  p += `<defs><filter id="heatblur" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="11"/></filter></defs>`;
+  p += `<rect x="0" y="0" width="${W}" height="${H}" fill="#0e1f0d"/>`;
+
+  if (pts.length) {
+    // bin into a grid and color by density
+    const NX = 14,
+      NY = 9;
+    const bins = Array.from({ length: NX * NY }, () => 0);
+    for (const pt of pts) {
+      const ix = Math.min(NX - 1, Math.max(0, Math.floor((pt.x / PITCH_L) * NX)));
+      const iy = Math.min(NY - 1, Math.max(0, Math.floor((pt.y / PITCH_W) * NY)));
+      bins[iy * NX + ix]++;
+    }
+    const max = Math.max(...bins);
+    const cw = W / NX,
+      ch = H / NY;
+    p += `<g filter="url(#heatblur)">`;
+    for (let iy = 0; iy < NY; iy++) {
+      for (let ix = 0; ix < NX; ix++) {
+        const n = bins[iy * NX + ix];
+        if (!n) continue;
+        const t = n / max;
+        p += `<rect x="${ix * cw}" y="${iy * ch}" width="${cw}" height="${ch}" fill="${heatColor(t)}" opacity="${0.25 + 0.65 * t}"/>`;
+      }
+    }
+    p += `</g>`;
+  }
+
+  // pitch lines on top
+  p += `<rect x="2" y="2" width="${W - 4}" height="${H - 4}" ${line}/>`;
+  p += `<line x1="${W / 2}" y1="2" x2="${W / 2}" y2="${H - 2}" ${line}/>`;
+  p += `<circle cx="${W / 2}" cy="${H / 2}" r="${9.15 * S}" ${line}/>`;
+  for (const left of [true, false]) {
+    const pbW = 16.5 * S,
+      pbH = 40.32 * S;
+    const px = left ? 2 : W - 2 - pbW;
+    p += `<rect x="${px}" y="${(H - pbH) / 2}" width="${pbW}" height="${pbH}" ${line}/>`;
+  }
+  // assist points
+  for (const pt of pts) {
+    p += `<circle cx="${(pt.x / PITCH_L) * W}" cy="${(pt.y / PITCH_W) * H}" r="3" fill="#fff" opacity="0.55"/>`;
+  }
+  p += `</svg>`;
+  return p;
+}
+
+function renderHeatMap(goals) {
+  const wrap = document.getElementById("heatWrap");
+  const withAssist = goals.filter((g) => g.assist_x != null && g.assist_y != null);
+  if (!withAssist.length) {
+    wrap.innerHTML = emptyMsg("No assist locations yet — the heat map fills in as taggers upload.");
+    return;
+  }
+  wrap.innerHTML = heatMapSvg(goals);
+}
+
 // ── Renders ───────────────────────────────────────────────────────────
 function renderStats(goals) {
   const scorers = new Set(goals.map((g) => g.scorer).filter(Boolean));
@@ -193,6 +281,7 @@ function renderAll(goals) {
   RENDERED = goals;
   renderStats(goals);
   renderShotMap(goals);
+  renderHeatMap(goals);
   renderTiming(goals);
   renderGoals(goals);
   renderLeaders(goals);
