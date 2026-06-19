@@ -15,22 +15,34 @@ export function Pitch({ events, onPick, highlightSequenceId }: Props) {
   const W = PITCH_LENGTH * SCALE;
   const H = PITCH_WIDTH * SCALE;
 
-  const handleClick = (e: React.MouseEvent<SVGSVGElement>) => {
-    const svg = svgRef.current;
-    if (!svg) return;
-    const r = svg.getBoundingClientRect();
-    const px = ((e.clientX - r.left) / r.width) * W;
-    const py = ((e.clientY - r.top) / r.height) * H;
-    const x = Math.min(PITCH_LENGTH, Math.max(0, px / SCALE));
-    const y = Math.min(PITCH_WIDTH, Math.max(0, py / SCALE));
-    onPick(Math.round(x * 10) / 10, Math.round(y * 10) / 10);
-  };
-
   const line = { stroke: "#9fd6a8", strokeWidth: 1.5, fill: "none", opacity: 0.7 };
   // Goal dimensions (FIFA standard): 7.32m wide, 2.44m high
   const goalW = 7.32 * SCALE;
   const goalH = 2.44 * SCALE;
   const goalPost = { stroke: "#ffffff", strokeWidth: 4, fill: "none", strokeLinecap: "round" as const, strokeLinejoin: "round" as const };
+
+  const handleClick = (e: React.MouseEvent<SVGSVGElement>) => {
+    const svg = svgRef.current;
+    if (!svg) return;
+    const r = svg.getBoundingClientRect();
+
+    // The viewBox is expanded to show goal posts:
+    //   origin = (-goalH - 2, -2), total size = (W + 2*(goalH+2)) x (H+4)
+    // We must map pixel → viewBox coords first, then subtract the viewBox offset
+    // so that only clicks on the actual 105×68 m pitch area return valid coords.
+    const vbW = W + 2 * (goalH + 2);
+    const vbH = H + 4;
+    const vbOriginX = -(goalH + 2);
+    const vbOriginY = -2;
+
+    const svgX = ((e.clientX - r.left) / r.width)  * vbW + vbOriginX;
+    const svgY = ((e.clientY - r.top)  / r.height) * vbH + vbOriginY;
+
+    const x = Math.min(PITCH_LENGTH, Math.max(0, svgX / SCALE));
+    const y = Math.min(PITCH_WIDTH,  Math.max(0, svgY / SCALE));
+    onPick(Math.round(x * 10) / 10, Math.round(y * 10) / 10);
+  };
+
 
   return (
     <svg
