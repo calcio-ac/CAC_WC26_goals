@@ -79,12 +79,24 @@ export function Pitch({ events, onPick, highlightSequenceId }: Props) {
         const gbH = 18.32 * SCALE;
         const px = left ? 2 : W - 2 - pbW;
         const gx = left ? 2 : W - 2 - gbW;
-        const spotX = left ? 11 * SCALE : W - 11 * SCALE;
+        const spotX = left ? 2 + 11 * SCALE : W - 2 - 11 * SCALE;
+        
+        // The D (penalty arc) is a circle of radius 9.15m from the spot, intersected by the 16.5m box.
+        const r = 9.15 * SCALE;
+        const dy = 7.3125 * SCALE; // sqrt(9.15^2 - 5.5^2)
+        const arcY1 = H / 2 - dy;
+        const arcY2 = H / 2 + dy;
+
         return (
           <g key={side}>
             <rect x={px} y={(H - pbH) / 2} width={pbW} height={pbH} {...line} />
             <rect x={gx} y={(H - gbH) / 2} width={gbW} height={gbH} {...line} />
             <circle cx={spotX} cy={H / 2} r={2} fill="#9fd6a8" opacity={0.7} />
+            {left ? (
+              <path d={`M ${px + pbW} ${arcY1} A ${r} ${r} 0 0 1 ${px + pbW} ${arcY2}`} {...line} />
+            ) : (
+              <path d={`M ${px} ${arcY1} A ${r} ${r} 0 0 0 ${px} ${arcY2}`} {...line} />
+            )}
           </g>
         );
       })}
