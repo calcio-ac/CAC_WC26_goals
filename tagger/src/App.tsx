@@ -37,6 +37,7 @@ export function App({ auth }: { auth: Auth | null }) {
   const [activeTab, setActiveTab] = useState<"setup" | "tagging">("setup");
   const [armed, setArmed] = useState<EventType | null>(null);
   const [armedTime, setArmedTime] = useState<number | null>(null);
+  const [sequenceTemplate, setSequenceTemplate] = useState<EventType[] | null>(null);
   
   const [toast, setToast] = useState<string | null>(null);
   const [urlInput, setUrlInput] = useState(project.match.videoUrl);
@@ -164,6 +165,22 @@ export function App({ auth }: { auth: Auth | null }) {
     flash(`Armed ${EVENT_META[type].label} @ ${fmtClock(t)} — Click pitch to plot`);
   }, [yt, flash]);
 
+  const startSequence = useCallback((template: EventType[]) => {
+    newSequence();
+    setSequenceTemplate(template);
+    setArmed(null);
+    setArmedTime(null);
+    flash(`Sequence started. Press hotkeys to capture times.`);
+  }, [newSequence, flash]);
+
+  const saveSequence = useCallback(() => {
+    setSequenceTemplate(null);
+    setArmed(null);
+    setArmedTime(null);
+    setAwaitingEndFor(null);
+    flash("Sequence saved. Ready for next.");
+  }, [flash]);
+
   // Place the armed action at a pitch coordinate.
   const placeAt = useCallback(
     (x: number, y: number) => {
@@ -211,8 +228,17 @@ export function App({ auth }: { auth: Auth | null }) {
         // Goal needs a second click for the shot end location.
         setAwaitingEndFor(ev.id);
       } else {
-        // Auto-advance the chain.
-        setArmed(armed === "pre_assist" ? "assist" : "goal");
+        // Auto-advance the chain if possible based on template
+        if (sequenceTemplate) {
+          const idx = sequenceTemplate.indexOf(armed);
+          if (idx !== -1 && idx < sequenceTemplate.length - 1) {
+            setArmed(sequenceTemplate[idx + 1]);
+          } else {
+            setArmed(null);
+          }
+        } else {
+          setArmed(armed === "pre_assist" ? "assist" : "goal");
+        }
       }
       setArmedTime(null);
     },
@@ -225,10 +251,13 @@ export function App({ auth }: { auth: Auth | null }) {
       const tag = (e.target as HTMLElement)?.tagName;
       if (tag === "INPUT" || tag === "SELECT" || tag === "TEXTAREA") return;
       switch (e.key.toLowerCase()) {
-        case "p": armTag("pre_assist"); break;
-        case "a": armTag("assist"); break;
-        case "g": armTag("goal"); break;
-        case "n": newSequence(); flash("New goal sequence"); break;
+        case "p": if (!sequenceTemplate || sequenceTemplate.includes("pre_assist")) armTag("pre_assist"); break;
+        case "a": if (!sequenceTemplate || sequenceTemplate.includes("assist")) armTag("assist"); break;
+        case "g": if (!sequenceTemplate || sequenceTemplate.includes("goal")) armTag("goal"); break;
+        case "n": 
+          if (sequenceTemplate) saveSequence();
+          else flash("Pick a sequence template to start");
+          break;
         case "escape": armTag(null); setAwaitingEndFor(null); setEditingEventId(null); break;
         case " ": e.preventDefault(); yt.togglePlay(); break;
         case "arrowleft": e.preventDefault(); e.shiftKey ? yt.nudge(-5) : yt.frameStep(-1); break;
@@ -505,8 +534,26 @@ export function App({ auth }: { auth: Auth | null }) {
                   ))}
                 </div>
               </div>
-              <div className="actions">
-                {EVENT_ORDER.map((t) => {
+              
+              {!sequenceTemplate ? (
+                <div className="template-picker" style={{ padding: "20px 0", textAlign: "center" }}>
+                  <p style={{ marginBottom: 12, color: "var(--muted)" }}>Pick a sequence type to start tagging:</p>
+                  <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
+                    <button className="btn primary" onClick={() => startSequence(["pre_assist", "assist", "goal"])}>
+                      Pre-Assist → Assist → Goal
+                    </button>
+                    <button className="btn primary" onClick={() => startSequence(["assist", "goal"])}>
+                      Assist → Goal
+                    </button>
+                    <button className="btn primary" onClick={() => startSequence(["goal"])}>
+                      Solo Goal
+                    </button>
+                  </div>
+                </div>
+              ) : (
+                <>
+                <div className="actions">
+                  {EVENT_ORDER.filter(t => sequenceTemplate.includes(t)).map((t) => {
                   const squad = byCode(sel[t].code);
                   const isArmed = armed === t;
                   return (
@@ -551,6 +598,13 @@ export function App({ auth }: { auth: Auth | null }) {
                   );
                 })}
               </div>
+              <div style={{ marginTop: 16, textAlign: "right", borderTop: "1px solid var(--line)", paddingTop: 12 }}>
+                <button className="btn primary" onClick={saveSequence}>
+                  ✓ Save Sequence <span className="kbd" style={{ background: "transparent" }}>N</span>
+                </button>
+              </div>
+              </>
+              )}
               </>
             )}
             <div className="legend">
