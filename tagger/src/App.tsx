@@ -8,7 +8,7 @@ import { useYouTube } from "./lib/useYouTube";
 import { AttackDirection, BODY_PARTS, BodyPart, DIRECTIONS, EVENT_META, EVENT_ORDER, EventType } from "./lib/types";
 import { fmtClock, parseYouTubeId } from "./lib/util";
 import { supabaseConfigured } from "./lib/supabase";
-import { pushProject } from "./lib/sync";
+import { pushProject, pullProject } from "./lib/sync";
 import { Auth } from "./lib/useAuth";
 
 const YT_CONTAINER = "gcip-yt";
@@ -28,6 +28,7 @@ export function App({ auth }: { auth: Auth | null }) {
     updateEvent,
     deleteEvent,
     startNewMatch,
+    importProject,
     markSequencesSynced,
   } = useProject();
 
@@ -101,29 +102,57 @@ export function App({ auth }: { auth: Auth | null }) {
     else updateMatch({ awayCode: code, awayTeam: sq?.name ?? code });
   };
 
-  const loadScheduledMatch = (m: typeof scheduledMatches[0]) => {
+  const loadScheduledMatch = async (m: typeof scheduledMatches[0]) => {
     if (project.sequences.length > 0) {
       if (!window.confirm(`You have ${project.sequences.length} goals logged in the current workspace. Loading a new match will clear them.\n\nAre you sure you want to switch?`)) {
         return;
       }
     }
     
-    startNewMatch({
-      id: m.id, // Preserve the database UUID (or fallback ID)
-      homeCode: m.home_code,
-      homeTeam: m.home_team,
-      awayCode: m.away_code,
-      awayTeam: m.away_team,
-      matchDate: m.match_date ?? "",
-      ...(m.video_url ? { videoUrl: m.video_url } : {}),
-      ...(m.video_id ? { videoId: m.video_id } : {}),
-    });
+    setSyncing(true);
+    let loadedExisting = false;
+    
+    // Check if m.id is a valid UUID (meaning it already exists in Supabase)
+    const isUuid = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i.test(m.id);
+    
+    if (isUuid) {
+      try {
+        const fetched = await pullProject(m.id);
+        if (fetched) {
+          importProject({
+             ...fetched,
+             match: {
+               ...fetched.match,
+               tagger: project.match.tagger || fetched.match.tagger,
+             }
+          });
+          loadedExisting = true;
+          flash(`Loaded existing data: ${fetched.sequences.length} goals found`);
+        }
+      } catch (err) {
+        console.error("Failed to pull project", err);
+      }
+    }
+    
+    if (!loadedExisting) {
+      startNewMatch({
+        id: m.id, // Preserve the database UUID (or fallback ID)
+        homeCode: m.home_code,
+        homeTeam: m.home_team,
+        awayCode: m.away_code,
+        awayTeam: m.away_team,
+        matchDate: m.match_date ?? "",
+        ...(m.video_url ? { videoUrl: m.video_url } : {}),
+        ...(m.video_id ? { videoId: m.video_id } : {}),
+      });
+      flash(`Loaded: ${m.home_team} vs ${m.away_team}`);
+    }
     
     if (m.video_url) setUrlInput(m.video_url);
     else setUrlInput("");
     
+    setSyncing(false);
     setMatchPickerOpen(false);
-    flash(`Loaded: ${m.home_team} vs ${m.away_team}`);
   };
 
   const filteredMatches = useMemo(() => {

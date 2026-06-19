@@ -134,6 +134,91 @@ export async function pushProject(project: GcipProject): Promise<SyncResult> {
   return { matchId, sequences: sequences.length, events: events.length };
 }
 
+/**
+ * Pull a project from Supabase by its match ID.
+ * Returns null if the match does not exist.
+ */
+export async function pullProject(matchId: string): Promise<GcipProject | null> {
+  if (!supabase) throw new Error("Supabase is not configured (.env missing)");
+
+  // 1. Fetch match
+  const { data: m, error: mErr } = await supabase
+    .from("matches")
+    .select("*")
+    .eq("id", matchId)
+    .maybeSingle();
+  if (mErr) throw mErr;
+  if (!m) return null;
+
+  // 2. Fetch sequences
+  const { data: seqs, error: sErr } = await supabase
+    .from("attack_sequences")
+    .select("*")
+    .eq("match_id", matchId)
+    .order("seq_index", { ascending: true });
+  if (sErr) throw sErr;
+
+  const sequences = (seqs || []).map((s) => ({
+    id: s.id, // we use the DB UUID directly on the client when pulling
+    matchId: s.match_id,
+    index: s.seq_index,
+    outcome: s.outcome as "goal",
+    notes: s.notes || undefined,
+    syncedAt: new Date().toISOString(), // perfectly synced
+    createdAt: s.created_at,
+  }));
+
+  // 3. Fetch events
+  const seqIds = sequences.map((s) => s.id);
+  let events: any[] = [];
+  if (seqIds.length > 0) {
+    const { data: evs, error: eErr } = await supabase
+      .from("events")
+      .select("*")
+      .in("sequence_id", seqIds)
+      .order("created_at", { ascending: true });
+    if (eErr) throw eErr;
+    
+    events = (evs || []).map((e) => ({
+      id: e.id,
+      sequenceId: e.sequence_id,
+      type: e.type,
+      minute: e.minute ?? 0,
+      second: e.second ?? 0,
+      videoTime: e.video_time ? Number(e.video_time) : 0,
+      x: e.x ? Number(e.x) : 0,
+      y: e.y ? Number(e.y) : 0,
+      endX: e.end_x ? Number(e.end_x) : undefined,
+      endY: e.end_y ? Number(e.end_y) : undefined,
+      teamCode: e.team_code || undefined,
+      player: e.player || undefined,
+      bodyPart: e.body_part || undefined,
+      direction: e.direction || "ltr",
+      notes: e.notes || undefined,
+      createdAt: e.created_at,
+    }));
+  }
+
+  return {
+    schemaVersion: 1,
+    match: {
+      id: m.id,
+      competition: m.competition || "FIFA World Cup 2026",
+      matchDate: m.match_date || "",
+      homeCode: m.home_code || "",
+      homeTeam: m.home_team || "",
+      awayCode: m.away_code || "",
+      awayTeam: m.away_team || "",
+      videoUrl: m.video_url || "",
+      videoId: m.video_id || "",
+      tagger: m.tagger || "",
+      createdAt: m.created_at,
+    },
+    sequences,
+    events,
+  };
+}
+
 /** Lightweight connectivity check against the reference data. */
 export async function testConnection(): Promise<number> {
   if (!supabase) throw new Error("Supabase is not configured (.env missing)");
