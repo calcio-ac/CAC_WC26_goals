@@ -27,7 +27,6 @@ export function App({ auth }: { auth: Auth | null }) {
     addEvent,
     updateEvent,
     deleteEvent,
-    resetProject,
   } = useProject();
 
   const { teams, byCode } = useSquads();
@@ -255,17 +254,6 @@ export function App({ auth }: { auth: Auth | null }) {
             {syncing ? "Syncing…" : "⬆ Push to Supabase"}
           </button>
         )}
-        <button
-          className="btn sm danger"
-          onClick={() => {
-            if (confirm("Clear the whole project? This cannot be undone.")) {
-              resetProject();
-              setUrlInput("");
-            }
-          }}
-        >
-          Reset
-        </button>
         {auth?.email && (
           <span className="user-chip">
             <span className="dot-on" />
